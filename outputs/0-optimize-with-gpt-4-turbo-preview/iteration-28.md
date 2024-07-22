@@ -1,3 +1,17 @@
+# Observations
+Placeholder for developer observations...
+
+# Configuration
+## RAG Files:
+data/edited_srs.md
+data/IEEE 830-1998.pdf
+data/a-state-of-the-art-review-of-bridge-inspection-planning-current-situation-and-future-needs.pdf
+## Model Name
+gpt-4-turbo-preview
+## Prompt
+    As a structural engineer,     I want to view color-coded inspection results on the map view,     so that I can quickly determine which bridges are high-risk for deterioration.
+
+# System Instructions
 A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
@@ -91,6 +105,63 @@ An example JSON structure is below with the necessary keys:
             "id": "SPD-7",
             "modification-type": "existing",
             "description": "Pontis 5.0 shall validate 50 bridges for NBI edit check within 10 seconds, at a rate better than 3 bridges per seconds."
+        }
+    ]
+}
+```
+
+
+# Final Output Message
+```json
+{
+    "use-cases": [
+        {
+            "parent-section": "3.2 BRIDGE INVENTORY & INSPECTION",
+            "id": "UC-1",
+            "modification-type": "new",
+            "primary-actor": "Structural Engineer",
+            "scope": "Bridge Inspection System",
+            "stakeholders": "Structural engineers, bridge maintenance teams",
+            "precondition": "The user has access to the bridge inventory and inspection system.",
+            "description": "The structural engineer views color-coded inspection results on the map view to quickly identify high-risk bridges for deterioration.",
+            "success-end-condition": "Inspection results are displayed on the map view with color-coding, allowing quick identification of high-risk bridges."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.1",
+            "modification-type": "new",
+            "description": "The system shall display bridge inspection results on a map view."
+        },
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.2",
+            "modification-type": "new",
+            "description": "The system shall color-code bridges on the map based on the risk levels identified in inspection results (e.g., green for low risk, yellow for medium risk, and red for high risk)."
+        },
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.3",
+            "modification-type": "new",
+            "description": "The system shall allow filtering of bridges on the map view based on risk level."
+        }
+    ],
+    "non-functional-requirements": [
+        {
+            "id": "USA-1",
+            "modification-type": "new",
+            "description": "The map view with color-coded inspection results shall be intuitive and easily understandable by structural engineers and maintenance teams."
+        },
+        {
+            "id": "SPD-1",
+            "modification-type": "new",
+            "description": "The bridge inspection results shall load on the map view within 3 seconds of accessing the feature."
+        },
+        {
+            "id": "SEC-1",
+            "modification-type": "new",
+            "description": "Access to the map view with inspection results shall be securely restricted to authorized personnel only."
         }
     ]
 }

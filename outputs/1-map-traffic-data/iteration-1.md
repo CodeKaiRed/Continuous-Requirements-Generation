@@ -1,3 +1,19 @@
+# Observations
+Placeholder for developer observations...
+
+# Configuration
+## RAG Files:
+data/edited_srs.md
+data/IEEE 830-1998.pdf
+data/a-state-of-the-art-review-of-bridge-inspection-planning-current-situation-and-future-needs.pdf
+## Model Name
+gpt-4o
+## Prompt
+    As a highway information analyst, 
+    I want to see traffic data in the map display
+    so that I can make better decisions for traffic impacts on bridges.
+
+# System Instructions
 A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
@@ -91,6 +107,48 @@ An example JSON structure is below with the necessary keys:
             "id": "SPD-7",
             "modification-type": "existing",
             "description": "Pontis 5.0 shall validate 50 bridges for NBI edit check within 10 seconds, at a rate better than 3 bridges per seconds."
+        }
+    ]
+}
+```
+
+
+# Final Output Message
+```json
+{
+    "use-cases": [
+        {
+            "parent-section": "3.1 BROWSE BRIDGE & PROJECT DATA",
+            "id": "UC-26",
+            "modification-type": "new",
+            "description": "The highway information analyst views traffic data overlay on the map display within Pontis to assess and make decisions regarding traffic impacts on bridges.",
+            "success-end-condition": "The traffic data overlay is displayed on the map, allowing the highway information analyst to make informed decisions about traffic impacts on bridges."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-26",
+            "id": "FR-26.1",
+            "modification-type": "new",
+            "description": "The system shall provide the ability for users to overlay traffic data on the map display within Pontis."
+        },
+        {
+            "parent-id": "UC-26",
+            "id": "FR-26.2",
+            "modification-type": "new",
+            "description": "The system shall allow users to filter traffic data by parameters such as time, location, and traffic type."
+        }
+    ],
+    "non-functional-requirements": [
+        {
+            "id": "USA-6",
+            "modification-type": "new",
+            "description": "The traffic data overlay feature shall be intuitive and require no more than 15 minutes of training for proficient use."
+        },
+        {
+            "id": "SPD-8",
+            "modification-type": "new",
+            "description": "The traffic data overlay shall load and display on the map within 3 seconds under standard network conditions."
         }
     ]
 }

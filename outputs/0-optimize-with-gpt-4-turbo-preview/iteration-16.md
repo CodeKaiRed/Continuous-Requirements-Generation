@@ -1,3 +1,18 @@
+# Observations
+Placeholder for developer observations...
+
+# Configuration
+## RAG Files:
+data/edited_srs.md
+data/IEEE 830-1998.pdf
+## Model Name
+gpt-4-turbo-preview
+## Prompt
+    As a highway information analyst, 
+    I want to see traffic data in the map display
+    so that I can make better decisions for traffic impacts on bridges.
+
+# System Instructions
 A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
@@ -49,13 +64,11 @@ You are a helpful assistant that translates Pontis user stories into a set of re
 - Functional requirements
 - Non-functional requirements
 
-For each user story, create a new set of achievable, clear, complete, concise, correct, consistent, necessary, organized, unambiguous, and understandable requirement artifacts. There may be more than one artifact type created for each user story. Provide new unique id's for each new requirement artifact generated. Submit your response in json format with the keys "use-cases", "functional-requirements", and "non-functional-requirements". Each key should contain a JSON list of the new requirement artifacts. For each requirement artifact, use a "modification-type" key to denote the following: 
+For each user story, create a new set of achievable, clear, complete, concise, correct, consistent, necessary, organized, unambiguous, and understandable requirement artifacts. There may be more than one artifact type created for each user story. Provide new unique id's for each new requirement artifact generated. Submit your response in json format with the keys "use-cases", "functional-requirements", and "non-functional-requirements". Each key should contain a JSON list of the new requirement artifacts. An example empty JSON structure is below with the key definitions. For each requirement artifact, use a "modification-type" key to denote the following: 
+- "existing": The requirement artifact exists to accomodate the user story and does not require changes
 - "new": This is a new requirement artifact to be added to the document
 - "modify": This is an existing requirement artifact that needs to be modified to accomodate the user story.
 
-If the artifact modification type is set to "modify", rewrite the requirement artifact to show the needed changes.
-
-An example JSON structure is below with the necessary keys:
 ```json
 {
     "use-cases": [
@@ -91,6 +104,59 @@ An example JSON structure is below with the necessary keys:
             "id": "SPD-7",
             "modification-type": "existing",
             "description": "Pontis 5.0 shall validate 50 bridges for NBI edit check within 10 seconds, at a rate better than 3 bridges per seconds."
+        }
+    ]
+}
+```
+
+
+# Final Output Message
+```json
+{
+    "use-cases": [
+        {
+            "parent-section": "3.4 PROGRAM SIMULATION",
+            "id": "UC-25",
+            "modification-type": "new",
+            "description": "The user selects and views traffic data on the map display to evaluate traffic impacts on bridges.",
+            "success-end-condition": "The user successfully views the traffic data on the map and is able to make informed decisions regarding traffic impacts on bridges."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-25",
+            "id": "FR-25.1",
+            "modification-type": "new",
+            "description": "The system shall provide the ability to select and display traffic data on the map display."
+        },
+        {
+            "parent-id": "UC-25",
+            "id": "FR-25.2",
+            "modification-type": "new",
+            "description": "The system shall allow filtering of traffic data based on specific criteria such as time of day, date range, and type of traffic."
+        },
+        {
+            "parent-id": "UC-25",
+            "id": "FR-25.3",
+            "modification-type": "new",
+            "description": "The system shall integrate traffic data with bridge data to assess and display potential traffic impacts on bridges."
+        }
+    ],
+    "non-functional-requirements": [
+        {
+            "id": "USA-25",
+            "modification-type": "new",
+            "description": "The traffic data visualization feature shall be user-friendly, requiring minimal user training."
+        },
+        {
+            "id": "SEC-25",
+            "modification-type": "new",
+            "description": "Access to traffic data shall be controlled based on user roles and permissions to ensure data security."
+        },
+        {
+            "id": "CAP-25",
+            "modification-type": "new",
+            "description": "The system shall be capable of handling large volumes of traffic data without performance degradation."
         }
     ]
 }

@@ -1,3 +1,17 @@
+# Observations
+Placeholder for developer observations...
+
+# Configuration
+## RAG Files:
+data/edited_srs.md
+data/IEEE 830-1998.pdf
+data/a-state-of-the-art-review-of-bridge-inspection-planning-current-situation-and-future-needs.pdf
+## Model Name
+gpt-4o
+## Prompt
+    As a bridge inspector,     I want to receive notifications for bridge inspections coming due,     so that I can allocate inspection personnel and resources for the next month efficiently.
+
+# System Instructions
 A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
@@ -95,3 +109,70 @@ An example JSON structure is below with the necessary keys:
     ]
 }
 ```
+
+
+# Final Output Message
+```json
+{
+    "use-cases": [
+        {
+            "parent-section": "3.2 BRIDGE INVENTORY & INSPECTION",
+            "id": "UC-10",
+            "modification-type": "new",
+            "description": "The system shall notify bridge inspectors of upcoming due bridge inspections.",
+            "success-end-condition": "The inspector is notified of inspections that are due, allowing for efficient allocation of inspection personnel and resources."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-10",
+            "id": "FR-10.1",
+            "modification-type": "new",
+            "description": "The system shall generate notifications for inspections coming due in the next month."
+        },
+        {
+            "parent-id": "UC-10",
+            "id": "FR-10.2",
+            "modification-type": "new",
+            "description": "The system shall allow inspectors to view due inspections in a calendar view."
+        },
+        {
+            "parent-id": "UC-10",
+            "id": "FR-10.3",
+            "modification-type": "new",
+            "description": "The system shall allow inspectors to set reminders for upcoming inspections."
+        },
+        {
+            "parent-id": "UC-10",
+            "id": "FR-10.4",
+            "modification-type": "new",
+            "description": "The system shall send email notifications for inspections due in the next month."
+        },
+        {
+            "parent-id": "UC-10",
+            "id": "FR-10.5",
+            "modification-type": "new",
+            "description": "The system shall provide a summary report of due inspections, including the required personnel and resources."
+        }
+    ],
+    "non-functional-requirements": [
+        {
+            "id": "USA-5",
+            "modification-type": "new",
+            "description": "The notification system shall be easy to configure and use for setting up reminders and alerts."
+        },
+        {
+            "id": "AVL-3",
+            "modification-type": "new",
+            "description": "The notification system shall be available 99.9% of the time to ensure inspectors receive timely alerts."
+        },
+        {
+            "id": "SEC-4",
+            "modification-type": "new",
+            "description": "The system shall ensure that all notifications and reminders are securely transmitted and stored to prevent unauthorized access."
+        }
+    ]
+}
+```
+
+This JSON includes the new and modified artifacts related to the user's request for bridge inspectors to receive notifications for upcoming due bridge inspections. Each artifact is provided with a unique alphanumeric ID and categorized under the appropriate type: use case, functional requirement, or non-functional requirement.

@@ -1,3 +1,17 @@
+# Observations
+Placeholder for developer observations...
+
+# Configuration
+## RAG Files:
+data/edited_srs.md
+data/IEEE 830-1998.pdf
+data/a-state-of-the-art-review-of-bridge-inspection-planning-current-situation-and-future-needs.pdf
+## Model Name
+gpt-4o
+## Prompt
+As a structural engineer, I want to view color-coded inspection results on the map view, so that I can quickly determine which bridges are high-risk for deterioration.
+
+# System Instructions
 A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
@@ -95,3 +109,57 @@ An example JSON structure is below with the necessary keys:
     ]
 }
 ```
+
+
+# Final Output Message
+```json
+{
+    "use-cases": [
+        {
+            "parent-section": "3.1 BROWSE BRIDGE & PROJECT DATA",
+            "id": "UC-10",
+            "modification-type": "new",
+            "description": "The user views color-coded inspection results on the map view to quickly determine which bridges are high-risk for deterioration.",
+            "success-end-condition": "The map view displays the bridges with their inspection results color-coded, allowing the user to identify high-risk bridges at a glance."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-10",
+            "id": "FR-10.1",
+            "modification-type": "new",
+            "description": "The system shall provide the functionality to display inspection results on the map view with color-coding based on risk levels."
+        },
+        {
+            "parent-id": "UC-10",
+            "id": "FR-10.2",
+            "modification-type": "new",
+            "description": "The system shall allow users to configure the color codes used for various risk levels in bridge inspections."
+        },
+        {
+            "parent-id": "UC-10",
+            "id": "FR-10.3",
+            "modification-type": "new",
+            "description": "The system shall update the map view in real-time when new inspection data is entered or existing data is modified."
+        }
+    ],
+    "non-functional-requirements": [
+        {
+            "id": "LAF-1",
+            "modification-type": "new",
+            "description": "The color-coded map view shall use a distinct and easily perceptible color scheme to ensure clarity and prevent misinterpretation of high-risk areas."
+        },
+        {
+            "id": "USA-1",
+            "modification-type": "new",
+            "description": "The color-coded map view shall be intuitive and user-friendly, requiring minimal training for routine users to understand and utilize the feature."
+        },
+        {
+            "id": "SPD-1",
+            "modification-type": "new",
+            "description": "The system shall render and update color-coded inspection results on the map view within 2 seconds of data entry or modification."
+        }
+    ]
+}
+```
+

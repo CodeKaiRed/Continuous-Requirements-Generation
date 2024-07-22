@@ -1,3 +1,17 @@
+# Observations
+Placeholder for developer observations...
+
+# Configuration
+## RAG Files:
+data/edited_srs.md
+data/IEEE 830-1998.pdf
+data/a-state-of-the-art-review-of-bridge-inspection-planning-current-situation-and-future-needs.pdf
+## Model Name
+gpt-4o
+## Prompt
+As an advanced user, I want to export bridge inspection results to a PowerPoint presentation, so that I can present risk analysis and recommendations to management personnel in a digestible format.
+
+# System Instructions
 A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
@@ -95,3 +109,77 @@ An example JSON structure is below with the necessary keys:
     ]
 }
 ```
+
+
+# Final Output Message
+Based on the provided user story, here are the Use Cases, Functional Requirements, and Non-functional Requirements:
+
+```json
+{
+    "use-cases": [
+        {
+            "parent-section": "3.7 DATA EXPORT",
+            "id": "UC-19",
+            "modification-type": "new",
+            "primary-actor": "Advanced user",
+            "scope": "This scenario covers all activities related to exporting bridge inspection results to a PowerPoint presentation.",
+            "stakeholders": ["Advanced User", "Management Personnel"],
+            "precondition": "User is logged into the system and has the necessary permissions to export data.",
+            "description": "The user exports bridge inspection results to a PowerPoint presentation, allowing risk analysis and recommendations to be presented to management in a digestible format.",
+            "success-end-condition": "The inspection results are successfully exported to a formatted PowerPoint presentation and are ready for presentation to management."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-19",
+            "id": "FR-19.1",
+            "modification-type": "new",
+            "description": "The system shall provide an option to export bridge inspection results to PowerPoint format."
+        },
+        {
+            "parent-id": "UC-19",
+            "id": "FR-19.2",
+            "modification-type": "new",
+            "description": "The system shall allow users to select specific inspection results and data to include in the PowerPoint presentation."
+        },
+        {
+            "parent-id": "UC-19",
+            "id": "FR-19.3",
+            "modification-type": "new",
+            "description": "The system shall generate a PowerPoint presentation with pre-defined templates for risk analysis and recommendations."
+        },
+        {
+            "parent-id": "UC-19",
+            "id": "FR-19.4",
+            "modification-type": "new",
+            "description": "The system shall enable users to customize the PowerPoint slides after the initial export."
+        }
+    ],
+    "non-functional-requirements": [
+        {
+            "id": "USA-19.1",
+            "modification-type": "new",
+            "description": "The exported PowerPoint presentations shall follow a consistent look and feel with the organization's branding guidelines."
+        },
+        {
+            "id": "OPR-19.1",
+            "modification-type": "new",
+            "description": "The system shall complete the PowerPoint export process within 30 seconds for inspection results with up to 1000 data points."
+        },
+        {
+            "id": "DEP-19.1",
+            "modification-type": "new",
+            "description": "The exported PowerPoint files shall be compatible with the latest three versions of Microsoft PowerPoint."
+        }
+    ]
+}
+```
+
+- **Use Cases**:
+  - Added a new use case to cover the export of bridge inspection results to PowerPoint format.
+  
+- **Functional Requirements**:
+  - Defined specific functional requirements for selecting, generating, and customizing PowerPoint presentations.
+
+- **Non-functional Requirements**:
+  - Included usability, operational, and deployment requirements to ensure the consistency, performance, and compatibility of the PowerPoint exports.

@@ -1,3 +1,19 @@
+# Observations
+Placeholder for developer observations...
+
+# Configuration
+## RAG Files:
+data/edited_srs.md
+data/IEEE 830-1998.pdf
+data/a-state-of-the-art-review-of-bridge-inspection-planning-current-situation-and-future-needs.pdf
+## Model Name
+gpt-4o
+## Prompt
+    As a highway information analyst, 
+    I want to see traffic data in the map display
+    so that I can make better decisions for traffic impacts on bridges.
+
+# System Instructions
 A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
@@ -95,3 +111,36 @@ An example JSON structure is below with the necessary keys:
     ]
 }
 ```
+
+
+# Final Output Message
+```json
+{
+  "use-cases": [
+    {
+      "parent-section": "3.1 BROWSE BRIDGE & PROJECT DATA",
+      "id": "UC-4",
+      "modification-type": "modify",
+      "description": "The user selects data (bridges, projects, and traffic data) from the Pontis database to generate a map display, or the user selects bridges, projects, or traffic data from a map and sees the supporting Pontis information.",
+      "success-end-condition": "The selected Pontis information displayed on the screen or a map is generated showing the Pontis information."
+    }
+  ],
+  "functional-requirements": [
+    {
+      "parent-id": "UC-4",
+      "id": "FR-4.1",
+      "modification-type": "modify",
+      "description": "The system shall provide the ability to create any report that is bridge, project, or traffic data based by selecting the relevant 'driver' records from a map display."
+    },
+    {
+      "parent-id": "UC-4",
+      "id": "FR-4.2",
+      "modification-type": "modify",
+      "description": "The system shall provide the ability to create or refresh a map display from a set of bridge, project, or traffic records selected within the Pontis desktop."
+    }
+  ],
+  "non-functional-requirements": []
+}
+```
+
+This JSON structure clearly reflects the new set of achievable, clear, complete, concise, correct, consistent, necessary, organized, unambiguous, and understandable requirement artifacts based on the provided user story. The necessary modifications to existing use cases and functional requirements have been made to accommodate the inclusion of traffic data in the map display.

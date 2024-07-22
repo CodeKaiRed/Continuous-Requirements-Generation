@@ -1,3 +1,22 @@
+# Observations
+Same inputs and configuration as iteration-14.
+
+**Sensitivity/consistency observations:**
+Completely different non-functional requirements. Better placement for use case parent section. Now thinks that this requirement is existing.
+
+
+# Configuration
+## RAG Files:
+data/edited_srs.md
+data/IEEE 830-1998.pdf
+## Model Name
+gpt-4-turbo-preview
+## Prompt
+    As a highway information analyst, 
+    I want to see traffic data in the map display
+    so that I can make better decisions for traffic impacts on bridges.
+
+# System Instructions
 A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
@@ -49,13 +68,11 @@ You are a helpful assistant that translates Pontis user stories into a set of re
 - Functional requirements
 - Non-functional requirements
 
-For each user story, create a new set of achievable, clear, complete, concise, correct, consistent, necessary, organized, unambiguous, and understandable requirement artifacts. There may be more than one artifact type created for each user story. Provide new unique id's for each new requirement artifact generated. Submit your response in json format with the keys "use-cases", "functional-requirements", and "non-functional-requirements". Each key should contain a JSON list of the new requirement artifacts. For each requirement artifact, use a "modification-type" key to denote the following: 
+For each user story, create a new set of achievable, clear, complete, concise, correct, consistent, necessary, organized, unambiguous, and understandable requirement artifacts. There may be more than one artifact type created for each user story. Provide new unique id's for each new requirement artifact generated. Submit your response in json format with the keys "use-cases", "functional-requirements", and "non-functional-requirements". Each key should contain a JSON list of the new requirement artifacts. An example empty JSON structure is below with the key definitions. For each requirement artifact, use a "modification-type" key to denote the following: 
+- "existing": The requirement artifact exists to accomodate the user story and does not require changes
 - "new": This is a new requirement artifact to be added to the document
 - "modify": This is an existing requirement artifact that needs to be modified to accomodate the user story.
 
-If the artifact modification type is set to "modify", rewrite the requirement artifact to show the needed changes.
-
-An example JSON structure is below with the necessary keys:
 ```json
 {
     "use-cases": [
@@ -91,6 +108,43 @@ An example JSON structure is below with the necessary keys:
             "id": "SPD-7",
             "modification-type": "existing",
             "description": "Pontis 5.0 shall validate 50 bridges for NBI edit check within 10 seconds, at a rate better than 3 bridges per seconds."
+        }
+    ]
+}
+```
+
+
+# Final Output Message
+```json
+{
+    "use-cases": [
+        {
+            "parent-section": "3.1 BROWSE BRIDGE & PROJECT DATA",
+            "id": "UC-4",
+            "modification-type": "existing",
+            "description": "The user selects data (bridges and projects) from the Pontis database to generate a map display, or the user selects bridges or projects from a map and sees the supporting Pontis information.",
+            "success-end-condition": "The selected Pontis information displayed on the screen or a map is generated showing the Pontis information."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-4",
+            "id": "FR4.1",
+            "modification-type": "existing",
+            "description": "The system shall provide the ability to create any report that is bridge or project based by selecting the relevant 'driver' records from a map display."
+        },
+        {
+            "parent-id": "UC-4",
+            "id": "FR4.2",
+            "modification-type": "existing",
+            "description": "The system shall provide the ability to create or refresh a map display from a set of bridge or project records selected within the Pontis desktop."
+        }
+    ],
+    "non-functional-requirements": [
+        {
+            "id": "USA-3",
+            "modification-type": "existing",
+            "description": "As a general goal, Pontis users should be comfortable operating and using the software after two full days of training. Users who only wish to access and display bridge information should be comfortable operating and using the software after two hours of training."
         }
     ]
 }

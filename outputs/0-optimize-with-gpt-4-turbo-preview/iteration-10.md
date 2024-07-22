@@ -1,11 +1,10 @@
 # Observations
-Placeholder for developer observations...
+The assistant API does not support a file-search model with JSON format for response outputs. However, prompting the model to deliver outputs shows reasonable results. Although, the JSON formatting is not guaranteed, this may be a good alternative. Unlike the previous iteration, the model chose not to output a set of each requirement artifact. The ID for the non-functional requirement was correct, but the section was wrong. If the model can accurately name the incremented alphanumeric ID of the new requirement artifacts, maybe the naming of the section/location is unnecessary.
 
 # Configuration
 ## RAG Files:
-- data/2005 - pontis.pdf
-- data/output_srs.md
-- data/IEEE 830-1998.pdf
+data/edited_srs.md
+data/IEEE 830-1998.pdf
 ## Model Name
 gpt-4-turbo-preview
 ## Prompt
@@ -18,26 +17,31 @@ A software requirements specification is a document containing specifications fo
 - Version History
 - System Purpose or Objective
 - System Description
-- Stakeholders or User Classes
+- Stakeholders
+- User Classes
 - Constraints
 - Naming Conventions
 - Glossary of Terms
 - Assumptions
+- Use Cases
 - Functional Requirements
 - Nonfunctional Requirements
 - Design Constraints
-- Use Cases
+- Risk Analysis
 
 A use case highlights the flow of the application to accomplish a goal. The use case format is as follows in bullets:
-- Goal
-- Actors
-- Preconditions
-- Triggers
-- Basic Scenario (Numbered Sequence for Event Flow)
-- Alternative Scenario
-- Postconditions
+- Primary Actor
+- Scope
+- Stakeholders
+- Precondition
+- Description
+- Success End Condition
 
-Functional requirements outline what the system will do, while non-functional requirements describe implementation details related to the system’s functional requirements such as performance, security, safety, reliability, availability, modularity, legality, maintability, portability, supportability, scalability, and/or usability. High-level requirements outline main functionality or a big feature. Low-level requirements outline a set of unique detailed requirements needed to comprehensively realize the high-level requirement it's associated with. All requirements should have a unique numbering system.
+The primary actor, scope, stakeholders, and precondition is defined in the use case's parent section. Use cases should have a unique alphanumric ID of the format "UC-N" where N is the incremental number of the use case.
+
+Functional requirements outline what the system will do, and are derived from the use cases. All functional requirements should have a unique numbering system and be traceable to a use case. Functional requirements should have a unique alphanumric ID of the format "FR-C.N" where C is the use-case ID numeric value and N is the iterative number of the requirements.
+
+Non-functional requirements describe implementation details related to the system’s functional requirements such as look and feel (LAF), usability (USA), capacity (CAP), speed (SPD), reliability/availability (AVL), operational (OPR), installation/deployment (DEP), maintainability/portability (MPR), security (SEC), and legal (LGL). The acronyms in the parentheses should be used to create a unique alphanumeric ID for each non-functional requirement.
 
 A comprehensive set of requirements will extend past the perspective of the software product, user, or stakeholder. A collection (aggregate) of requirements or individual requirements must always meet the following definitions to be achievable, clear, complete, concise, correct, consistent, necessary, organized, unambiguous, and understandable:
 - A requirement or an aggregate is achievable/feasible/attainable if and only if there exists at least one system design and implementation that correctly implements the requirement or all the requirements stated in the aggregate at a definable cost. 
@@ -57,54 +61,44 @@ A user story defines an end goal of a software feature written from the perspect
 "As a a [type of user], I want to [complete some objective], so that I [receive some benefit]."
 
 You are a helpful assistant that translates Pontis user stories into a set of requirement artifacts listed below:
+- Use cases
 - Functional requirements
 - Non-functional requirements
-- Use cases
-- Operational scenarios
-- Constraints
 
-For each user story, create a new set of achievable, clear, complete, concise, correct, consistent, necessary, organized, unambiguous, and understandable requirement artifacts. There may be more than one artifact type created for each user story. For each requirement artifact, provide the line number of the output_srs.md file where the artifact should be placed.
+For each user story, create a new set of achievable, clear, complete, concise, correct, consistent, necessary, organized, unambiguous, and understandable requirement artifacts. There may be more than one artifact type created for each user story. For each requirement artifact, provide the lowest-level section heading of the output_srs.md file where the artifact should be placed. Submit your response in json format.
+
 
 # Final Output Message
-Based on the user story provided by the highway information analyst desiring to see traffic data in the map display for making better traffic impact decisions on bridges, the following requirement artifacts have been prepared:
-
-### Functional Requirements
-
-1. **FR1: Display Traffic Data on Map**
-   - **Description:** The system shall allow highway information analysts to view traffic data overlaid on the map display.
-   - **Rationale:** To enable analysts to assess traffic impacts on bridge infrastructure visually.
-   - **Priority:** High
-   - **Location:** Section 4.0 Functional Requirements, after requirement 1.8 .
-
-### Use Case
-
-1. **Use Case: View Traffic Data on Map Display**
-   - **Goal:** Enable highway information analysts to make informed decisions regarding traffic impacts on bridges.
-   - **Actors:** Highway information analysts.
-   - **Preconditions:** The user is logged into the system with highway information analyst permissions.
-   - **Triggers:** The user selects the option to view traffic data on the map.
-   - **Basic Scenario:**
-     1. The user navigates to the map display feature.
-     2. The user selects the option to overlay traffic data.
-     3. The system retrieves current traffic data.
-     4. The system overlays traffic data on the map display.
-     5. The user analyzes the traffic data in relation to bridge locations and conditions.
-   - **Alternative Scenario:** If traffic data is unavailable, display a message indicating the lack of data.
-   - **Postconditions:** Traffic data is displayed on the map, enabling analysis.
-   - **Location:** Use Case section, after Use Case 4 .
-
-### Non-Functional Requirements
-
-1. **NFR1: Performance**
-   - **Description:** The system shall display traffic data on the map within 5 seconds of user request.
-   - **Rationale:** To ensure timely access to traffic information for decision-making.
-   - **Priority:** High
-   - **Location:** Section on Non-functional Requirements.
-
-2. **NFR2: Usability**
-   - **Description:** Traffic data overlay on the map must be easily interpretable and distinguishable from other map data.
-   - **Rationale:** To ensure that highway information analysts can easily understand and utilize the traffic data.
-   - **Priority:** Medium
-   - **Location:** Section on Non-functional Requirements.
-
-By placing these requirements in the specified sections of the SRS document, the system's ability to support highway information analysts in making better-informed decisions regarding traffic impacts on bridges will be effectively captured and addressed.
+```json
+{
+  "Use Cases": [
+    {
+      "section": "3.1 BROWSE BRIDGE & PROJECT DATA",
+      "ID": "UC-4",
+      "Primary Actor": "Highway information analyst",
+      "Scope": "Pontis system",
+      "Stakeholders": "Highway information analysts, traffic management authorities, bridge management planners",
+      "Precondition": "User is logged into the system and authorized to view traffic and bridge data.",
+      "Description": "The highway information analyst selects traffic data from the Pontis database to be displayed on a map. This enables the visualization of traffic impacts on bridges within a specified area.",
+      "Success End Condition": "The system displays traffic data on the map, allowing the highway information analyst to analyze the traffic impacts on bridges effectively."
+    }
+  ],
+  "Functional Requirements": [
+    {
+      "section": "4.0 Functional Requirements",
+      "ID": "FR-4.1",
+      "UseCaseID": "4",
+      "Description": "The system shall allow highway information analysts to select and visualize traffic data on the map display within the Pontis interface.",
+      "Rationale": "To enable data-driven decision-making for traffic management and bridge impact analysis."
+    }
+  ],
+  "Non-Functional Requirements": [
+    {
+      "section": "5.3 PERFORMANCE REQUIREMENTS",
+      "ID": "USA-2",
+      "Description": "The map display function should maintain a consistent look and feel in both web and standalone environments, conforming to standard .NET application conventions where applicable.",
+      "Rationale": "To ensure usability and accessibility across different platforms."
+    }
+  ]
+}
+```

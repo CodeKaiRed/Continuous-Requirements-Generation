@@ -1,3 +1,17 @@
+# Observations
+Placeholder for developer observations...
+
+# Configuration
+## RAG Files:
+data/edited_srs.md
+data/IEEE 830-1998.pdf
+data/a-state-of-the-art-review-of-bridge-inspection-planning-current-situation-and-future-needs.pdf
+## Model Name
+gpt-4o
+## Prompt
+As a structural engineer, I want to view color-coded inspection results on the map view, so that I can quickly determine which bridges are high-risk for deterioration.
+
+# System Instructions
 A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
@@ -95,3 +109,55 @@ An example JSON structure is below with the necessary keys:
     ]
 }
 ```
+
+
+# Final Output Message
+```json
+{
+    "use-cases": [
+        {
+            "parent-section": "3.1 BROWSE BRIDGE & PROJECT DATA",
+            "id": "UC-1",
+            "modification-type": "modify",
+            "description": "The user uses the find, filter, and select capabilities in Pontis to access the desired structure. A map-based query can be performed. The user can view color-coded inspection results on the map view.",
+            "success-end-condition": "User finds and selects the desired structure(s). User views data for the selected structure(s). The map view displays color-coded inspection results for the selected structures."
+        },
+        {
+            "parent-section": "3.1 BROWSE BRIDGE & PROJECT DATA",
+            "id": "UC-4",
+            "modification-type": "modify",
+            "description": "The user selects data (bridges and projects) from the Pontis database to generate a map display, or the user selects bridges or projects from a map and sees the supporting Pontis information. Users can also view color-coded inspection results for bridges on the map view.",
+            "success-end-condition": "The selected Pontis information is displayed on the screen, or a map is generated showing the Pontis information with color-coded inspection results for bridges."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.8",
+            "modification-type": "modify",
+            "description": "The user shall be able to select bridges on a supported map display and generate a bridge list for use within Pontis, for example, to perform a simulation analysis or to generate an inspection roster. The map display shall show color-coded inspection results for the selected bridges."
+        },
+        {
+            "parent-id": "UC-4",
+            "id": "FR-4.2",
+            "modification-type": "modify",
+            "description": "The system shall provide the ability to create or refresh a map display from a set of bridge or project records selected within the Pontis desktop. The map display shall include color-coded inspection results for bridges."
+        },
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.10",
+            "modification-type": "new",
+            "description": "The system shall enable color-coding of inspection results on the map based on the risk level of deterioration."
+        },
+        {
+            "parent-id": "UC-4",
+            "id": "FR-4.5",
+            "modification-type": "new",
+            "description": "The system shall allow users to customize the color codes representing different levels of bridge condition and risk of deterioration on the map view."
+        }
+    ],
+    "non-functional-requirements": []
+}
+```
+
+This JSON structure includes the necessary modifications and additions to the use cases and functional requirements to accommodate the new user story. The modifications ensure that the system displays color-coded inspection results on the map view, allowing structural engineers to quickly determine high-risk bridges for deterioration.

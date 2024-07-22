@@ -1,3 +1,17 @@
+# Observations
+Placeholder for developer observations...
+
+# Configuration
+## RAG Files:
+data/edited_srs.md
+data/IEEE 830-1998.pdf
+data/a-state-of-the-art-review-of-bridge-inspection-planning-current-situation-and-future-needs.pdf
+## Model Name
+gpt-4o
+## Prompt
+As a structural engineer, I want to view color-coded inspection results on the map view, so that I can quickly determine which bridges are high-risk for deterioration.
+
+# System Instructions
 A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
@@ -95,3 +109,58 @@ An example JSON structure is below with the necessary keys:
     ]
 }
 ```
+
+
+# Final Output Message
+```json
+{
+    "use-cases": [
+        {
+            "parent-section": "3.1 BROWSE BRIDGE & PROJECT DATA",
+            "id": "UC-10",
+            "modification-type": "new",
+            "description": "The user views color-coded inspection results on the map view to quickly determine which bridges are high-risk for deterioration.",
+            "success-end-condition": "Color-coded inspection results are displayed on the map with clear representation of high-risk bridges."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-10",
+            "id": "FR-10.1",
+            "modification-type": "new",
+            "description": "The system shall be capable of displaying inspection results on the map view using color codes to indicate the risk level of deterioration."
+        },
+        {
+            "parent-id": "UC-10",
+            "id": "FR-10.2",
+            "modification-type": "new",
+            "description": "The system shall allow users to configure color codes for different risk levels of bridge deterioration."
+        },
+        {
+            "parent-id": "UC-10",
+            "id": "FR-10.3",
+            "modification-type": "new",
+            "description": "The system shall provide a legend or key on the map view to explain the color codes used for different risk levels."
+        }
+    ],
+    "non-functional-requirements": [
+        {
+            "id": "LAF-1",
+            "modification-type": "new",
+            "description": "The map view's color-coded inspection results should be visually distinguishable in different lighting conditions and for color-blind users."
+        },
+        {
+            "id": "USA-1",
+            "modification-type": "new",
+            "description": "The system's map view interface shall be user-friendly and allow engineers to easily toggle between different inspection results and risk levels."
+        },
+        {
+            "id": "SPD-1",
+            "modification-type": "new",
+            "description": "The system shall update the map view with color-coded inspection results within 2 seconds of a user request."
+        }
+    ]
+}
+```
+
+This JSON defines new requirement artifacts based on the provided user story. The artifacts are designed to ensure the color-coded inspection results feature is feasible, precise, complete, concise, correct, organized, and understandable.

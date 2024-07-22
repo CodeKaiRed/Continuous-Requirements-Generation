@@ -1,3 +1,19 @@
+# Observations
+Placeholder for developer observations...
+
+# Configuration
+## RAG Files:
+data/edited_srs.md
+data/IEEE 830-1998.pdf
+data/a-state-of-the-art-review-of-bridge-inspection-planning-current-situation-and-future-needs.pdf
+## Model Name
+gpt-4o
+## Prompt
+    As a highway information analyst, 
+    I want to see traffic data in the map display
+    so that I can make better decisions for traffic impacts on bridges.
+
+# System Instructions
 A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
@@ -95,3 +111,62 @@ An example JSON structure is below with the necessary keys:
     ]
 }
 ```
+
+
+# Final Output Message
+Here's a set of requirement artifacts to address the user story: 
+
+**User Story**: 
+"As a highway information analyst, I want to see traffic data in the map display so that I can make better decisions for traffic impacts on bridges."
+
+```json
+{
+    "use-cases": [
+        {
+            "parent-section": "3.1 BROWSE BRIDGE & PROJECT DATA",
+            "id": "UC-4",
+            "modification-type": "modify",
+            "description": "The user selects data (bridges and projects) and traffic data from the Pontis database to generate a map display, or the user selects items from a map and sees the supporting information.",
+            "success-end-condition": "The selected information, including traffic data, is displayed on the screen or a map is generated showing the details."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-4",
+            "id": "FR-4.3",
+            "modification-type": "new",
+            "description": "The system shall provide the ability to overlay traffic data onto the map display to assist in decision making regarding traffic impacts on bridges."
+        },
+        {
+            "parent-id": "UC-4",
+            "id": "FR-4.4",
+            "modification-type": "new",
+            "description": "The system shall allow the user to filter and display traffic data in conjunction with bridge and project data in the map display."
+        }
+    ],
+    "non-functional-requirements": [
+        {
+            "id": "LAF-1",
+            "modification-type": "new",
+            "description": "The map display shall have a user-friendly interface consistent with the overall application design, allowing intuitive access to traffic data."
+        },
+        {
+            "id": "SPD-8",
+            "modification-type": "new",
+            "description": "The system shall be capable of integrating and displaying traffic data within 5 seconds of selection."
+        },
+        {
+            "id": "AVL-1",
+            "modification-type": "new",
+            "description": "The traffic data overlay functionality shall be available 99.9% of the time to ensure reliability for decision making."
+        }
+    ]
+}
+```
+
+In this set of requirements:
+- **Use Case UC-4** has been modified to include the selection and display of traffic data.
+- Two new **Functional Requirements (FR-4.3 and FR-4.4)** are created to outline the specific capabilities related to overlaying and filtering traffic data in the map display.
+- Three new **Non-Functional Requirements** are added to address the usability, speed, and availability of the new traffic data feature.
+
+These changes ensure the user story's needs are met by integrating traffic data capabilities into the existing functionality[0][1][2].

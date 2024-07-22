@@ -1,3 +1,17 @@
+# Observations
+Placeholder for developer observations...
+
+# Configuration
+## RAG Files:
+data/edited_srs.md
+data/IEEE 830-1998.pdf
+data/a-state-of-the-art-review-of-bridge-inspection-planning-current-situation-and-future-needs.pdf
+## Model Name
+gpt-4-turbo-preview
+## Prompt
+    As a bridge inspector,     I want to see notifications for inspections coming due,     so that I can allocate resources for inspections efficiently and before due dates.
+
+# System Instructions
 A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
@@ -91,6 +105,59 @@ An example JSON structure is below with the necessary keys:
             "id": "SPD-7",
             "modification-type": "existing",
             "description": "Pontis 5.0 shall validate 50 bridges for NBI edit check within 10 seconds, at a rate better than 3 bridges per seconds."
+        }
+    ]
+}
+```
+
+
+# Final Output Message
+```json
+{
+    "use-cases": [
+        {
+            "parent-section": "3.2 Bridge Inspection Management",
+            "id": "UC-1",
+            "modification-type": "new",
+            "description": "The system notifies the bridge inspector of inspections coming due within a specified timeframe.",
+            "success-end-condition": "The bridge inspector receives timely notifications for upcoming inspections, allowing for efficient resource allocation."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.1",
+            "modification-type": "new",
+            "description": "The system shall generate and send notifications for inspections due within the next 30 days."
+        },
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.2",
+            "modification-type": "new",
+            "description": "The system shall allow the bridge inspector to view and manage the list of upcoming inspections."
+        },
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.3",
+            "modification-type": "new",
+            "description": "The system shall enable setting priority levels for upcoming inspections based on due dates."
+        }
+    ],
+    "non-functional-requirements": [
+        {
+            "id": "USA-1",
+            "modification-type": "new",
+            "description": "The system's notification feature shall be user-friendly, allowing inspectors to easily navigate and act upon inspection notifications."
+        },
+        {
+            "id": "AVL-1",
+            "modification-type": "new",
+            "description": "Notification services shall be highly available to ensure timely delivery of inspection due alerts."
+        },
+        {
+            "id": "SEC-1",
+            "modification-type": "new",
+            "description": "All notification data shall be securely transmitted and stored, ensuring confidentiality of inspection schedules."
         }
     ]
 }

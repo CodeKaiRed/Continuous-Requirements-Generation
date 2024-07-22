@@ -1,3 +1,17 @@
+# Observations
+Placeholder for developer observations...
+
+# Configuration
+## RAG Files:
+data/edited_srs.md
+data/IEEE 830-1998.pdf
+data/a-state-of-the-art-review-of-bridge-inspection-planning-current-situation-and-future-needs.pdf
+## Model Name
+gpt-4o
+## Prompt
+As an advanced user, I want to export bridge inspection results to a PowerPoint presentation, so that I can present risk analysis and recommendations to management personnel in a digestible format.
+
+# System Instructions
 A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
@@ -91,6 +105,76 @@ An example JSON structure is below with the necessary keys:
             "id": "SPD-7",
             "modification-type": "existing",
             "description": "Pontis 5.0 shall validate 50 bridges for NBI edit check within 10 seconds, at a rate better than 3 bridges per seconds."
+        }
+    ]
+}
+```
+
+
+# Final Output Message
+```json
+{
+    "use-cases": [
+        {
+            "parent-section": "4.6 DATA MANAGEMENT",
+            "id": "UC-17",
+            "modification-type": "new",
+            "description": "The user exports bridge inspection results to a PowerPoint presentation format to present risk analysis and recommendations.",
+            "success-end-condition": "The bridge inspection data is successfully exported into a PowerPoint presentation, maintaining all necessary visual aids and data points."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-17",
+            "id": "FR-17.1",
+            "modification-type": "new",
+            "description": "The system shall allow users to select specific data fields and visual aids to be included in the exported PowerPoint presentation."
+        },
+        {
+            "parent-id": "UC-17",
+            "id": "FR-17.2",
+            "modification-type": "new",
+            "description": "The system shall maintain the formatting (charts, graphs, tables) of bridge inspection results when exporting to PowerPoint."
+        },
+        {
+            "parent-id": "UC-17",
+            "id": "FR-17.3",
+            "modification-type": "new",
+            "description": "The system shall provide customizable templates for PowerPoint presentations to align with organizational branding guidelines."
+        },
+        {
+            "parent-id": "UC-17",
+            "id": "FR-17.4",
+            "modification-type": "new",
+            "description": "The system shall allow users to export inspection images and annotations as part of the PowerPoint presentation."
+        },
+        {
+            "parent-id": "UC-17",
+            "id": "FR-17.5",
+            "modification-type": "new",
+            "description": "The system shall prompt users for confirmation before completing the export to ensure all selected data is correct and complete."
+        }
+    ],
+    "non-functional-requirements": [
+        {
+            "id": "USA-5",
+            "modification-type": "new",
+            "description": "The exported PowerPoint presentation shall be user-friendly and easy to read, with a clear and concise display of inspection data and risk analysis."
+        },
+        {
+            "id": "DEP-3",
+            "modification-type": "new",
+            "description": "The system shall be capable of exporting a PowerPoint presentation within 30 seconds of user initiation, ensuring timely preparation for meetings and presentations."
+        },
+        {
+            "id": "LAF-4",
+            "modification-type": "new",
+            "description": "The PowerPoint templates provided shall adhere to the organization's aesthetic guidelines, ensuring consistency in all presentations."
+        },
+        {
+            "id": "SEC-3",
+            "modification-type": "new",
+            "description": "The system shall ensure that only authorized users can export bridge inspection data to PowerPoint to maintain data confidentiality."
         }
     ]
 }

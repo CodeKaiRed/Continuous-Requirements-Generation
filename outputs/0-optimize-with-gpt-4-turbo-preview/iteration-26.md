@@ -1,3 +1,17 @@
+# Observations
+Placeholder for developer observations...
+
+# Configuration
+## RAG Files:
+data/edited_srs.md
+data/IEEE 830-1998.pdf
+data/a-state-of-the-art-review-of-bridge-inspection-planning-current-situation-and-future-needs.pdf
+## Model Name
+gpt-4-turbo-preview
+## Prompt
+    As a bridge inspector,     I want to receive notifications for bridge inspections coming due,     so that I can allocate inspection personnel and resources for the next month efficiently.
+
+# System Instructions
 A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
@@ -91,6 +105,63 @@ An example JSON structure is below with the necessary keys:
             "id": "SPD-7",
             "modification-type": "existing",
             "description": "Pontis 5.0 shall validate 50 bridges for NBI edit check within 10 seconds, at a rate better than 3 bridges per seconds."
+        }
+    ]
+}
+```
+
+
+# Final Output Message
+```json
+{
+    "use-cases": [
+        {
+            "parent-section": "3.4 BRIDGE MAINTENANCE AND INSPECTION SCHEDULING",
+            "id": "UC-1",
+            "modification-type": "new",
+            "primary-actor": "Bridge Inspector",
+            "scope": "Bridge Inspection Scheduling System",
+            "stakeholders": "Bridge inspectors, maintenance crew, management team",
+            "precondition": "Inspector has access to the Bridge Inspection Scheduling System with appropriate permissions.",
+            "description": "The system sends out notifications for upcoming bridge inspections due, allowing the inspector to schedule personnel and resources.",
+            "success-end-condition": "Bridge inspector receives notifications and is able to plan and allocate inspection personnel and resources efficiently for the upcoming month."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.1",
+            "modification-type": "new",
+            "description": "The system shall identify bridges with inspections due in the next month."
+        },
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.2",
+            "modification-type": "new",
+            "description": "The system shall notify the bridge inspector of bridges with inspections due in the next month."
+        },
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.3",
+            "modification-type": "new",
+            "description": "The system shall allow the bridge inspector to view a list of all bridges with inspections due in the next month."
+        }
+    ],
+    "non-functional-requirements": [
+        {
+            "id": "USA-1",
+            "modification-type": "new",
+            "description": "The notification system shall be user-friendly, enabling bridge inspectors to easily access and interpret upcoming inspection information."
+        },
+        {
+            "id": "SPD-1",
+            "modification-type": "new",
+            "description": "Notifications for upcoming bridge inspections shall be sent at least 30 days before the due date."
+        },
+        {
+            "id": "SEC-1",
+            "modification-type": "new",
+            "description": "The system shall ensure the security of bridge inspection data during transmission and storage."
         }
     ]
 }

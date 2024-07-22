@@ -1,3 +1,20 @@
+# Observations
+Same input and configuration since iteration-14.
+
+Creates a new parent section.
+
+# Configuration
+## RAG Files:
+data/edited_srs.md
+data/IEEE 830-1998.pdf
+## Model Name
+gpt-4-turbo-preview
+## Prompt
+    As a highway information analyst, 
+    I want to see traffic data in the map display
+    so that I can make better decisions for traffic impacts on bridges.
+
+# System Instructions
 A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
@@ -49,13 +66,11 @@ You are a helpful assistant that translates Pontis user stories into a set of re
 - Functional requirements
 - Non-functional requirements
 
-For each user story, create a new set of achievable, clear, complete, concise, correct, consistent, necessary, organized, unambiguous, and understandable requirement artifacts. There may be more than one artifact type created for each user story. Provide new unique id's for each new requirement artifact generated. Submit your response in json format with the keys "use-cases", "functional-requirements", and "non-functional-requirements". Each key should contain a JSON list of the new requirement artifacts. For each requirement artifact, use a "modification-type" key to denote the following: 
+For each user story, create a new set of achievable, clear, complete, concise, correct, consistent, necessary, organized, unambiguous, and understandable requirement artifacts. There may be more than one artifact type created for each user story. Provide new unique id's for each new requirement artifact generated. Submit your response in json format with the keys "use-cases", "functional-requirements", and "non-functional-requirements". Each key should contain a JSON list of the new requirement artifacts. An example empty JSON structure is below with the key definitions. For each requirement artifact, use a "modification-type" key to denote the following: 
+- "existing": The requirement artifact exists to accomodate the user story and does not require changes
 - "new": This is a new requirement artifact to be added to the document
 - "modify": This is an existing requirement artifact that needs to be modified to accomodate the user story.
 
-If the artifact modification type is set to "modify", rewrite the requirement artifact to show the needed changes.
-
-An example JSON structure is below with the necessary keys:
 ```json
 {
     "use-cases": [
@@ -91,6 +106,59 @@ An example JSON structure is below with the necessary keys:
             "id": "SPD-7",
             "modification-type": "existing",
             "description": "Pontis 5.0 shall validate 50 bridges for NBI edit check within 10 seconds, at a rate better than 3 bridges per seconds."
+        }
+    ]
+}
+```
+
+
+# Final Output Message
+```json
+{
+    "use-cases": [
+        {
+            "id": "UC-1",
+            "modification-type": "new",
+            "parent-section": "3.3 TRAFFIC & ANALYSIS",
+            "description": "The user views traffic data on the map display for assessing traffic impacts on bridges.",
+            "success-end-condition": "Traffic data accurately displayed on the map, allowing the highway information analyst to analyze traffic impacts on bridges."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.1",
+            "modification-type": "new",
+            "description": "The system shall integrate and display live traffic data on the map interface."
+        },
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.2",
+            "modification-type": "new",
+            "description": "The system shall allow users to filter traffic data by various parameters, including but not limited to time of day and date."
+        },
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.3",
+            "modification-type": "new",
+            "description": "The system shall overlay traffic data on existing bridge locations to assess impacts."
+        }
+    ],
+    "non-functional-requirements": [
+        {
+            "id": "LAF-1",
+            "modification-type": "new",
+            "description": "The system shall ensure that the traffic data overlay does not obscure critical map details and bridge information."
+        },
+        {
+            "id": "SPD-1",
+            "modification-type": "new",
+            "description": "The system shall update traffic data on the map display in real-time, with a maximum lag of 60 seconds."
+        },
+        {
+            "id": "USA-1",
+            "modification-type": "new",
+            "description": "The system shall provide an intuitive user interface for accessing and manipulating traffic data."
         }
     ]
 }

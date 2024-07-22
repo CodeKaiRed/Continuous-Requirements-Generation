@@ -1,3 +1,18 @@
+# Observations
+Changes were made to the instructions to clarify how to handle ID-generation and how to choose an existing parent section for use-cases. The model is struggliing to reason what the ID's of the artifacts should be. The parent section of the use-case is still incorrect and the numbering seems to ignore the existing ID's in the document. For example, there are only 4 USA NFR's, but the model chose to create a new one with an ID of "USA-9". If the user of the model is able to provide the input for the use-case parent section of the user story, maybe this would resolve this challenge.
+
+# Configuration
+## RAG Files:
+data/edited_srs.md
+data/IEEE 830-1998.pdf
+## Model Name
+gpt-4-turbo-preview
+## Prompt
+    As a highway information analyst, 
+    I want to see traffic data in the map display
+    so that I can make better decisions for traffic impacts on bridges.
+
+# System Instructions
 A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
@@ -36,7 +51,8 @@ A comprehensive set of requirements will extend past the perspective of the soft
 - A requirement is correct if it accurately describes a functionality to be delivered. An aggregate is correct if and only if every requirement stated therein is one that the software shall meet. 
 - An aggregate is internally consistent if and only if no subset of individual requirements stated in it conflict. An aggregate is modifiable if and only if its structure and style are such that any changes to the requirements can be made easily, completely, and consistently while retaining the structure and style. 
 - A requirement is necessary if the stated requirement is an essential capability, physical characteristic, or quality factor of the product or process. If it is removed or deleted, a deficiency will exist, which cannot be fulfilled by other capabilities of the product or process. 
-- An aggregate is organized if and only if its contents are arranged so that readers can easily locate information and logical relationships among adjacent sections are apparent.
+- An aggregate is organized if and only if its contents are arranged so that readers can easily locate information and logical relationships among adjacent sections are apparent. - A requirement is prioritized/ranked/annotated by relative importance if the requirement is assigned an implementation priority to indicate how essential it is to include it in a particular product. 
+- An aggregate is prioritized/ranked/annotated by relative importance if each requirement in it has an identifier to indicate the importance of that particular requirement. 
 - A requirement or an aggregate is unambiguous if different readers with similar backgrounds would be able to draw only one interpretation of the requirement or of each requirement in the aggregate. 
 - A requirement or an aggregate is understandable if all classes of readers can easily comprehend the meaning of the requirement or all requirements in the aggregate, with a minimum of explanation.
 - A non-functional requirement should be quantifiable and testable. 
@@ -49,20 +65,14 @@ You are a helpful assistant that translates Pontis user stories into a set of re
 - Functional requirements
 - Non-functional requirements
 
-For each user story, create a new set of achievable, clear, complete, concise, correct, consistent, necessary, organized, unambiguous, and understandable requirement artifacts. There may be more than one artifact type created for each user story. Provide new unique id's for each new requirement artifact generated. Submit your response in json format with the keys "use-cases", "functional-requirements", and "non-functional-requirements". Each key should contain a JSON list of the new requirement artifacts. For each requirement artifact, use a "modification-type" key to denote the following: 
-- "new": This is a new requirement artifact to be added to the document
-- "modify": This is an existing requirement artifact that needs to be modified to accomodate the user story.
+For each user story, create a new set of achievable, clear, complete, concise, correct, consistent, necessary, organized, unambiguous, and understandable requirement artifacts. There may be more than one artifact type created for each user story. Provide NEW unique id's for each new requirement artifact generated. If the requirement is in conflict with existing artifacts, enter "CONFLICT" into the "id" fields instead. Submit your response in json format with the keys "use-cases", "functional-requirements", and "non-functional-requirements". Each key should contain a JSON list of the new requirement artifacts. An example empty JSON structure is below with the key definitions. The parent section of the use-case must be existing or a added to the bottom of the "3.0 Use Cases" section.
 
-If the artifact modification type is set to "modify", rewrite the requirement artifact to show the needed changes.
-
-An example JSON structure is below with the necessary keys:
 ```json
 {
     "use-cases": [
         {
             "parent-section": "3.2 BRIDGE INVENTORY & INSPECTION",
             "id": "UC-7",
-            "modification-type": "existing",
             "description": "The user calculates derived ratings (NBI condition ratings, structural rating, geometric rating, sufficiency rating, and SD/FO status) based on inspection data. Users may override any calculated NBI condition rating such as deck, superstructure, substructure or culvert condition as necessary.",
             "success-end-condition": "The dependent ratings are calculated and, if accepted by the user, are stored in the Pontis database. Ratings for deck, superstructure, and substructure, or culvert, condition can be entered directly to override calculated results."
         }
@@ -71,26 +81,68 @@ An example JSON structure is below with the necessary keys:
         {
             "parent-id": "UC-7",
             "id": "FR-7.1",
-            "modification-type": "existing",
             "description": "The system shall be capable of calculating NBI condition ratings using the FHWA NBI Translator."
         },
         {
             "parent-id": "UC-7",
             "id": "FR-7.2",
-            "modification-type": "existing",
             "description": "The system shall be capable of calculating and storing bridge Sufficiency Rating."
         },
     ],
     "non-functional-requirements": [
         {
             "id": "SPD-6",
-            "modification-type": "existing",
             "description": "Pontis 5.0 shall retrieve and display single bridge (inspection) detail in less than 2 seconds, unless non-native content is being accessed."
         },
         {
             "id": "SPD-7",
-            "modification-type": "existing",
             "description": "Pontis 5.0 shall validate 50 bridges for NBI edit check within 10 seconds, at a rate better than 3 bridges per seconds."
+        }
+    ]
+}
+```
+
+
+# Final Output Message
+```json
+{
+    "use-cases": [
+        {
+            "parent-section": "3.4 SELECT AND VIEW PONTIS INFORMATION USING MAPS",
+            "id": "UC-8",
+            "description": "The highway information analyst selects and views traffic data on the map display in Pontis to analyze traffic impacts on bridges.",
+            "success-end-condition": "The highway information analyst successfully views and analyzes traffic data on bridges using the map display in Pontis."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-8",
+            "id": "FR-8.1",
+            "description": "The system shall allow highway information analysts to select traffic data layers within the map display."
+        },
+        {
+            "parent-id": "UC-8",
+            "id": "FR-8.2",
+            "description": "The system shall display selected traffic data on bridges within the map interface."
+        },
+        {
+            "parent-id": "UC-8",
+            "id": "FR-8.3",
+            "description": "The system shall enable analysts to analyze traffic impact on bridge conditions by correlating bridge data with traffic volumes."
+        }
+    ],
+    "non-functional-requirements": [
+        {
+            "id": "USA-9",
+            "description": "The map display interface shall be user-friendly, allowing analysts to easily select and view different traffic data layers."
+        },
+        {
+            "id": "CAP-6",
+            "description": "The system shall support the visualization of traffic data for up to 50,000 bridges simultaneously."
+        },
+        {
+        	"id": "SPD-8",
+        	"description": "Traffic data on the map display shall refresh within 5 seconds of selecting a new data layer."
         }
     ]
 }

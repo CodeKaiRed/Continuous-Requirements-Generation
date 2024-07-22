@@ -1,3 +1,18 @@
+# Observations
+Placeholder for developer observations...
+
+# Configuration
+## RAG Files:
+data/edited_srs.md
+data/IEEE 830-1998.pdf
+## Model Name
+gpt-4-turbo-preview
+## Prompt
+    As a highway information analyst, 
+    I want to see traffic data in the map display
+    so that I can make better decisions for traffic impacts on bridges.
+
+# System Instructions
 A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
@@ -91,6 +106,63 @@ An example JSON structure is below with the necessary keys:
             "id": "SPD-7",
             "modification-type": "existing",
             "description": "Pontis 5.0 shall validate 50 bridges for NBI edit check within 10 seconds, at a rate better than 3 bridges per seconds."
+        }
+    ]
+}
+```
+
+
+# Final Output Message
+```json
+{
+    "use-cases": [
+        {
+            "id": "UC-1",
+            "modification-type": "new",
+            "parent-section": "Traffic Data Integration",
+            "description": "The system displays traffic data on the map for the highway information analyst to evaluate traffic impacts on bridges.",
+            "primary-actor": "Highway Information Analyst",
+            "scope": "Pontis Application",
+            "stakeholders": "Transportation Department, Infrastructure Planning Teams",
+            "precondition": "Traffic data is available and integrated into the system.",
+            "success-end-condition": "Traffic data is displayed on the map, enabling the analyst to assess traffic impacts on bridges effectively."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.1",
+            "modification-type": "new",
+            "description": "The system shall integrate traffic data from multiple sources into the Pontis application."
+        },
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.2",
+            "modification-type": "new",
+            "description": "The system shall provide an option to display traffic data on the map."
+        },
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.3",
+            "modification-type": "new",
+            "description": "The system shall allow the analyst to select specific data points for detailed traffic impact analysis on bridges."
+        }
+    ],
+    "non-functional-requirements": [
+        {
+            "id": "LAF-1",
+            "modification-type": "new",
+            "description": "The map display interface shall be intuitive and user-friendly, allowing easy access to traffic data visualizations."
+        },
+        {
+            "id": "USA-1",
+            "modification-type": "new",
+            "description": "The system shall update the map with the latest traffic data in real-time or near real-time."
+        },
+        {
+            "id": "SEC-1",
+            "modification-type": "new",
+            "description": "All traffic data displayed must be anonymized to protect individual privacy."
         }
     ]
 }

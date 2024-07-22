@@ -1,3 +1,17 @@
+# Observations
+Placeholder for developer observations...
+
+# Configuration
+## RAG Files:
+data/edited_srs.md
+data/IEEE 830-1998.pdf
+data/a-state-of-the-art-review-of-bridge-inspection-planning-current-situation-and-future-needs.pdf
+## Model Name
+gpt-4o
+## Prompt
+As an advanced user, I want to export bridge inspection results to a PowerPoint presentation, so that I can present risk analysis and recommendations to management personnel in a digestible format.
+
+# System Instructions
 A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
@@ -95,3 +109,66 @@ An example JSON structure is below with the necessary keys:
     ]
 }
 ```
+
+
+# Final Output Message
+Based on the user story provided, I have created a set of requirement artifacts to facilitate the export of bridge inspection results to a PowerPoint presentation. Here are the new, modified, and associated requirement artifacts:
+
+```json
+{
+    "use-cases": [
+        {
+            "parent-section": "3.6 DATA MANAGEMENT",
+            "id": "UC-17",
+            "modification-type": "new",
+            "description": "The user exports bridge inspection results to a PowerPoint presentation for easily presenting risk analysis and recommendations to management personnel.",
+            "success-end-condition": "The bridge inspection results are successfully exported to a PowerPoint presentation format and are ready for review and presentation."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-17",
+            "id": "FR-17.1",
+            "modification-type": "new",
+            "description": "The system shall allow users to select specific bridge inspection results to be included in the PowerPoint presentation export."
+        },
+        {
+            "parent-id": "UC-17",
+            "id": "FR-17.2",
+            "modification-type": "new",
+            "description": "The system shall format the selected bridge inspection results into a predefined PowerPoint template."
+        },
+        {
+            "parent-id": "UC-17",
+            "id": "FR-17.3",
+            "modification-type": "new",
+            "description": "The system shall enable advanced users to include risk analysis and recommendations within the PowerPoint presentation."
+        },
+        {
+            "parent-id": "UC-17",
+            "id": "FR-17.4",
+            "modification-type": "new",
+            "description": "The system shall allow users to export the PowerPoint presentation file to a specified directory."
+        }
+    ],
+    "non-functional-requirements": [
+        {
+            "id": "LAF-1",
+            "modification-type": "new",
+            "description": "The exported PowerPoint presentation shall follow the organization's branding guidelines, including logo, fonts, and color scheme."
+        },
+        {
+            "id": "USA-2",
+            "modification-type": "new",
+            "description": "The process of exporting bridge inspection results to PowerPoint shall be user-friendly and require no more than five user actions."
+        },
+        {
+            "id": "CAP-1",
+            "modification-type": "new",
+            "description": "The system shall support exporting large sets of inspection results, up to 10,000 entries, into PowerPoint without performance degradation."
+        }
+    ]
+}
+```
+
+These requirements ensure that the new functionality for exporting bridge inspection results to PowerPoint is both comprehensive and achievable, meeting the needs of advanced users for presenting risk analysis and recommendations effectively.

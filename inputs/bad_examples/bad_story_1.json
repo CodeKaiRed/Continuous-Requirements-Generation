@@ -1,0 +1,48 @@
+{
+    "use-cases": [
+        {
+            "parent-section": "3.1 BROWSE BRIDGE & PROJECT DATA",
+            "id": "UC-4",
+            "modification-type": "modify",
+            "description": "The user selects data (bridges and projects) and traffic data from the Pontis database to generate a map display, or the user selects items from a map and sees the supporting information.",
+            "success-end-condition": "The selected information, including traffic data, is displayed on the screen or a map is generated showing the details."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-4",
+            "id": "FR-4.3",
+            "modification-type": "new",
+            "description": "The system shall show traffic data."
+        },
+        {
+            "parent-id": "UC-4",
+            "id": "FR-4.4",
+            "modification-type": "new",
+            "description": "The system shall not allow the user to display the map view."
+        },
+        {
+            "parent-id": "UC-4",
+            "id": "FR-4.5",
+            "modification-type": "new",
+            "description": "The system shall allow the user to filter and display traffic data in conjunction with bridge and project data in the map displaya therefore displaying needed information and showing lots of good stuff while only looking at what the user wants."
+        }
+    ],
+    "non-functional-requirements": [
+        {
+            "id": "LAF-1",
+            "modification-type": "new",
+            "description": "The map display shall be easy and intuitive."
+        },
+        {
+            "id": "SPD-8",
+            "modification-type": "new",
+            "description": "The system shall be capable of showing traffic data within an appropriate time of selection."
+        },
+        {
+            "id": "AVL-1",
+            "modification-type": "new",
+            "description": "The traffic data overlay functionality shall be available most of the time to ensure reliability for decision making."
+        }
+    ]
+}

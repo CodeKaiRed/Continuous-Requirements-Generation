@@ -1,0 +1,3 @@
+As a structural engineer,
+I want to view color-coded inspection results on the map view,
+so that I can quickly determine which bridges are high-risk for deterioration.

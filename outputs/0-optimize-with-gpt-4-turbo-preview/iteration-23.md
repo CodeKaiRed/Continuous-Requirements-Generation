@@ -1,3 +1,19 @@
+# Observations
+Placeholder for developer observations...
+
+# Configuration
+## RAG Files:
+data/edited_srs.md
+data/IEEE 830-1998.pdf
+data/a-state-of-the-art-review-of-bridge-inspection-planning-current-situation-and-future-needs.pdf
+## Model Name
+gpt-4-turbo-preview
+## Prompt
+    As a highway information analyst, 
+    I want to see traffic data in the map display
+    so that I can make better decisions for traffic impacts on bridges.
+
+# System Instructions
 A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
@@ -91,6 +107,63 @@ An example JSON structure is below with the necessary keys:
             "id": "SPD-7",
             "modification-type": "existing",
             "description": "Pontis 5.0 shall validate 50 bridges for NBI edit check within 10 seconds, at a rate better than 3 bridges per seconds."
+        }
+    ]
+}
+```
+
+
+# Final Output Message
+```json
+{
+    "use-cases": [
+        {
+            "id": "UC-1",
+            "modification-type": "new",
+            "parent-section": "3. Visualizations and Data Analysis",
+            "primary-actor": "Highway Information Analyst",
+            "scope": "Pontis Map Display Functionality",
+            "stakeholders": "Highway Information Analysts; Bridge Maintenance Teams",
+            "precondition": "Traffic data is available and integrated into the Pontis database.",
+            "description": "The highway information analyst views traffic data overlaid on the map display to assess traffic impacts on bridges.",
+            "success-end-condition": "Traffic data is successfully displayed on the map, enabling the analyst to analyze traffic impacts on bridges."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.1",
+            "modification-type": "new",
+            "description": "The system shall integrate traffic data from external sources into the Pontis database."
+        },
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.2",
+            "modification-type": "new",
+            "description": "The system shall provide a feature for overlaying traffic data on the map display within the Pontis application."
+        },
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.3",
+            "modification-type": "new",
+            "description": "The system shall allow users to filter traffic data on the map by various parameters such as time, date, and traffic volume."
+        }
+    ],
+    "non-functional-requirements": [
+        {
+            "id": "USA-1",
+            "modification-type": "new",
+        "description": "The traffic data overlay feature shall be designed for ease of use, allowing analysts to easily interpret traffic data on bridges."
+        },
+        {
+            "id": "SPD-1",
+            "modification-type": "new",
+            "description": "Traffic data overlays on the map shall render within 3 seconds of user request."
+        },
+        {
+            "id": "CAP-1",
+            "modification-type": "new",
+            "description": "The system must support simultaneous traffic data viewing by up to 100 users."
         }
     ]
 }

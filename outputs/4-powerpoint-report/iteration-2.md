@@ -1,3 +1,17 @@
+# Observations
+Placeholder for developer observations...
+
+# Configuration
+## RAG Files:
+data/edited_srs.md
+data/IEEE 830-1998.pdf
+data/a-state-of-the-art-review-of-bridge-inspection-planning-current-situation-and-future-needs.pdf
+## Model Name
+gpt-4o
+## Prompt
+As an advanced user, I want to export bridge inspection results to a PowerPoint presentation, so that I can present risk analysis and recommendations to management personnel in a digestible format.
+
+# System Instructions
 A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
@@ -95,3 +109,60 @@ An example JSON structure is below with the necessary keys:
     ]
 }
 ```
+
+
+# Final Output Message
+Based on the provided user story "As an advanced user, I want to export bridge inspection results to a PowerPoint presentation, so that I can present risk analysis and recommendations to management personnel in a digestible format," here are the achievable, clear, complete, concise, correct, consistent, necessary, organized, unambiguous, and understandable requirement artifacts:
+
+```json
+{
+  "use-cases": [
+    {
+      "parent-section": "3.6 DATA MANAGEMENT",
+      "id": "UC-17",
+      "modification-type": "new",
+      "description": "The user exports bridge inspection results to a PowerPoint presentation to present risk analysis and recommendations.",
+      "success-end-condition": "The bridge inspection results are exported successfully into a PowerPoint presentation format."
+    }
+  ],
+  "functional-requirements": [
+    {
+      "parent-id": "UC-17",
+      "id": "FR-17.1",
+      "modification-type": "new",
+      "description": "The system shall allow the user to export bridge inspection results to a PowerPoint presentation."
+    },
+    {
+      "parent-id": "UC-17",
+      "id": "FR-17.2",
+      "modification-type": "new",
+      "description": "The system shall format the exported PowerPoint presentation to include risk analysis and recommendations."
+    },
+    {
+      "parent-id": "UC-17",
+      "id": "FR-17.3",
+      "modification-type": "new",
+      "description": "The system shall provide customizable templates for PowerPoint presentation exports."
+    }
+  ],
+  "non-functional-requirements": [
+    {
+      "id": "LAF-1",
+      "modification-type": "new",
+      "description": "The exported PowerPoint presentation shall maintain a professional layout with consistent fonts and color schemes."
+    },
+    {
+      "id": "USA-2",
+      "modification-type": "new",
+      "description": "The export functionality shall be intuitive and accessible within three clicks for advanced users."
+    },
+    {
+      "id": "SEC-3",
+      "modification-type": "new",
+      "description": "The system shall ensure that only authorized advanced users can export bridge inspection results to PowerPoint presentations."
+    }
+  ]
+}
+```
+
+This set of JSON artifacts includes a new use case, functional requirements tied to the new use case, and relevant non-functional requirements to ensure a comprehensive and user-friendly functionality.

@@ -1,0 +1,29 @@
+You will be given JSON-formatted requirement artifacts that add functionality to a Software Requirements Specification document. Your task is to rate the set of requirement artifacts on one metric according to the IEEE standard for Software Requirements Specification.
+Please make sure you read and understand these instructions very carefully.
+Please keep both documents open while reviewing, and refer to it as needed.
+
+Evaluation Criteria:
+
+{criteria}
+
+Evaluation Steps:
+
+{steps}
+
+Example:
+
+Software Requirements Specification IEEE Standard:
+
+{standard}
+
+Original Software Requirements Specification:
+
+{srs}
+
+Requirement Artifacts:
+
+{requirement}
+
+Evaluation Form (scores ONLY):
+
+- {metric_name}

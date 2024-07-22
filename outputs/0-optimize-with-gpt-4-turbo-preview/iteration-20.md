@@ -1,3 +1,18 @@
+# Observations
+Placeholder for developer observations...
+
+# Configuration
+## RAG Files:
+data/edited_srs.md
+data/IEEE 830-1998.pdf
+## Model Name
+gpt-4-turbo-preview
+## Prompt
+    As a project engineer, 
+    I want to create a new project,
+    so that I can manage project information in the Pontis repository.
+
+# System Instructions
 A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
@@ -49,13 +64,11 @@ You are a helpful assistant that translates Pontis user stories into a set of re
 - Functional requirements
 - Non-functional requirements
 
-For each user story, create a new set of achievable, clear, complete, concise, correct, consistent, necessary, organized, unambiguous, and understandable requirement artifacts. There may be more than one artifact type created for each user story. Provide new unique id's for each new requirement artifact generated. Submit your response in json format with the keys "use-cases", "functional-requirements", and "non-functional-requirements". Each key should contain a JSON list of the new requirement artifacts. For each requirement artifact, use a "modification-type" key to denote the following: 
+For each user story, create a new set of achievable, clear, complete, concise, correct, consistent, necessary, organized, unambiguous, and understandable requirement artifacts. There may be more than one artifact type created for each user story. Provide new unique id's for each new requirement artifact generated. Submit your response in json format with the keys "use-cases", "functional-requirements", and "non-functional-requirements". Each key should contain a JSON list of the new requirement artifacts. An example empty JSON structure is below with the key definitions. For each requirement artifact, use a "modification-type" key to denote the following: 
+- "existing": The requirement artifact exists to accomodate the user story and does not require changes
 - "new": This is a new requirement artifact to be added to the document
 - "modify": This is an existing requirement artifact that needs to be modified to accomodate the user story.
 
-If the artifact modification type is set to "modify", rewrite the requirement artifact to show the needed changes.
-
-An example JSON structure is below with the necessary keys:
 ```json
 {
     "use-cases": [
@@ -91,6 +104,59 @@ An example JSON structure is below with the necessary keys:
             "id": "SPD-7",
             "modification-type": "existing",
             "description": "Pontis 5.0 shall validate 50 bridges for NBI edit check within 10 seconds, at a rate better than 3 bridges per seconds."
+        }
+    ]
+}
+```
+
+
+# Final Output Message
+```json
+{
+    "use-cases": [
+        {
+            "parent-section": "3.3 PROJECT MANAGEMENT",
+            "id": "UC-1",
+            "modification-type": "new",
+            "description": "The project engineer creates a new project in the Pontis system to manage project information.",
+            "success-end-condition": "A new project is successfully created and stored in the Pontis repository, and the project engineer can manage the project information."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.1",
+            "modification-type": "new",
+            "description": "The system shall provide an interface for project engineers to input new project details."
+        },
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.2",
+            "modification-type": "new",
+            "description": "The system shall save the new project details in the Pontis repository upon confirmation by the project engineer."
+        },
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.3",
+            "modification-type": "new",
+            "description": "The system shall allow project engineers to edit the project details after the project has been created."
+        }
+    ],
+    "non-functional-requirements": [
+        {
+            "id": "USA-1",
+            "modification-type": "new",
+            "description": "The interface for creating new projects shall be user-friendly, allowing project engineers to easily enter and edit project information."
+        },
+        {
+            "id": "SPD-1",
+            "modification-type": "new",
+            "description": "The system shall process and store new project information in less than 5 seconds under normal operating conditions."
+        },
+        {
+            "id": "SEC-1",
+            "modification-type": "new",
+            "description": "Access to create, edit, and manage project information in the Pontis system shall be restricted to authorized project engineers."
         }
     ]
 }

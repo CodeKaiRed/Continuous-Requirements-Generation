@@ -1,3 +1,17 @@
+# Observations
+Placeholder for developer observations...
+
+# Configuration
+## RAG Files:
+data/edited_srs.md
+data/IEEE 830-1998.pdf
+data/a-state-of-the-art-review-of-bridge-inspection-planning-current-situation-and-future-needs.pdf
+## Model Name
+gpt-4o
+## Prompt
+    As a bridge inspector,     I want to receive notifications for bridge inspections coming due,     so that I can allocate inspection personnel and resources for the next month efficiently.
+
+# System Instructions
 A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
@@ -95,3 +109,68 @@ An example JSON structure is below with the necessary keys:
     ]
 }
 ```
+
+
+# Final Output Message
+Based on the user story provided, I have created the necessary requirement artifacts:
+
+JSON output:
+```json
+{
+    "use-cases": [
+        {
+            "parent-section": "3.2 BRIDGE INVENTORY & INSPECTION",
+            "id": "UC-10",
+            "modification-type": "new",
+            "description": "The system sends notifications to the bridge inspector for inspections coming due within the next month.",
+            "success-end-condition": "Bridge inspectors receive notifications about upcoming inspections, allowing them to allocate personnel and resources efficiently."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-10",
+            "id": "FR-10.1",
+            "modification-type": "new",
+            "description": "The system shall send notifications to bridge inspectors for inspections that are due within the next month."
+        },
+        {
+            "parent-id": "UC-10",
+            "id": "FR-10.2",
+            "modification-type": "new",
+            "description": "The system shall allow bridge inspectors to configure the notification period (e.g., 1 week, 2 weeks, 1 month)."
+        },
+        {
+            "parent-id": "UC-10",
+            "id": "FR-10.3",
+            "modification-type": "new",
+            "description": "The system shall provide a dashboard to view upcoming inspections and corresponding notifications."
+        }
+    ],
+    "non-functional-requirements": [
+        {
+            "id": "USA-6",
+            "modification-type": "new",
+            "description": "The notification system shall be user-friendly and require no more than 1 hour of training for new users."
+        },
+        {
+            "id": "CAP-6",
+            "modification-type": "new",
+            "description": "The system shall support notifications for up to 1000 bridge inspectors simultaneously."
+        },
+        {
+            "id": "SPD-8",
+            "modification-type": "new",
+            "description": "The system shall deliver notifications within 30 seconds of an inspection due date meeting the notification criteria."
+        },
+        {
+            "id": "AVL-6",
+            "modification-type": "new",
+            "description": "The notification system shall have an uptime of 99.9%."
+        }
+    ]
+}
+```
+
+These requirement artifacts are derived from the user story and have been designed to be achievable, clear, complete, concise, correct, consistent, necessary, organized, unambiguous, and understandable. They extend the current requirements to support the new user story effectively. 
+
+Additional functional requirements and non-functional requirements ensure that the system is both useful and usable for bridge inspectors. 

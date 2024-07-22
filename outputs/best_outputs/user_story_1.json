@@ -1,0 +1,42 @@
+{
+    "use-cases": [
+        {
+            "parent-section": "3.1 BROWSE BRIDGE & PROJECT DATA",
+            "id": "UC-4",
+            "modification-type": "modify",
+            "description": "The user selects data (bridges and projects) and traffic data from the Pontis database to generate a map display, or the user selects items from a map and sees the supporting information.",
+            "success-end-condition": "The selected information, including traffic data, is displayed on the screen or a map is generated showing the details."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-4",
+            "id": "FR-4.3",
+            "modification-type": "new",
+            "description": "The system shall provide the ability to overlay traffic data onto the map display to assist in decision making regarding traffic impacts on bridges."
+        },
+        {
+            "parent-id": "UC-4",
+            "id": "FR-4.4",
+            "modification-type": "new",
+            "description": "The system shall allow the user to filter and display traffic data in conjunction with bridge and project data in the map display."
+        }
+    ],
+    "non-functional-requirements": [
+        {
+            "id": "LAF-1",
+            "modification-type": "new",
+            "description": "The map display shall have a user-friendly interface consistent with the overall application design, allowing intuitive access to traffic data."
+        },
+        {
+            "id": "SPD-8",
+            "modification-type": "new",
+            "description": "The system shall be capable of integrating and displaying traffic data within 5 seconds of selection."
+        },
+        {
+            "id": "AVL-1",
+            "modification-type": "new",
+            "description": "The traffic data overlay functionality shall be available 99.9% of the time to ensure reliability for decision making."
+        }
+    ]
+}

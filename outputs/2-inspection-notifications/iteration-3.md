@@ -1,3 +1,17 @@
+# Observations
+Placeholder for developer observations...
+
+# Configuration
+## RAG Files:
+data/edited_srs.md
+data/IEEE 830-1998.pdf
+data/a-state-of-the-art-review-of-bridge-inspection-planning-current-situation-and-future-needs.pdf
+## Model Name
+gpt-4o
+## Prompt
+    As a bridge inspector,     I want to receive notifications for bridge inspections coming due,     so that I can allocate inspection personnel and resources for the next month efficiently.
+
+# System Instructions
 A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
@@ -95,3 +109,83 @@ An example JSON structure is below with the necessary keys:
     ]
 }
 ```
+
+
+# Final Output Message
+Based on the provided Pontis user story and the current context of bridge inspections, here is a comprehensive set of requirement artifacts:
+
+```json
+{
+    "use-cases": [
+        {
+            "parent-section": "3.3 NOTIFICATION SYSTEM",
+            "id": "UC-8",
+            "modification-type": "new",
+            "description": "The system sends notifications to bridge inspectors for upcoming bridge inspections that are due in the next month.",
+            "success-end-condition": "The bridge inspector receives notifications for upcoming inspections, allowing them to allocate personnel and resources efficiently."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-8",
+            "id": "FR-8.1",
+            "modification-type": "new",
+            "description": "The system shall identify bridges with upcoming inspection due dates within the next month."
+        },
+        {
+            "parent-id": "UC-8",
+            "id": "FR-8.2",
+            "modification-type": "new",
+            "description": "The system shall send notifications to the assigned bridge inspector via email and SMS for inspections that are due within the next month."
+        },
+        {
+            "parent-id": "UC-8",
+            "id": "FR-8.3",
+            "modification-type": "new",
+            "description": "The system shall allow bridge inspectors to configure their notification preferences for upcoming inspections."
+        },
+        {
+            "parent-id": "UC-8",
+            "id": "FR-8.4",
+            "modification-type": "new",
+            "description": "The system shall provide a dashboard view for bridge inspectors to see all upcoming inspections and their due dates."
+        }
+    ],
+    "non-functional-requirements": [
+        {
+            "id": "SPD-8",
+            "modification-type": "new",
+            "description": "The notification system shall be able to process and send notifications for up to 1000 bridges within 10 seconds."
+        },
+        {
+            "id": "AVL-6",
+            "modification-type": "new",
+            "description": "The notification system shall have an availability of 99.9% uptime to ensure timely delivery of inspection notifications."
+        },
+        {
+            "id": "SEC-5",
+            "modification-type": "new",
+            "description": "The notification system shall ensure that notifications are only sent to authorized bridge inspectors."
+        }
+    ]
+}
+```
+
+### Use Cases
+- **UC-8:** The system sends notifications to bridge inspectors for upcoming bridge inspections that are due in the next month.
+  - **Parent Section:** 3.3 NOTIFICATION SYSTEM
+  - **Description:** The system sends notifications to bridge inspectors for upcoming bridge inspections that are due in the next month.
+  - **Success End Condition:** The bridge inspector receives notifications for upcoming inspections, allowing them to allocate personnel and resources efficiently.
+
+### Functional Requirements
+- **FR-8.1:** The system shall identify bridges with upcoming inspection due dates within the next month.
+- **FR-8.2:** The system shall send notifications to the assigned bridge inspector via email and SMS for inspections that are due within the next month.
+- **FR-8.3:** The system shall allow bridge inspectors to configure their notification preferences for upcoming inspections.
+- **FR-8.4:** The system shall provide a dashboard view for bridge inspectors to see all upcoming inspections and their due dates.
+
+### Non-Functional Requirements
+- **SPD-8:** The notification system shall be able to process and send notifications for up to 1000 bridges within 10 seconds.
+- **AVL-6:** The notification system shall have an availability of 99.9% uptime to ensure timely delivery of inspection notifications.
+- **SEC-5:** The notification system shall ensure that notifications are only sent to authorized bridge inspectors.
+
+These artifacts collectively address the user's needs and ensure that the notification system is both effective and reliable. If you need further adjustments or additional artifacts, please let me know!

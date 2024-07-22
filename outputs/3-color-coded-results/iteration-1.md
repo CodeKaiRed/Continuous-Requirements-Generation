@@ -1,3 +1,17 @@
+# Observations
+Placeholder for developer observations...
+
+# Configuration
+## RAG Files:
+data/edited_srs.md
+data/IEEE 830-1998.pdf
+data/a-state-of-the-art-review-of-bridge-inspection-planning-current-situation-and-future-needs.pdf
+## Model Name
+gpt-4o
+## Prompt
+As a structural engineer, I want to view color-coded inspection results on the map view, so that I can quickly determine which bridges are high-risk for deterioration.
+
+# System Instructions
 A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
@@ -91,6 +105,58 @@ An example JSON structure is below with the necessary keys:
             "id": "SPD-7",
             "modification-type": "existing",
             "description": "Pontis 5.0 shall validate 50 bridges for NBI edit check within 10 seconds, at a rate better than 3 bridges per seconds."
+        }
+    ]
+}
+```
+
+
+# Final Output Message
+```json
+{
+    "use-cases": [
+        {
+            "parent-section": "3.1 BROWSE BRIDGE & PROJECT DATA",
+            "id": "UC-10",
+            "modification-type": "new",
+            "primary-actor": "Structural Engineer",
+            "scope": "This scenario covers viewing color-coded inspection results on the map view to determine high-risk bridges.",
+            "stakeholders": "Structural Engineer",
+            "precondition": "User is logged into Pontis and has the necessary permissions.",
+            "description": "The user views color-coded inspection results on the map view, with different colors indicating different levels of risk for deterioration.",
+            "success-end-condition": "User views a map with color-coded inspection results, allowing for quick identification of high-risk bridges."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-10",
+            "id": "FR-10.1",
+            "modification-type": "new",
+            "description": "The system shall provide the capability to display inspection results on the map view, color-coded based on risk levels."
+        },
+        {
+            "parent-id": "UC-10",
+            "id": "FR-10.2",
+            "modification-type": "new",
+            "description": "The system shall allow users to configure risk levels and corresponding colors for the map view."
+        },
+        {
+            "parent-id": "UC-10",
+            "id": "FR-10.3",
+            "modification-type": "new",
+            "description": "The system shall update the map view dynamically as new inspection data is entered."
+        }
+    ],
+    "non-functional-requirements": [
+        {
+            "id": "USA-1.1",
+            "modification-type": "new",
+            "description": "The color-coded map view shall be intuitive and easy to interpret, with a user-friendly legend explaining the risk levels."
+        },
+        {
+            "id": "SPD-1.2",
+            "modification-type": "new",
+            "description": "The system shall update and render the map view within 2 seconds after new inspection data is entered."
         }
     ]
 }

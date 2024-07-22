@@ -1,0 +1,3 @@
+As an advanced user, 
+I want to export bridge inspection results to a PowerPoint presentation, 
+so that I can present risk analysis and recommendations to management personnel in a digestible format.

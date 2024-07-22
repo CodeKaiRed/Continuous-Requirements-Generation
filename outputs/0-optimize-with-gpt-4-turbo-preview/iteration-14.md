@@ -1,3 +1,20 @@
+# Observations
+The system instructions were updated to remove the prioritization quailty definition and include instructions for outputting the type of modification needed to accomodate the newly generated requirement artifacts.
+
+The model still input incorrect numbering for the newly generated requirement artifacts, but the determination that requirement artifacts are "new" to the SRS is correct. The use-case is not very well-defined for the success end-condition, but this may be due to the simplicity of the user story input. the security requirement is accurate, but unnecessary as the average person may already have access to traffic data.  The other non-functional requirements are measurable and testable due to the specification of quantities in time, clicks, or users.
+
+# Configuration
+## RAG Files:
+data/edited_srs.md
+data/IEEE 830-1998.pdf
+## Model Name
+gpt-4-turbo-preview
+## Prompt
+    As a highway information analyst, 
+    I want to see traffic data in the map display
+    so that I can make better decisions for traffic impacts on bridges.
+
+# System Instructions
 A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
@@ -49,13 +66,11 @@ You are a helpful assistant that translates Pontis user stories into a set of re
 - Functional requirements
 - Non-functional requirements
 
-For each user story, create a new set of achievable, clear, complete, concise, correct, consistent, necessary, organized, unambiguous, and understandable requirement artifacts. There may be more than one artifact type created for each user story. Provide new unique id's for each new requirement artifact generated. Submit your response in json format with the keys "use-cases", "functional-requirements", and "non-functional-requirements". Each key should contain a JSON list of the new requirement artifacts. For each requirement artifact, use a "modification-type" key to denote the following: 
+For each user story, create a new set of achievable, clear, complete, concise, correct, consistent, necessary, organized, unambiguous, and understandable requirement artifacts. There may be more than one artifact type created for each user story. Provide new unique id's for each new requirement artifact generated. Submit your response in json format with the keys "use-cases", "functional-requirements", and "non-functional-requirements". Each key should contain a JSON list of the new requirement artifacts. An example empty JSON structure is below with the key definitions. For each requirement artifact, use a "modification-type" key to denote the following: 
+- "existing": The requirement artifact exists to accomodate the user story and does not require changes
 - "new": This is a new requirement artifact to be added to the document
 - "modify": This is an existing requirement artifact that needs to be modified to accomodate the user story.
 
-If the artifact modification type is set to "modify", rewrite the requirement artifact to show the needed changes.
-
-An example JSON structure is below with the necessary keys:
 ```json
 {
     "use-cases": [
@@ -91,6 +106,64 @@ An example JSON structure is below with the necessary keys:
             "id": "SPD-7",
             "modification-type": "existing",
             "description": "Pontis 5.0 shall validate 50 bridges for NBI edit check within 10 seconds, at a rate better than 3 bridges per seconds."
+        }
+    ]
+}
+```
+
+
+# Final Output Message
+```json
+{
+    "use-cases": [
+        {
+            "parent-section": "3.2 BRIDGE INVENTORY & INSPECTION",
+            "id": "UC-1",
+            "modification-type": "new",
+            "description": "The highway information analyst reviews traffic data on the map display for decision making on traffic impacts on bridges.",
+            "success-end-condition": "Traffic data is displayed on the map, allowing the analyst to make informed decisions regarding traffic impacts on bridges."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.1",
+            "modification-type": "new",
+            "description": "The system shall provide a feature to overlay traffic data onto the map display."
+        },
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.2",
+            "modification-type": "new",
+            "description": "The system shall allow users to filter traffic data based on specific criteria (e.g., time of day, day of the week)."
+        },
+        {
+            "parent-id": "UC-1",
+            "id": "FR-1.3",
+            "modification-type": "new",
+            "description": "The system shall update traffic data in real-time to ensure accurate decision-making."
+        }
+    ],
+    "non-functional-requirements": [
+        {
+            "id": "USA-1",
+            "modification-type": "new",
+            "description": "Traffic data overlays should be intuitive to use and accessible within two clicks from the bridge inventory map view."
+        },
+        {
+            "id": "SPD-8",
+            "modification-type": "new",
+            "description": "The system shall update and display real-time traffic data on the map within 5 seconds."
+        },
+        {
+        "id": "SEC-1",
+        "modification-type": "new",
+        "description": "Ensure all traffic data transmitted and received is encrypted to protect against unauthorized access."
+        },
+        {
+            "id": "AVL-1",
+            "modification-type": "new",
+            "description": "The system shall maintain an uptime of 99.9%, ensuring continuous availability of traffic data for decision-making."
         }
     ]
 }
