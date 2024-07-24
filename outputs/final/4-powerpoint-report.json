@@ -1,0 +1,81 @@
+{
+    "use-cases": [
+        {
+            "parent-section": "3.1 BROWSE BRIDGE & PROJECT DATA",
+            "id": "UC-25",
+            "modification-type": "new",
+            "description": "The user exports bridge inspection results to a PowerPoint presentation.",
+            "success-end-condition": "Bridge inspection results are successfully exported to a PowerPoint presentation in the desired format and stored in the Pontis database under the 'Exported Presentations' directory for future use."
+        }
+    ],
+    "functional-requirements": [
+        {
+            "parent-id": "UC-25",
+            "id": "FR-25.1",
+            "modification-type": "new",
+            "description": "The system shall allow users to select multiple bridge inspection results and export them to a PowerPoint presentation file."
+        },
+        {
+            "parent-id": "UC-25",
+            "id": "FR-25.2",
+            "modification-type": "new",
+            "description": "The system shall provide predefined templates for exporting bridge inspection results to a PowerPoint presentation file."
+        },
+        {
+            "parent-id": "UC-25",
+            "id": "FR-25.3",
+            "modification-type": "new",
+            "description": "The system shall allow users to customize the layout and content of the PowerPoint presentation export, including slide order, text, images, and formatting options."
+        },
+        {
+            "parent-id": "UC-25",
+            "id": "FR-25.4",
+            "modification-type": "new",
+            "description": "The system shall ensure that the exported PowerPoint presentation includes a detailed risk analysis and specific recommendations based on the selected bridge inspection results."
+        },
+        {
+            "parent-id": "UC-25",
+            "id": "FR-25.5",
+            "modification-type": "new",
+            "description": "The system shall store the exported PowerPoint presentations in the Pontis database under the 'Exported Presentations' directory for future access by authorized users."
+        },
+        {
+            "parent-id": "UC-25",
+            "id": "FR-25.6",
+            "modification-type": "new",
+            "description": "WHEN the bridge inspection results have been successfully exported to a PowerPoint presentation file, the system shall display a notification message to the user."
+        }
+    ],
+    "non-functional-requirements": [
+        {
+            "id": "LAF-25.1",
+            "modification-type": "new",
+            "description": "The PowerPoint export feature shall enable users to export bridge inspection results to a PowerPoint presentation using exactly three clicks from the main interface."
+        },
+        {
+            "id": "USA-25.2",
+            "modification-type": "new",
+            "description": "The PowerPoint export process shall be documented with a step-by-step guide that includes exactly 10 distinct steps, each with a corresponding screenshot, and shall be accessible within the help section of the software."
+        },
+        {
+            "id": "CAP-25.3",
+            "modification-type": "new",
+            "description": "The system shall support exporting PowerPoint presentations for up to 50 bridge inspection results in a single operation, with each export operation completing within 5 minutes."
+        },
+        {
+            "id": "SPD-25.4",
+            "modification-type": "new",
+            "description": "The system shall complete the export of bridge inspection results to a PowerPoint presentation file within 30 seconds for 95% of export attempts."
+        },
+        {
+            "id": "AVL-25.5",
+            "modification-type": "new",
+            "description": "WHILE [in operational hours] the [PowerPoint export feature] shall [have an uptime of at least 99%, calculated over a continuous period of one month]."
+        },
+        {
+            "id": "SEC-25.6",
+            "modification-type": "new",
+            "description": "The system shall restrict access to exported PowerPoint presentations exclusively to users who possess the 'Export PowerPoint' permission."
+        }
+    ]
+}
