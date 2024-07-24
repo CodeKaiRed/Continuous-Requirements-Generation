@@ -1,3 +1,0 @@
-As a bridge inspector, 
-I want to receive notifications for bridge inspections coming due, 
-so that I can allocate inspection personnel and resources for the next month efficiently.

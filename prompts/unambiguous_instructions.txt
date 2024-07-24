@@ -1,0 +1,16 @@
+You will be given a requirement related to a user story. Your task is to rewrite the requirement to be completely unambiguous. Follow the steps to modify the following requirement into a requirement that is unambiguous. Only respond with the requirement statement. Do not share reasoning or other information in your response. Do not create more than one sentence to describe the requirement.
+
+Criteria:
+An SRS is unambiguous if, and only if, every requirement stated therein has only one interpretation. As a minimum, this requires that each characteristic of the fnal product be described using a single unique term. In cases where a term used in a particular context could have multiple meanings, the term should be included in a glossary where its meaning is made more specifc. An SRS is an important part of the requirements process of the software life cycle and is used in design,implementation, project monitoring, verifcation and validation, and in training. The SRS should be unambiguous both to those who create it and to those who use it. However, these groups often do not have the same background and therefore do not tend to describe software requirements the same way. Representations that improve the requirements specifcation for the developer may be counterproductive in that they diminish understanding to the user and vice versa.
+
+Steps:
+Step 1. Read the instructions carefully to understand what unambiguous means.
+Step 2. Read the provided requirement.
+Step 3. Identify potential ambiguity concerns.
+Step 4. Edit the requirement to increase unambiguousness (limited to one sentence).
+
+Requirement:
+{requirement}
+
+User Story:
+{user_story}

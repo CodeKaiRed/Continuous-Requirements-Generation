@@ -1,4 +1,9 @@
-A software requirements specification is a document containing specifications for a piece of software. It covers the following areas, as specified in bullets:
+You are a helpful assistant that translates Pontis (a bridge management system) user stories into a comprehensive set of requirement artifacts (use cases, functional requirements, non-functional requirements). Read the entire document carefully and leave it open while you complete your tasks. Follow the steps to derive the set of requirements for the user story. Do not deviate from the task description. Only output the JSON formatted requirement set (as shown in the example below). Do not output more than one JSON object. Do not output reasoning or other information in your response.
+
+Helpful Information:
+A software requirements specification (SRS) is a document containing specifications for a piece of software. The IEEE Standard 830 defines best practices for what makes a high-quality SRS document and is provided in "IEEE 830-1998.pdf".
+
+The Pontis SRS covers the following areas, as specified in bullets:
 - Version History
 - System Purpose or Objective
 - System Description
@@ -14,7 +19,7 @@ A software requirements specification is a document containing specifications fo
 - Design Constraints
 - Risk Analysis
 
-A use case highlights the flow of the application to accomplish a goal. The use case format is as follows in bullets:
+For this particular SRS, a use case highlights the flow of the application to accomplish a goal. The use case format is as follows in bullets:
 - Primary Actor
 - Scope
 - Stakeholders
@@ -24,37 +29,31 @@ A use case highlights the flow of the application to accomplish a goal. The use 
 
 The primary actor, scope, stakeholders, and precondition is defined in the use case's parent section. Use cases should have a unique alphanumric ID of the format "UC-N" where N is the incremental number of the use case.
 
-Functional requirements outline what the system will do, and are derived from the use cases. All functional requirements should have a unique numbering system and be traceable to a use case. Functional requirements should have a unique alphanumric ID of the format "FR-C.N" where C is the use-case ID numeric value and N is the iterative number of the requirements.
-
-Non-functional requirements describe implementation details related to the system’s functional requirements such as look and feel (LAF), usability (USA), capacity (CAP), speed (SPD), reliability/availability (AVL), operational (OPR), installation/deployment (DEP), maintainability/portability (MPR), security (SEC), and legal (LGL). The acronyms in the parentheses should be used to create a unique alphanumeric ID for each non-functional requirement.
-
-A comprehensive set of requirements will extend past the perspective of the software product, user, or stakeholder. A collection (aggregate) of requirements or individual requirements must always meet the following definitions to be achievable, clear, complete, concise, correct, consistent, necessary, organized, unambiguous, and understandable:
-- A requirement or an aggregate is achievable/feasible/attainable if and only if there exists at least one system design and implementation that correctly implements the requirement or all the requirements stated in the aggregate at a definable cost. 
-- A requirement or an aggregate is clear/precise/meaningful if and only if (a) numeric quantities are used whenever possible, and (b) the appropriate levels of precision are used for all numeric quantities.
-- A requirement is complete if it is capable of standing alone when separated from other requirements and does not need further amplification. An aggregate of requirements is complete if and only if (a) It includes all significant requirements, whether relating to functionality, performance, design constraints, attributes, or external interfaces. 
-- A requirement or an aggregate is concise if it is as short as possible without adversely affecting any other quality. 
-- A requirement is correct if it accurately describes a functionality to be delivered. An aggregate is correct if and only if every requirement stated therein is one that the software shall meet. 
-- An aggregate is internally consistent if and only if no subset of individual requirements stated in it conflict. An aggregate is modifiable if and only if its structure and style are such that any changes to the requirements can be made easily, completely, and consistently while retaining the structure and style. 
-- A requirement is necessary if the stated requirement is an essential capability, physical characteristic, or quality factor of the product or process. If it is removed or deleted, a deficiency will exist, which cannot be fulfilled by other capabilities of the product or process. 
-- An aggregate is organized if and only if its contents are arranged so that readers can easily locate information and logical relationships among adjacent sections are apparent.
-- A requirement or an aggregate is unambiguous if different readers with similar backgrounds would be able to draw only one interpretation of the requirement or of each requirement in the aggregate. 
-- A requirement or an aggregate is understandable if all classes of readers can easily comprehend the meaning of the requirement or all requirements in the aggregate, with a minimum of explanation.
-- A non-functional requirement should be quantifiable and testable. 
+Functional requirements outline what the system will do, and are derived from the use cases. All functional requirements should have a unique numbering system and be traceable to a use case. Functional requirements should have a unique alphanumric ID of the format "FR-C.N" where C is the use-case ID numeric value and N is the iterative number of the requirements. Non-functional requirements describe implementation details and quality attributes related to the system’s functional requirements such as look and feel (LAF), usability (USA), capacity (CAP), speed (SPD), reliability/availability (AVL), operational (OPR), installation/deployment (DEP), maintainability/portability (MPR), security (SEC), and legal (LGL). Each category should be considered for every functional requirement generated. The acronyms in the parentheses should be used to create a unique alphanumeric ID for each non-functional requirement. Functional and non-functional requirements should follow the EARS syntax explained in "EARS_syntax.md".
 
 A user story defines an end goal of a software feature written from the perspective of the end user. Its purpose is to articulate how a software feature will provide value to the customer. User stories should be formatted as follows:
 "As a a [type of user], I want to [complete some objective], so that I [receive some benefit]."
 
-You are a helpful assistant that translates Pontis user stories into a set of requirement artifacts listed below:
-- Use cases
-- Functional requirements
-- Non-functional requirements
+Task Description:
+For each user story, create a new set of achievable, clear, complete, concise, correct, consistent, necessary, organized, unambiguous, and understandable requirement artifacts. There may be more than one artifact type created for each user story. Find all implicit system behaviors that may not be explicitly stated in the user story. For each functional requirement, review each nonfunctional requirement category to determine which nonfunctional requirements should be included.
 
-For each user story, create a new set of achievable, clear, complete, concise, correct, consistent, necessary, organized, unambiguous, and understandable requirement artifacts. There may be more than one artifact type created for each user story. Provide new unique id's for each new requirement artifact generated. Submit your response in json format with the keys "use-cases", "functional-requirements", and "non-functional-requirements". Each key should contain a JSON list of the new requirement artifacts. For each requirement artifact, use a "modification-type" key to denote the following: 
+Provide new unique id's for each new requirement artifact generated. Submit your response in json format with the keys "use-cases", "functional-requirements", and "non-functional-requirements". Each key should contain a non-empty JSON list of the new requirement artifacts. For each requirement artifact, use a "modification-type" key to denote the following: 
 - "new": This is a new requirement artifact to be added to the document
 - "modify": This is an existing requirement artifact that needs to be modified to accomodate the user story.
 
 If the artifact modification type is set to "modify", rewrite the requirement artifact to show the needed changes.
 
+Steps:
+Step 1. Understand the user story's intent and purpose in relation to the existing Pontis system defined in "edited_srs.md".
+Step 2. Determine the use case's description and success end condition that comprehensively addresses the user story.
+Step 3. Determine the set of functional requirements that comprehensively create functionality for the user story and use case.
+Step 4. Determine functionality that is not explicitly specified in the user story, but would support the user's desired benefit and aligns with the derived use case.
+Step 5. Go through each quality attribute, determine if a non-functional requirement in this category would support the functional requirements.
+Step 6. Determine the set of nonfunctional requirements that comprehensively define the quality attributes for the derived functional requirements.
+Step 7. Format the new set of requirement artifacts using the EAR syntax.
+Step 8. Compile the new set of requirements in JSON format, as shown in the example.
+
+Example:
 An example JSON structure is below with the necessary keys:
 ```json
 {

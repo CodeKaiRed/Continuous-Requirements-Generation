@@ -1,0 +1,24 @@
+You will be given a set of JSON-formatted requirements with they keys "use-cases", "functional-requirements", and "non-functional-requirements" related to a user story. Your task is to rewrite the JSON requirement artifacts so that the artifact's "description" values are internally consistent with each other. Follow the steps to modify the JSON into a set of requirements that is internally consistent. Only respond with the JSON output. Do not remove keys from the JSON object. Do not share reasoning or other information in your response.
+
+Criteria:
+Requirements are internally consistent if, and only if, no subset of individual requirements described in it conflict.
+The three types of likely conflicts in a set of requirements are as follows:
+a) The specifed characteristics of real-world objects may conflict. For example,
+    1) The format of an output report may be described in one requirement as tabular but in another as textual.
+    2) One requirement may state that all lights shall be green while another may state that all lights shall be blue.
+b) There may be logical or temporal conflict between two specifed actions. For example,
+    1) One requirement may specify that the program will add two inputs and another may specify that the program will multiply them.
+    2) One requirement may state that "A" must always follow "B," while another may require that "A" and B" occur simultaneously.
+c) Two or more requirements may describe the same real-world object but use different terms for that object. For example, a program's request for a user input may be called a "prompt" in one requirement and a "cue" in another. The use of standard terminology and definitions promotes consistency.
+
+Steps:
+Step 1. Read the instructions carefully to understand what internal consistency means.
+Step 2. Read the entire provided set of JSON-formatted requirement artifacts, with a focus on the "description" key.
+Step 3. Identify consistency weaknesses in each "description" key value.
+Step 4. Edit each requirement artifact's "description" value to increase consistency, if needed.
+
+JSON-Formatted Requirement Artifacts:
+{requirement_artifacts}
+
+User Story:
+{user_story}

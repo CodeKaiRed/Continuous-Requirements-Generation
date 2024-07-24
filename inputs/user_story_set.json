@@ -1,0 +1,24 @@
+{
+    "user-stories": [
+        {
+            "user-story": "As a highway information analyst, I want to see traffic data in the map display, so that I can make better decisions for traffic impacts on bridges.",
+            "output-location": "outputs/1-map-traffic-data/final-iteration-{i}.md"
+        },
+        {
+            "user-story": "As a bridge inspector, I want to receive notifications for bridge inspections coming due, so that I can allocate inspection personnel and resources for the next month efficiently.",
+            "output-location": "outputs/2-inspection-notifications/final-iteration-{i}.md"
+        },
+        {
+            "user-story": "As a structural engineer, I want to view color-coded inspection results on the map view, so that I can quickly determine which bridges are high-risk for deterioration.",
+            "output-location": "outputs/3-color-coded-results/final-iteration-{i}.md"
+        },
+        {
+            "user-story": "As an advanced user, I want to export bridge inspection results to a PowerPoint presentation, so that I can present risk analysis and recommendations to management personnel in a digestible format.",
+            "output-location": "outputs/4-powerpoint-report/final-iteration-{i}.md"
+        },
+        {
+            "user-story": "As an advanced user, I want to export bridge inspection results to a PowerPoint presentation, so that I can present risk analysis and recommendations to management personnel in a digestible format.",
+            "output-location": "outputs/4-powerpoint-report/final-iteration-{i}.md"
+        }
+    ]
+}

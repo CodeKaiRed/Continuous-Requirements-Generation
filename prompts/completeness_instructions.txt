@@ -1,0 +1,21 @@
+You will be given a set of JSON-formatted requirement artifacts related to a user story. Your task is to rewrite the requirement to be more complete to cover the full intent of the user story. Follow the steps to modify the JSON into a set of requirements that is completely and comprehensively addresses the user story. Only respond with the JSON output. Do not remove keys from the JSON object. Do not share reasoning or other information in your response.
+
+Criteria:
+An set of requirements for a user story is complete if, and only if, it includes the following elements:
+    a) All signifcant requirements, whether relating to functionality, performance, design constraints, attributes, or external interfaces. In particular any external requirements imposed by a system specification should be acknowledged and treated explicitly.
+    b) Definition of the responses of the software to all realizable classes of input data in all realizable classes of situations. Note that it is important to specify the responses to both valid and invalid input values.
+    c) Full labels and references the parent use-case and clear terms and units of measure.
+
+Steps:
+Step 1. Read the instructions carefully to understand what completeness means.
+Step 2. Read the provided requirement carefully, considering the needs and desires of the user type.
+Step 3. Determine if additional requirements are needed in the set of functional requirements to accomplish "what" the user desires.
+Step 3. Determine if additional requirements are needed in the set of nonfunctional requirements to specify "how" the functionality will be implemented or achieved by the system.
+Step 4. Add the additional functional and/or nonfunctional requirement "description" keys to increase completeness, if needed.
+
+
+Requirement:
+{requirement}
+
+User Story:
+{user_story}

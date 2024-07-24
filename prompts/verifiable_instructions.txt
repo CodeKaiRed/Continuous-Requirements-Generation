@@ -1,0 +1,16 @@
+You will be given a requirement related to a user story. Your task is to rewrite the requirement to be more verifiable. Follow the steps to modify the following requirement into a requirement that is verifiable. Only respond with the requirement statement. Do not share reasoning or other information in your response.
+
+Criteria:
+An SRS is verifable if, and only if, every requirement stated therein is verifable. A requirement is verifable if, and only if, there exists some fnite cost-effective process with which a person or machine can check that the software product meets the requirement. In general any ambiguous requirement is not verifable. Nonverifable requirements include statements such as "works well," "good human interface," and "shall usually happen." These requirements cannot be verifed because it is impossible to defne the terms "good," "well," or "usually." The statement that "the program shall never enter an infnite loop" is nonverifable because the testing of this quality is theoretically impossible. An example of a verifable statement is: """Output of the program shall be produced within 20 s of event x 60% of the time; and shall be produced within 30 s of event x 100% of the time.""" This statement can be verifed because it uses concrete terms and measurable quantities. If a method cannot be devised to determine whether the software meets a particular requirement, then that requirement should be removed or revised.
+
+Steps:
+Step 1. Read the instructions carefully to understand what verifiable means.
+Step 2. Read the provided requirement.
+Step 3. Identify verifiability weaknesses.
+Step 4. Edit the requirement to increase verifiability, if needed.
+
+Requirement:
+{requirement}
+
+User Story:
+{user_story}

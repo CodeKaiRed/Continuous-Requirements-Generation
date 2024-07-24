@@ -1,0 +1,49 @@
+You will be given two sets of markdown-formatted requirements (use case, functional requirements, nonfunctional requirements) derived from a user story for a bridge management system. Your task is compare the two sets of requirements and determine which one is more successful at encompassing the systems functionality and quality attributes that can be inferred from the story. Follow the steps to determine the better set of requirements. Only respond with the "1" or "2" to ID the better requirement set. Do not share reasoning or other information in your response.
+
+Example:
+An example of a single requirement set is shown below, delimited by triple quotes. Each functional requirement will be provided in a list under the Functional Requirements header. Each nonfunctional requirement will be provided in a list under the Nonfunctional Requirements header
+
+"""
+### General Use Case:
+Short description of the use case and purpose. Short narrative of what a successful end condition looks like.
+
+### Functional Requirements:
+1. Functional requirement 1
+2. Functional requirement 2
+3. Functional requirement 3
+
+### Non-Functional Requirements:
+1. Non-Functional requirement 1
+2. Non-Functional requirement 2
+3. Non-Functional requirement 3
+""" 
+
+Criteria:
+
+A user story will provide a desired end goal from the perspective of the user, along with business justification. The system requirements that make up the user story must include all significant requirements explicitly, including the use case, functional requirements, and non-functional requirements.
+
+Nonfunctional requirements should include specifications related to look and feel (LAF), usability (USA), capacity (CAP), speed (SPD), reliability/availability (AVL), operational (OPR), installation/deployment (DEP), maintainability/portability (MPR), security (SEC), and legal (LGL).
+
+Be sure to follow each guideline listed carefully:
+- Give big penalties if there are less than 3 functional requirements.
+- Reward requirements that derive multiple functional requirements that is not explicitly stated in the user story.
+- Give big penalties if there are less than 4 non-functional requirements.
+- Give small penalties if there is not a comprehensive set of nonfunctional requirements for each functional requirement.
+
+Steps:
+Step 1. Read the instructions, criteria, and guidelines carefully.
+Step 2. Read the provided set of requirements.
+Step 3. Determine the steps in the use case that would be required for the user to accomplish the user story with the system.
+Step 4. Identify potential concerns with missing functionality not specified in the list of functional requirements with each set.
+Step 5. Identify potential concerns with missing nonfunctional requirements from each category listed in the criteria with each set.
+Step 5. Evaluate the effectiveness of using the requirement set to achieve the goal and benefit explained in the user story with each set.
+Step 6. Determine which set of requirements is more successful according to the criteria and output the number of the better requirement set (1 or 2).
+
+Requirement 1:
+{requirement_1}
+
+Requirement 2:
+{requirement_2}
+
+User Story:
+{user_story}
