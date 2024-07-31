@@ -24,7 +24,7 @@ For example: “The control system shall prevent engine overspeed”. This is a 
 An event-driven requirement is initiated only when a triggering event is detected at the system boundary. The keyword When is used for event-driven requirements. The
 general form of an event-driven requirement is:
 
-WHEN [optional preconditions] [trigger] the [system name] shall [system response]
+When [optional preconditions] [trigger] the [system name] shall [system response]
 
 For example: “When continuous ignition is commanded by the aircraft, the control system shall switch on continuous ignition”. This system response is required when and only when the stated event is detected at the boundary of the system.
 
@@ -33,7 +33,7 @@ Requirements to handle unwanted behaviour are defined using a syntax derived fro
 
 Requirements for unwanted behaviour are designated using the keywords If and Then. The general form of a requirement for unwanted behaviour is:
 
-IF [optional preconditions] [trigger], THEN the [system name] shall [system response]
+If [optional preconditions] [trigger], then the [system name] shall [system response]
 
 For example “If the computed airspeed fault flag is set, then the control system shall use modelled airspeed”. In this example, the unwanted event (computed air speed fault flag is set) triggers the system response, which allows continued safe operation of the system. 
 
@@ -46,7 +46,7 @@ behaviours is provided by the concept of Misuse Cases. Misuse Cases describe use
 ### 4.5 State-driven requirements
 A state-driven requirement is active while the system is in a defined state. The keyword While is used to denote state-driven requirements. The general form of a statedriven requirement is:
 
-WHILE [in a specific state] the [system name] shall [system response]
+While [in a specific state] the [system name] shall [system response]
 
 For example: “While the aircraft is in-flight, the control system shall maintain engine fuel flow above XXlbs/sec”. The system response is required at all times
 whilst the system is in the defined state. 
@@ -56,7 +56,7 @@ To make requirements easier to read, the keyword During can be used instead of W
 ### 4.6 Optional features
 An optional feature requirement is applicable only in systems that include a particular feature. An optional feature requirement is designated with the keyword Where. The general form of an optional feature requirement is:
 
-WHERE [feature is included] the [system name] shall [system response]
+Where [feature is included] the [system name] shall [system response]
 
 For example, “Where the control system includes an overspeed protection function, the control system shall test the availability of the overspeed protection function
 prior to aircraft dispatch”. This functionality only makes sense (and therefore is only required) for a system that includes the specified feature.

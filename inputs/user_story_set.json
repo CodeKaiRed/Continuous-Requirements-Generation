@@ -2,19 +2,255 @@
     "user-stories": [
         {
             "user-story": "As a highway information analyst, I want to see traffic data in the map display, so that I can make better decisions for traffic impacts on bridges.",
-            "output-location": "outputs/1-map-traffic-data/final-iteration-{i}.md"
+            "log-file-path": "outputs/1-map-traffic-data/final-iteration-{i}.md",
+            "output-file-path": "outputs/final/1-map-traffic-data.json",
+            "iteration-file-path": "outputs/final/1-map-traffic-data-iterations.json",
+            "reference-output": {
+                "use-cases": [
+                    {
+                        "parent-section-id": "3.1",
+                        "parent-section-title": "BROWSE BRIDGE & PROJECT DATA",
+                        "id": "UC-BRWS-5",
+                        "title": "View Map Traffic Data",
+                        "modification-type": "new",
+                        "description": "The user enables the map traffic data overlay, customizes the timeline of displayed traffic, and highlights bridges according to customizable traffic impact threshold.",
+                        "success-end-condition": "Average speed (mph), vehicle count (number of vehicles), or flow (vehicle/hour/lane) is displayed on the map overlayed on the Pontis bridge and project location data, with an associated legend. If the traffic filter mode is enabled, bridges above a certain traffic impact threshold will be highlighted."
+                    }
+                ],
+                "functional-requirements": [
+                    {
+                        "parent-id": "UC-BRWS-5",
+                        "id": "FR-BRWS-5.1",
+                        "modification-type": "new",
+                        "description": "While viewing the map display, the system shall allow the user to select and view an overlay of the average speed (mph), vehicle count (number of vehicles), or flow (vehicle/hour/lane)."
+                    },
+                    {
+                        "parent-id": "UC-BRWS-5",
+                        "id": "FR-BRWS-5.2",
+                        "modification-type": "new",
+                        "description": "While viewing the selected traffic data on the map display, the system shall allow the user to view the traffic data as an average per hour, day, week, or month."
+                    },
+                    {
+                        "parent-id": "UC-BRWS-5",
+                        "id": "FR-BRWS-5.3",
+                        "modification-type": "new",
+                        "description": "If the traffic volume option is enabled on the map display, the system shall generate an overlay of color-coded flow levels for traffic volume areas (green for no congestion, yellow for moderate congestion below 70% of desired flow, red for heavy congestion below 25% of desired flow)."
+                    },
+                    {
+                        "parent-id": "UC-BRWS-5",
+                        "id": "FR-BRWS-5.4",
+                        "modification-type": "new",
+                        "description": "While viewing traffic data on the map display, the system shall allow users to filter bridges displayed above the configured traffic flow threshold."
+                    }
+                ],
+                "non-functional-requirements": [
+                    {
+                        "id": "CAP-10",
+                        "modification-type": "new",
+                        "description": "While traffic data is enabled on the map display, the system shall retrieve and display average daily traffic data for up to 400 square miles."
+                    },
+                    {
+                        "id": "SPD-13",
+                        "modification-type": "new",
+                        "description": "When traffic data selections are changed, the selected traffic data shall render on the map within 2 seconds."
+                    },
+                    {
+                        "id": "LAF-5",
+                        "modification-type": "new",
+                        "description": "While traffic data is enabled on the map display, the system shall display a legend depicting the color-coded areas to assist users with consuming the displayed data."
+                    }
+                ]
+            }
         },
         {
             "user-story": "As a bridge inspector, I want to receive notifications for bridge inspections coming due, so that I can allocate inspection personnel and resources for the next month efficiently.",
-            "output-location": "outputs/2-inspection-notifications/final-iteration-{i}.md"
+            "log-file-path": "outputs/2-inspection-notifications/final-iteration-{i}.md",
+            "output-file-path": "outputs/final/2-inspection-notifications.json",
+            "iteration-file-path": "outputs/final/2-inspection-notifications-iterations.json",
+            "reference-output": {
+                "use-cases": [
+                    {
+                        "parent-section-id": "3.2",
+                        "parent-section-title": "BRIDGE INVENTORY & INSPECTION",
+                        "id": "UC-BRDG-4",
+                        "title": "Receive Bridge Inspection Reminders",
+                        "modification-type": "new",
+                        "description": "The user enables the inspection notification service by selecting the email notification frequency and reminder settings.",
+                        "success-end-condition": "The user receives email notificcations of inspection reminders for the configured time before the inspection date at the selected frequency. The email contains all necessary bridge information required to allocate resources efficiently and perform bridge inspections in a timely manner, such as inspection date, bridge location, and previous inspection results."
+                    }
+                ],
+                "functional-requirements": [
+                    {
+                        "parent-id": "UC-BRDG-4",
+                        "id": "FR-BRDG-4.1",
+                        "modification-type": "new",
+                        "description": "The system shall allow users to enable bridge inspection reminder email notifications for the options of 'never', 'daily', 'weekly', or 'monthly' frequencies."
+                    },
+                    {
+                        "parent-id": "UC-BRDG-4",
+                        "id": "FR-BRDG-4.2",
+                        "modification-type": "new",
+                        "description": "If bridge inspection reminders are enabled (not on 'never'), the system shall provide users with the capability to configure the reminder threshold of one or more of the following: '30 days before', '1 week before', and '1 day before'."
+                    },
+                    {
+                        "parent-id": "UC-BRDG-4",
+                        "id": "FR-BRDG-4.3",
+                        "modification-type": "new",
+                        "description": "When the system sends a bridge inspection email reminder, the system shall include the inspection date, the bridge location, and the previous bridge inspection results."
+                    }
+                ],
+                "non-functional-requirements": [
+                    {
+                        "id": "CAP-10",
+                        "modification-type": "new",
+                        "description": "The email notification service shall support sending up to 5,000 emails per day."
+                    },
+                    {
+                        "id": "SPD-13",
+                        "modification-type": "new",
+                        "description": "The email notification service shall send up to 500 emails per minute."
+                    },
+                    {
+                        "id": "SEC-5",
+                        "modification-type": "new",
+                        "description": "The system shall only allow users with the appropriate role type to receive bridge inspection data via email."
+                    }
+                ]
+            }
         },
         {
-            "user-story": "As a structural engineer, I want to view color-coded inspection results on the map view, so that I can quickly determine which bridges are high-risk for deterioration.",
-            "output-location": "outputs/3-color-coded-results/final-iteration-{i}.md"
+            "user-story": "As a structural engineer, I want to view color-coded condition ratings on the map view, so that I can quickly determine which bridges are high-risk for deterioration.",
+            "log-file-path": "outputs/3-color-coded-results/final-iteration-{i}.md",
+            "output-file-path": "outputs/final/3-color-coded-results.json",
+            "iteration-file-path": "outputs/final/3-color-coded-results-iterations.json",
+            "reference-output": {
+                "use-cases": [
+                    {
+                        "parent-section-id": "3.1",
+                        "parent-section-title": "BROWSE BRIDGE & PROJECT DATA",
+                        "id": "UC-BRWS-4",
+                        "title": "View Color-Coded Inspection Results on Map",
+                        "modification-type": "new",
+                        "description": "The user enables the color-coded condition ratings for bridges on the map display and filters bridges according to the designated condition rating levels.",
+                        "success-end-condition": "The map display renders bridge locations color-coded by 'good', 'fair', or 'pair' according to the MDOT Bridge Condition. Based on the filter settings, the user will only see bridges with the desired condition rating for quicker identification of bridge conditions across various locations."
+                    }
+                ],
+                "functional-requirements": [
+                    {
+                        "parent-id": "UC-BRDG-4",
+                        "id": "FR-BRDG-4.1",
+                        "modification-type": "new",
+                        "description": "The system shall allow users to enable color-coded bridge condition ratings on the map display."
+                    },
+                    {
+                        "parent-id": "UC-BRDG-4",
+                        "id": "FR-BRDG-4.2",
+                        "modification-type": "new",
+                        "description": "While the color-coded bridge condition rating is enabled on the map display, the system shall display color-coded markers at each bridge location based on the following condition rating levels: 'red' for Poor (NBI rating less than 5), 'yellow' for Fair (NBI rating of 5 or 6), 'green' for Good (NBI rating more than 6)."
+                    },
+                    {
+                        "parent-id": "UC-BRDG-4",
+                        "id": "FR-BRDG-4.3",
+                        "modification-type": "new",
+                        "description": "The system shall allow users to filter the map display for bridges according to one or more of the following condition rating levels: 'red' for Poor (NBI rating less than 5), 'yellow' for Fair (NBI rating of 5 or 6), 'green' for Good (NBI rating more than 6)."
+                    },
+                    {
+                        "parent-id": "UC-BRDG-4",
+                        "id": "FR-BRDG-4.4",
+                        "modification-type": "new",
+                        "description": "While the color-coded condition rating is enabled on the map display, if the user clicks a bridge marker, a pop-up window appears to display the selected bridge's NBI rating breakdown for the deck, superstructure, and substructure along with the last inspection date."
+                    }
+                ],
+                "non-functional-requirements": [
+                    {
+                        "id": "CAP-10",
+                        "modification-type": "new",
+                        "description": "While the color-coded condition rating is enabled on the map display, the system shall support the indication of up to 500 color-coded bridge markers."
+                    },
+                    {
+                        "id": "SPD-13",
+                        "modification-type": "new",
+                        "description": "While the color-coded condition rating is enabled on the map display, the system shall render the color-coded markers for up to 400 square miles and 500 bridges within 1 second."
+                    },
+                    {
+                        "id": "LAF-5",
+                        "modification-type": "new",
+                        "description": "While the color-coded condition rating is enabled on the map display, the system shall display a legend depicting the following color-coded condition rating levels: 'red' for Poor (NBI rating less than 5), 'yellow' for Fair (NBI rating of 5 or 6), 'green' for Good (NBI rating more than 6)."
+                    },
+                    {
+                        "id": "SEC-5",
+                        "modification-type": "new",
+                        "description": "The system shall only allow users with the appropriate role type to view inspection results and condition ratings."
+                    }
+                ]
+            }
         },
         {
-            "user-story": "As an advanced user, I want to export bridge inspection results to a PowerPoint presentation, so that I can present risk analysis and recommendations to management personnel in a digestible format.",
-            "output-location": "outputs/4-powerpoint-report/final-iteration-{i}.md"
+            "user-story": "As an advanced user, I want to export bridge analysis results to a PowerPoint presentation, so that I can present risk analysis and recommendations to management personnel in a digestible format.",
+            "log-file-path": "outputs/4-powerpoint-report/final-iteration-{i}.md",
+            "output-file-path": "outputs/final/4-powerpoint-report.json",
+            "iteration-file-path": "outputs/final/4-powerpoint-report-iterations.json",
+            "reference-output": {
+                "use-cases": [
+                    {
+                        "parent-section-id": "3.4",
+                        "parent-section-title": "PROGRAM SIMULATION",
+                        "id": "UC-PRGM-4",
+                        "title": "Export Bridge Analysis to PowerPoint",
+                        "modification-type": "new",
+                        "description": "After performing a bridge analysis for a structure, the user clicks the button to export the bridge analysis report to PowerPoint format. The user then customizes the layout and format of the PowerPoint report.",
+                        "success-end-condition": "The PowerPoint report is generated with bridge visuals, inspection results, structure work items, and condition ratings in a visually digestible format for executive review."
+                    }
+                ],
+                "functional-requirements": [
+                    {
+                        "parent-id": "UC-PRGM-4",
+                        "id": "FR-PRGM-4.1",
+                        "modification-type": "new",
+                        "description": "The system shall allow users to export analysis results into a PowerPoint report format."
+                    },
+                    {
+                        "parent-id": "UC-BRDG-4",
+                        "id": "FR-BRDG-4.2",
+                        "modification-type": "new",
+                        "description": "When the user selects the option to export bridge analysis results to PowerPoint format, the system shall display a pop-up window to choose from a pre-formatted choice of the following themes: 'dark', 'light', and 'sepia'."
+                    },
+                    {
+                        "parent-id": "UC-PRGM-4",
+                        "id": "FR-PRGM-4.3",
+                        "modification-type": "new",
+                        "description": "When the user selects the option to export bridge analysis results to PowerPoint format, the system shall output the following information into the slides: structure identification number, last inspection date, inspection results, structure condition ratings, outstanding work items, impact of work items on structure condition, and life-cycle cost analysis results."
+                    },
+                    {
+                        "parent-id": "UC-PRGM-4",
+                        "id": "FR-PRGM-4.4",
+                        "modification-type": "new",
+                        "description": "When the user selects the option to export bridge analysis results to PowerPoint format, the system shall save the PowerPoint file with the following naming convention: 'BRIDGE-ID_CURRENT-DATE-TIME.pptx'"
+                    }
+                ],
+                "non-functional-requirements": [
+                    {
+                        "id": "CAP-10",
+                        "modification-type": "new",
+                        "description": "When the user selects the option to export bridge analysis results to PowerPoint format, the system shall support the export of a PowerPoint file for up to 1GB."
+                    },
+                    {
+                        "id": "SPD-13",
+                        "modification-type": "new",
+                        "description": "When the user selects the option to export bridge analysis results to PowerPoint format, the system shall create the PowerPoint file within 30 seconds."
+                    },
+                    {
+                        "id": "LAF-5",
+                        "modification-type": "new",
+                        "description": "When the user selects the option to export bridge analysis results to PowerPoint format, the system shall export text and images into the PowerPoint file without overlap."
+                    },
+                    {
+                        "id": "SEC-5",
+                        "modification-type": "new",
+                        "description": "The system shall only allow users with the appropriate role type to export analysis results to PowerPoint format."
+                    }
+                ]
+            }
         },
         {
             "user-story": "As an advanced user, I want to export bridge inspection results to a PowerPoint presentation, so that I can present risk analysis and recommendations to management personnel in a digestible format.",

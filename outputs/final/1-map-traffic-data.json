@@ -1,69 +1,86 @@
 {
     "use-cases": [
         {
-            "parent-section": "3.1 BROWSE BRIDGE & PROJECT DATA",
-            "id": "UC-25",
-            "modification-type": "new",
-            "description": "The highway information analyst views real-time traffic data in the map display to make informed decisions about traffic impacts on bridges.",
-            "success-end-condition": "Real-time traffic data is successfully displayed within the map interface alongside bridge data, enabling the highway information analyst to assess traffic impacts on bridges."
+            "parent-id": "3.1",
+            "parent-section": "BROWSE BRIDGE & PROJECT DATA",
+            "id": "UC-BRWS-5",
+            "title": "View Traffic Data on Map",
+            "description": "The highway information analyst accesses the map display in the Pontis system to view traffic data. This includes selecting the traffic data layer and displaying it alongside bridge and project data to evaluate traffic impacts on bridges.",
+            "success-end-condition": "The traffic data is displayed on the map within the Pontis system, allowing the analyst to make informed decisions regarding traffic impacts on bridges."
         }
     ],
     "functional-requirements": [
         {
-            "parent-id": "UC-25",
-            "id": "FR-25.1",
-            "modification-type": "new",
-            "description": "The system shall display real-time traffic data on the map interface, specifically showing traffic conditions within a 1-mile radius of bridges."
+            "parent-id": "UC-BRWS-5",
+            "id": "FR-BRWS-5.1",
+            "description": "The system shall provide a map display within the Pontis system that allows the user to view traffic data, including vehicle counts and average speeds for each road segment."
         },
         {
-            "parent-id": "UC-25",
-            "id": "FR-25.2",
-            "modification-type": "new",
-            "description": "The system shall enable the highway information analyst to overlay real-time traffic data with existing bridge data on the map display."
+            "parent-id": "UC-BRWS-5",
+            "id": "FR-BRWS-5.2",
+            "description": "The system shall allow users to select a traffic data layer from a list and view the selected traffic data layer on the map display interface."
         },
         {
-            "parent-id": "UC-25",
-            "id": "FR-25.3",
-            "modification-type": "new",
-            "description": "The system shall provide tools for filtering real-time traffic data by specific parameters including time of day, calendar date, and traffic volume."
+            "parent-id": "UC-BRWS-5",
+            "id": "FR-BRWS-5.3",
+            "description": "The system shall overlay the user-selected traffic data layer with existing bridge data and project data on the map display, ensuring that all three data layers are visible and distinguishable."
         },
         {
-            "parent-id": "UC-25",
-            "id": "FR-25.4",
-            "modification-type": "new",
-            "description": "The system shall enable the highway information analyst to generate reports that include both real-time traffic data and bridge data."
+            "parent-id": "UC-BRWS-5",
+            "id": "FR-BRWS-5.4",
+            "description": "The system shall allow the user to filter and display traffic data based on specific criteria including traffic volume (e.g., number of vehicles per hour), vehicle types (e.g., cars, trucks, motorcycles), and predefined time intervals (e.g., hourly, daily, weekly)."
+        },
+        {
+            "parent-id": "UC-BRWS-5",
+            "id": "FR-BRWS-5.5",
+            "description": "When traffic data is received from the traffic data source, the system shall update the map display every second to reflect changes in traffic data, ensuring that new traffic data is displayed within one second of receipt."
+        },
+        {
+            "parent-id": "UC-BRWS-5",
+            "id": "FR-BRWS-5.6",
+            "description": "The system shall allow users to export traffic data currently displayed on the map into a CSV file containing columns for timestamp, location, vehicle count, and average speed."
         }
     ],
     "non-functional-requirements": [
         {
-            "id": "LAF-25.1",
-            "modification-type": "new",
-            "description": "The map display shall use a predefined and consistent color scheme, font styles, and layout structure across both web and standalone applications as specified in the design guidelines document."
+            "id": "LAF-BRWS-5.1",
+            "description": "The map display shall use the colors green for low traffic, yellow for moderate traffic, and red for high traffic to differentiate traffic levels."
         },
         {
-            "id": "USA-25.1",
-            "modification-type": "new",
-            "description": "The real-time traffic data overlay functionality shall be accessible within three clicks from the main menu and shall require no more than 30 minutes of training for a highway information analyst to use effectively."
+            "id": "USA-BRWS-5.1",
+            "description": "The map interface shall provide navigation controls and zoom functionality that allow users to view traffic data at various levels of detail."
         },
         {
-            "id": "CAP-25.1",
-            "modification-type": "new",
-            "description": "The system shall display up to 100,000 real-time traffic data points on the map simultaneously, ensuring a response time of less than 2 seconds for any user interaction."
+            "id": "CAP-BRWS-5.1",
+            "description": "The system shall display traffic data for up to 10,000 bridge locations simultaneously."
         },
         {
-            "id": "SPD-25.1",
-            "modification-type": "new",
-            "description": "WHEN the system receives new real-time traffic data from the data source, the system shall refresh the traffic data on the map display within 5 seconds."
+            "id": "SPD-BRWS-5.1",
+            "description": "When the system is operating under standard conditions as defined in the system's operational guidelines, the map display shall load and update the traffic data layer within 1 second."
         },
         {
-            "id": "AVL-25.1",
-            "modification-type": "new",
-            "description": "The map display shall be available with an uptime of at least 99.9% over any continuous 30-day period."
+            "id": "AVL-BRWS-5.1",
+            "description": "The map display shall maintain an uptime of at least 99.9% over any given calendar month."
         },
         {
-            "id": "SEC-25.1",
-            "modification-type": "new",
-            "description": "The map interface shall encrypt real-time traffic data using Advanced Encryption Standard (AES) with a 256-bit key both during transmission and while stored to ensure data security."
+            "id": "OPR-BRWS-5.1",
+            "description": "The system shall update and synchronize with specified external traffic data sources every 5 minutes to ensure the accuracy of traffic information displayed on the map."
+        },
+        {
+            "id": "DEP-BRWS-5.1",
+            "description": "Where the traffic data layer feature is included, the traffic data layer feature shall be deployable with no more than five configuration steps on existing Pontis installations, verified through a step-by-step deployment checklist."
+        },
+        {
+            "id": "MPR-BRWS-5.1",
+            "description": "The system shall allow updates and maintenance of the traffic data integration module to be performed without requiring more than 2 hours of downtime and by personnel with basic technical training."
+        },
+        {
+            "id": "SEC-BRWS-5.1",
+            "description": "The system shall transmit traffic data using AES-256 encryption protocols and store it in databases encrypted with AES-256, complying with the General Data Protection Regulation (GDPR) and other relevant data protection standards."
+        },
+        {
+            "id": "LGL-BRWS-5.1",
+            "description": "The system shall comply with all specific laws and regulations listed in the glossary regarding the use and display of traffic data, ensuring that all traffic data displayed on the map is accurate and up-to-date according to the specified legal standards."
         }
     ]
 }

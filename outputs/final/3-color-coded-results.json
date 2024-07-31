@@ -1,80 +1,82 @@
 {
     "use-cases": [
         {
-            "parent-section": "3.2 BRIDGE INVENTORY & INSPECTION",
-            "id": "UC-10",
-            "modification-type": "new",
-            "description": "The structural engineer views color-coded inspection results on the map view to quickly determine which bridges are high-risk for deterioration.",
-            "success-end-condition": "The structural engineer sees a map with bridges color-coded based on their risk level for deterioration, enabling quick identification of high-risk bridges."
+            "parent-id": "3.1",
+            "parent-section": "BROWSE BRIDGE & PROJECT DATA",
+            "id": "UC-BRWS-5",
+            "title": "View Color-Coded Condition Ratings on Map",
+            "description": "The user selects to view a map display where bridges are color-coded based on their condition ratings to quickly identify high-risk bridges.",
+            "success-end-condition": "The user views a map with bridges color-coded according to their condition ratings, enabling quick identification of bridges at high risk for deterioration."
         }
     ],
     "functional-requirements": [
         {
-            "parent-id": "UC-10",
-            "id": "FR-10.1",
-            "modification-type": "new",
-            "description": "The system shall provide a map view that displays bridges with specific colors representing distinct risk levels for deterioration."
+            "parent-id": "UC-BRWS-5",
+            "id": "FR-5.1",
+            "description": "The system shall display a map view with bridges color-coded according to their specific condition ratings, with green for good, yellow for fair, and red for poor."
         },
         {
-            "parent-id": "UC-10",
-            "id": "FR-10.2",
-            "modification-type": "new",
-            "description": "WHEN the system receives the latest inspection data, the system shall update the color-coding of bridges on the map view within 5 seconds, using a predefined color scheme to indicate risk levels."
+            "parent-id": "UC-BRWS-5",
+            "id": "FR-5.2",
+            "description": "The system shall allow users to select numerical condition rating thresholds to adjust the color-coding of bridges on the map, with each threshold corresponding to a specific color."
         },
         {
-            "parent-id": "UC-10",
-            "id": "FR-10.3",
-            "modification-type": "new",
-            "description": "When the filter option is activated, the system shall display only bridges classified as high-risk for deterioration on the map view."
+            "parent-id": "UC-BRWS-5",
+            "id": "FR-5.3",
+            "description": "The system shall update the map view to reflect the user's changes to the selected condition rating thresholds within 1 second."
         },
         {
-            "parent-id": "UC-10",
-            "id": "FR-10.4",
-            "modification-type": "new",
-            "description": "The system shall display a legend that clearly explains the specific color-coding scheme used to represent different risk levels on the map view."
+            "parent-id": "UC-BRWS-5",
+            "id": "FR-5.4",
+            "description": "The system shall display a legend on the map view that explains the meaning of each color used for bridge condition ratings, with green for good, yellow for fair, and red for poor."
         },
         {
-            "parent-id": "UC-10",
-            "id": "FR-10.5",
-            "modification-type": "new",
-            "description": "The system shall enable users to click on a bridge icon in the map view to display detailed inspection results and risk assessment data for that specific bridge."
+            "parent-id": "UC-BRWS-5",
+            "id": "FR-5.5",
+            "description": "The system shall provide a filter option in the map view to display only bridges with condition ratings that meet or exceed the user-defined high-risk thresholds."
+        },
+        {
+            "parent-id": "UC-BRWS-5",
+            "id": "FR-5.6",
+            "description": "The system shall allow users to click on a specific bridge in the map view to display detailed condition data, including color-coded condition ratings, for that selected bridge."
         }
     ],
     "non-functional-requirements": [
         {
-            "id": "LAF-10.1",
-            "modification-type": "new",
-            "description": "The map view shall display inspection results using the following distinct colors: red for high-risk, yellow for medium-risk, and green for low-risk, with each color being clearly distinguishable from the others."
+            "id": "LAF-1",
+            "description": "The map view shall display color-coded condition ratings for bridges, with a legend explaining the colors, to ensure structural engineers can identify high-risk bridges for deterioration within 5 seconds."
         },
         {
-            "id": "USA-10.2",
-            "modification-type": "new",
-            "description": "WHEN the user hovers over any color-coded area on the map view, the system shall display a tooltip with a predefined description of the risk level (red for high risk, yellow for medium risk, green for low risk)."
+            "id": "USA-1",
+            "description": "The system shall provide an interface that allows individuals with beginner, intermediate, and advanced levels of technical expertise to complete tasks without requiring additional training."
         },
         {
-            "id": "CAP-10.3",
-            "modification-type": "new",
-            "description": "The system shall display color-coded data for up to 10,000 bridges simultaneously on the map, with each bridge's data being updated within 5 seconds of receiving new inspection results."
+            "id": "CAP-1",
+            "description": "The map view functionality shall support displaying up to 1,000 bridges simultaneously without any decrease in rendering speed or responsiveness compared to displaying 100 bridges."
         },
         {
-            "id": "SPD-10.4",
-            "modification-type": "new",
-            "description": "WHEN new inspection data is entered, the map view shall refresh and display updated color-coded inspection data within 5 seconds with a success rate of 95%."
+            "id": "SPD-1",
+            "description": "When the user changes the condition rating thresholds, the system shall update the color-coding on the map view within 1 second 95% of the time."
         },
         {
-            "id": "AVL-10.5",
-            "modification-type": "new",
-            "description": "The system shall maintain an uptime of at least 99.9% over any consecutive 30-day period."
+            "id": "AVL-1",
+            "description": "The map view functionality shall have an uptime of at least 99.9% over any given calendar month, as measured by system logs."
         },
         {
-            "id": "MPR-10.6",
-            "modification-type": "new",
-            "description": "The system shall allow a user with administrative privileges to complete updates and maintenance to the color-coding algorithm and criteria within 2 hours."
+            "id": "DEP-1",
+            "description": "When the application setup process is completed, the map view and its associated functionality shall be deployed and operational within 60 minutes."
         },
         {
-            "id": "SEC-10.7",
-            "modification-type": "new",
-            "description": "The system shall restrict access to the map view and modification of inspection data exclusively to users who have been authenticated and authorized according to their predefined user roles."
+            "id": "MPR-1",
+            "description": "The system shall enable updates and extensions to the color-coding logic for condition rating metrics without requiring more than 10 lines of changes to the existing codebase."
+        },
+        {
+            "id": "SEC-1",
+            "description": "The system shall restrict access to the map view and its functionalities, ensuring that only authorized users can view and interact with the map view, based on predefined user permission levels."
+        },
+        {
+            "id": "LGL-1",
+            "description": "The system shall comply with the data privacy and protection standards and regulations listed in sections 1.1 to 1.5 of the attached document."
         }
     ]
 }

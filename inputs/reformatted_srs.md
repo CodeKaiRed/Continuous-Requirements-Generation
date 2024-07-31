@@ -327,22 +327,22 @@ Stakeholders: All Pontis users
 
 Precondition: User is logged into Pontis and has the necessary permissions.
 
-**UC-1: View Bridge Data**
+**UC-BRWS-1: View Bridge Data**
 Description: The user uses the find, filter, and select capabilities in Pontis to access the desired structure. A map-based query can be performed.
 
 Success End Conditions: User finds and selects the desired structure(s). User views data for the selected structure(s).
 
-**UC-2: View Project Data**
+**UC-BRWS-2: View Project Data**
 Description: The user uses the find, filter, and select capabilities in Pontis to access the desired project. A map-based query can be performed.
 
 Success End Condition: User finds and selects the desired project(s). User views data for the selected project(s).
 
-**UC-3: Select and View Reports**
+**UC-BRWS-3: Select and View Reports**
 Description: The user selects a report to run against the Pontis database.
 
 Success End Condition: The selected report is generated and displayed on the screen.
 
-**UC-4: Select and View Pontis Information Using Maps**
+**UC-BRWS-4: Select and View Pontis Information Using Maps**
 Description: The user selects data (bridges and projects) from the Pontis database to generate a map display, or the user selects bridges or projects from a map and sees the supporting Pontis information.
 
 Success End Condition: The selected Pontis information displayed on the screen or a map is generated showing the Pontis information.
@@ -357,20 +357,20 @@ Stakeholders: Inspector
 
 Precondition: User is logged into Pontis and has the necessary permissions.
 
-**UC-5: Create/Edit Structures**
+**UC-BRDG-1: Create/Edit Structures**
 
 Description: The user creates a new structure by copying an existing structure or manually entering in data for the structure. The user can also modify inventory
 data for an existing structure.
 
 Success End Condition: Data for the new structure and the modifications to the existing structure are stored in the Pontis database.
 
-**UC-6: Create/Edit Inspections**
+**UC-BRDG-2: Create/Edit Inspections**
 
 Description: The user creates a new inspection for a structure by copying the last inspection on the structure, or manually entering in data for the new inspection. The user can also modify existing inspection data for the structure. When appropriate, results from multiple inspectors working together may be merged for one structure to create a single combined or consolidated inspection.
 
 Success End Condition: Data for the new inspection and the modifications to the existing inspections are stored in the Pontis database.
 
-**UC-7: Calculate Dependent/Derived Inspection Results**
+**UC-BRDG-3: Calculate Dependent/Derived Inspection Results**
 
 Description: The user calculates derived ratings (NBI condition ratings, structural rating, geometric rating, sufficiency rating, and SD/FO status) based on inspection data. Users may override any calculated NBI condition rating such as deck, superstructure, substructure or culvert condition as necessary.
 
@@ -386,13 +386,13 @@ Stakeholders: Engineering
 
 Precondition: User is logged into Pontis and has the necessary permissions.
 
-**UC-8: Develop Preservation Policy**
+**UC-PRSV-1: Develop Preservation Policy**
 
 Description: The user updates the deterioration probabilities and preservation action costs based on expert elicitation and/or inspection data. The costs and probabilities are used to develop the optimal preservation policy.
 
 Success End Condition: Updated preservation policy data is stored and displayed.
 
-**UC-9: Perform Health Index Targeting**
+**UC-PRSV-2: Perform Health Index Targeting**
 
 Description: The user runs the health index targeting process to determine the long term cost of meeting an average health index target.
 
@@ -408,19 +408,19 @@ Stakeholders: Engineering/Planning
 
 Precondition: User is logged into Pontis and has the necessary permissions to use and potentially modify the bridge inventory, inspection history, work recommendations, and project planning data, as well as the necessary model information.
 
-**UC-10: Configure Simulation Parameters**
+**UC-PRGM-1: Configure Simulation Parameters**
 
 Description: The user specifies all settings for the simulation, including the improvement model parameters, agency rules, the simulation time frame, and the annual budget.
 
 Success End Condition: The simulation settings are stored under a scenario name.
 
-**UC-11: Perform Program Simulation**
+**UC-PRGM-2: Perform Program Simulation**
 
 Description: The user runs a program simulation for one or more structure(s) with the specified settings in order to view network trends and generate bridgelevel work recommendations.
 
 Success End Condition: The results of the program simulation are accurately generated and stored in the Pontis database.
 
-**UC-12: Perform Bridge Analysis**
+**UC-PRGM-3: Perform Bridge Analysis**
 
 Description: The user performs a bridge analysis for a structure in order to view the impact of one or more work items on the structure condition.
 
@@ -436,13 +436,13 @@ Stakeholders: Bridge Engineer/Planner/Projects Engineer
 
 Precondition: User is logged into Pontis and has the necessary permissions.
 
-**UC-13: Create/Edit Programs**
+**UC-PROJ-1: Create/Edit Programs**
 
 Description: The user creates a new program and specifies the budget for the program by funding source. The user can also edit an existing program.
 
 Success End Condition: Data for the new program and the modifications to the existing program are stored in the Pontis database.
 
-**UC-14: Create/Edit Projects**
+**UC-PROJ-2: Create/Edit Projects**
 
 Description: The user creates a new project by selecting Pontis-generated work recommendations, inspector work candidates, and user-specified work items, or edits data for an existing project. The user can also edit, split, or combine existing projects. Project information can be imported from a file to create or
 update projects.
@@ -459,25 +459,25 @@ Stakeholders: Inspector, Routine and Advanced User
 
 Precondition: User is logged into Pontis and has the necessary permissions.
 
-**UC-15: Perform Data Validation**
+**UC-DATA-1: Perform Data Validation**
 
 Description: Perform validation, cross-validation, and quality assurance tasks in context and display the result.
 
 Success End Condition: Invalid data items are listed as a result.
 
-**UC-16: Exchange Data**
+**UC-DATA-2: Exchange Data**
 
 Description: Export Pontis data in various formats including NBI, PDI, and XML. Import the data from various sources into Pontis database. Import and export data using the TransXML schema.
 
 Success End Condition: For the export operation, the specified data are written to a specified format. For the import, the data are correctly read from the file and/or the existing data are updated, and new or modified data is saved to the database.
 
-**UC-17: Perform Data Archiving**
+**UC-DATA-3: Perform Data Archiving**
 
 Description: User selects data items (e.g. inventory, inspection and/or project data for removed structures) to be archived.
 
 Success End Condition: Selected data items are archived.
 
-**UC-18: BRIDGEWare Integration Support**
+**UC-DATA-4: BRIDGEWare Integration Support**
 
 Description: Perform database integration task with other BRIDGEWare products. Transfer load rating data from Virtis to Pontis.
 
@@ -493,37 +493,37 @@ Stakeholders: End users, Agency
 
 Precondition: User has the necessary permissions.
 
-**UC-19: Define and Manage User Roles.**
+**UC-ADMN-1: Define and Manage User Roles.**
 
 Description: An administrator creates/edits user roles with different security settings.
 
 Success End Condition: New user roles are added to the system or existing roles are modified.
 
-**UC-20: Create New Users**
+**UC-ADMN-2: Create New Users**
 
 Description: An administrator adds a new user to Pontis application and assigns him/her to a role.
 
 Success End Condition: New users are added to the system with designated privileges.
 
-**UC-21: Perform User Authentication**
+**UC-ADMN-3: Perform User Authentication**
 
 Description: When a user logs into Pontis, it validates the user name and password. Access to Pontis functionalities are controlled depending on the user role.
 
 Success End Condition: Connect and run Pontis with designated privileges.
 
-**UC-22: Configure Application Functionalities**
+**UC-ADMN-4: Configure Application Functionalities**
 
 Description: User can change the application configurations.
 
 Success End Condition: Modified configuration are updated correctly And application operation changes immediately, or after restart, as appropriate, to reflect the new configuration settings.
 
-**UC-23: Configure User-Interface Presentation**
+**UC-ADMN-5: Configure User-Interface Presentation**
 
 Description: User modifies the user interface items.
 
 Success End Condition: The changes are saved and applied correctly.
 
-**UC-24: Administration Functionalities**
+**UC-ADMN-6: Administration Functionalities**
 
 Description: User manages the administration functionalities that affect application operation.
 
@@ -550,383 +550,383 @@ Requirements surrounded by boxes are new or significantly updated requirements f
 
 ### 4.1 BROWSE DATA
 
-#### UC-1 **View Bridge Data**
+#### UC-BRWS-1 **View Bridge Data**
 
-FR-1.1 The user shall be able to view the data stored in the Physical Inventory tables through the Pontis graphical user interface (GUI).
+FR-BRWS-1.1 The user shall be able to view the data stored in the Physical Inventory tables through the Pontis graphical user interface (GUI).
 
-FR-1.2 The user shall be able to switch between predefined structure lists.
+FR-BRWS-1.2 The user shall be able to switch between predefined structure lists.
 
-FR-1.3 The user shall be able to select structures by structure ID, district, county, administrative area (geographic group), ownership, custodianship, functional class, NHS status, on/off system, inspector, bridge group, inspection due dates, and all or some environment and elements. The query shall be restricted depending on the user privilege.
+FR-BRWS-1.3 The user shall be able to select structures by structure ID, district, county, administrative area (geographic group), ownership, custodianship, functional class, NHS status, on/off system, inspector, bridge group, inspection due dates, and all or some environment and elements. The query shall be restricted depending on the user privilege.
 
-FR-1.4 The user shall be able to find structures based on the structure ID, structure name, feature intersected, facility carried, route number, LRS Inventory Route, KM/mile posts, structure types, design types and materials, and by searching the notes fields. The query shall be restricted depending on the user privilege.
+FR-BRWS-1.4 The user shall be able to find structures based on the structure ID, structure name, feature intersected, facility carried, route number, LRS Inventory Route, KM/mile posts, structure types, design types and materials, and by searching the notes fields. The query shall be restricted depending on the user privilege.
 
-FR-1.5 The user shall be able to enter a WHERE clause of the SQL query in the Find and the Filter window and run a query against the bridges in the database. The query will be verified by the application and SQL errors will be reported to the user for correction. This capability shall be an application privilege. Bridge-level security of the user shall be applied automatically.
+FR-BRWS-1.5 The user shall be able to enter a WHERE clause of the SQL query in the Find and the Filter window and run a query against the bridges in the database. The query will be verified by the application and SQL errors will be reported to the user for correction. This capability shall be an application privilege. Bridge-level security of the user shall be applied automatically.
 
-FR-1.6 The user shall be able to select a structure by directly typing in the structure ID in GUI, with the display scrolling to that structure. Bridge-level security of
+FR-BRWS-1.6 The user shall be able to select a structure by directly typing in the structure ID in GUI, with the display scrolling to that structure. Bridge-level security of
 the user shall be applied automatically.
 
-FR-1.7 The system shall display the data in the appropriate unit of measurement as configured for the application. This will be a permanent modal setting for the application. This setting shall be configurable (as stipulated in Requirement 22.1).
+FR-BRWS-1.7 The system shall display the data in the appropriate unit of measurement as configured for the application. This will be a permanent modal setting for the application. This setting shall be configurable (as stipulated in Requirement 22.1).
 
-FR-1.8 The user shall be able to select bridges on a supported map display and generate a bridge list for use within Pontis, for example, to perform a simulation analysis or to generate an inspection roster.
+FR-BRWS-1.8 The user shall be able to select bridges on a supported map display and generate a bridge list for use within Pontis, for example, to perform a simulation analysis or to generate an inspection roster.
 
-#### UC-2 **View Project Data**
+#### UC-BRWS-2 **View Project Data**
 
-FR-2.1 The user shall be able to view the data stored in the Project Planning tables
+FR-BRWS-2.1 The user shall be able to view the data stored in the Project Planning tables
 through the GUI.
 
-FR-2.2 The user shall be able to switch between predefined project lists.
+FR-BRWS-2.2 The user shall be able to switch between predefined project lists.
 
-FR-2.3 The user shall be able to filter and select projects by structure ID, project ID, program, action type, project status, review status, treatment, program year, and project end date.
+FR-BRWS-2.3 The user shall be able to filter and select projects by structure ID, project ID, program, action type, project status, review status, treatment, program year, and project end date.
 
-FR-2.4 The user shall be able to find projects by project ID, project name, project status, structure ID, and program.
+FR-BRWS-2.4 The user shall be able to find projects by project ID, project name, project status, structure ID, and program.
 
-FR-2.5 The user shall be able to filter and select work candidates by structure ID, project ID, program, action type, project status, review status, treatment, program year, and project end date.
+FR-BRWS-2.5 The user shall be able to filter and select work candidates by structure ID, project ID, program, action type, project status, review status, treatment, program year, and project end date.
 
-FR-2.6 The user shall be able to enter a WHERE clause of the SQL query in the Find and the Filter window and run a query against the projects in the database. The query will be verified by the application and SQL errors will be reported to the user for correction. This capability shall be an application privilege. Bridge-level security of the user shall be applied automatically.
+FR-BRWS-2.6 The user shall be able to enter a WHERE clause of the SQL query in the Find and the Filter window and run a query against the projects in the database. The query will be verified by the application and SQL errors will be reported to the user for correction. This capability shall be an application privilege. Bridge-level security of the user shall be applied automatically.
 
-FR-2.7 The user shall be able to select a project by directly typing in the project ID in the GUI, with the display scrolling to that structure. Bridge or project level security of the user shall be applied automatically.
+FR-BRWS-2.7 The user shall be able to select a project by directly typing in the project ID in the GUI, with the display scrolling to that structure. Bridge or project level security of the user shall be applied automatically.
 
-FR-2.8 The user shall be able to select projects (work) on a supported map display and generate a project/bridge list for use within Pontis, for example, to display results of a simulation analysis or to generate a STIP display.
+FR-BRWS-2.8 The user shall be able to select projects (work) on a supported map display and generate a project/bridge list for use within Pontis, for example, to display results of a simulation analysis or to generate a STIP display.
 
-#### UC-3 **Generate Predefined Reports**
+#### UC-BRWS-3 **Generate Predefined Reports**
 
-FR-3.1 The user shall be able to select and execute predefined reports to view bridge data, project data, preservation model data, program simulation results, and configuration data. The existing Pontis reports shall form the basis for the predefined reports to be provided in Pontis 5.0.
+FR-BRWS-3.1 The user shall be able to select and execute predefined reports to view bridge data, project data, preservation model data, program simulation results, and configuration data. The existing Pontis reports shall form the basis for the predefined reports to be provided in Pontis 5.0.
 
-FR-3.2 The user shall be able to create reports in a .NET compliant report generator other than InfoMaker and review these reports from within the Pontis GUI.
+FR-BRWS-3.2 The user shall be able to create reports in a .NET compliant report generator other than InfoMaker and review these reports from within the Pontis GUI.
 
-FR3.3 The system shall provide the ability to integrate current selections with a .NET compliant report generator other than InfoMaker. AASHTO may provide users with a list of suggested report generators to replace PowerBuilder/InfoMaker.
+FR-BRWS-3.3 The system shall provide the ability to integrate current selections with a .NET compliant report generator other than InfoMaker. AASHTO may provide users with a list of suggested report generators to replace PowerBuilder/InfoMaker.
 
-FR3.4 The system shall provide the ability to incorporate PDF files into standard Pontis reports.
+FR-BRWS-3.4 The system shall provide the ability to incorporate PDF files into standard Pontis reports.
 
-FR3.5 The system shall provide the ability to save reports in PDF, HTML, and XML formats.
+FR-BRWS-3.5 The system shall provide the ability to save reports in PDF, HTML, and XML formats.
 
-#### UC-4 **Select and View Pontis Information Using Maps**
+#### UC-BRWS-4 **Select and View Pontis Information Using Maps**
 
-FR4.1 The system shall provide the ability to create any report that is bridge or project based by selecting the relevant “driver” records from a map display.
+FR-BRWS-4.1 The system shall provide the ability to create any report that is bridge or project based by selecting the relevant “driver” records from a map display.
 
-FR4.2 The system shall provide the ability to create or refresh a map display from a set of bridge or project records selected within the Pontis desktop.
+FR-BRWS-4.2 The system shall provide the ability to create or refresh a map display from a set of bridge or project records selected within the Pontis desktop.
 
 ### 4.2 BRIDGE INVENTORY & INSPECTION
 
-#### UC-5 **Create/Edit Structure**
+#### UC-BRDG-1 **Create/Edit Structure**
 
-FR5.1 The user shall be able to create a new structure with a user-defined bridge key.
+FR-BRDG-1.1 The user shall be able to create a new structure with a user-defined bridge key.
 
-FR-5.2 The user shall be able to create a new structure by copying all data of an existing structure.
+FR-BRDG-1.2 The user shall be able to create a new structure by copying all data of an existing structure.
 
-FR-5.3 The user shall be able to create new structure(s) by importing from a supported file type. The supported file types are to be determined, but will include at least PDI, NBI, and XML.
+FR-BRDG-1.3 The user shall be able to create new structure(s) by importing from a supported file type. The supported file types are to be determined, but will include at least PDI, NBI, and XML.
 
-FR-5.4 The user shall be able to edit and remove existing structures.
+FR-BRDG-1.4 The user shall be able to edit and remove existing structures.
 
-FR-5.5 The system shall provide the ability to mark a bridge with any of several status values (e.g. inactive/closed) and automatically filter displays to recognize the status value (e.g. to automatically suppress inactive/closed structures).
+FR-BRDG-1.5 The system shall provide the ability to mark a bridge with any of several status values (e.g. inactive/closed) and automatically filter displays to recognize the status value (e.g. to automatically suppress inactive/closed structures).
 
-FR-5.6 The system shall support storage and management of information for bridges in a design or preconstruction state (functional requirement is related to 4.5 above)
+FR-BRDG-1.6 The system shall support storage and management of information for bridges in a design or preconstruction state (functional requirement is related to 4.5 above)
 
-FR-5.7 The user shall be able to renumber the bridge key identifier and have the change made globally. This functionality shall be restricted depending on the user privilege.
+FR-BRDG-1.7 The user shall be able to renumber the bridge key identifier and have the change made globally. This functionality shall be restricted depending on the user privilege.
 
-#### UC-6 **Create/Edit Inspection**
+#### UC-BRDG-2 **Create/Edit Inspection**
 
-FR-6.1 The user shall be able to create a new inspection.
+FR-BRDG-2.1 The user shall be able to create a new inspection.
 
-FR-6.2 The user shall be able to create a new inspection by copying a previous
+FR-BRDG-2.2 The user shall be able to create a new inspection by copying a previous
 inspection.
 
-FR-6.3 The user shall be able to identify and select any previous inspection as the source for the copy action. The selection can be made by combination of date, inspection type, inspector, or inspection control group.
+FR-BRDG-2.3 The user shall be able to identify and select any previous inspection as the source for the copy action. The selection can be made by combination of date, inspection type, inspector, or inspection control group.
 
-FR-6.4 The system shall have a short-form interface (display only NBI and element data, similar to SI&A sheet) for inspection data entry with specifics of design and functionality to be determined as part of the technical design.
+FR-BRDG-2.4 The system shall have a short-form interface (display only NBI and element data, similar to SI&A sheet) for inspection data entry with specifics of design and functionality to be determined as part of the technical design.
 
-FR-6.5 The user shall have the option to copy the notes from previous inspection when creating a new inspection.
+FR-BRDG-2.5 The user shall have the option to copy the notes from previous inspection when creating a new inspection.
 
-FR-6.6 The user shall be able to create new inspection(s) by importing an PDI file.
+FR-BRDG-2.6 The user shall be able to create new inspection(s) by importing an PDI file.
 
-FR-6.7 The user shall be able to add new elements to the structure.
+FR-BRDG-2.7 The user shall be able to add new elements to the structure.
 
-FR-6.8 The user shall be able to edit all the NBI data
+FR-BRDG-2.8 The user shall be able to edit all the NBI data
 
-FR-6.9 Changes to calculated results such as Sufficiency Rating or NBI Appraisal Ratings will be prohibited except for secured, privileged users.
+FR-BRDG-2.9 Changes to calculated results such as Sufficiency Rating or NBI Appraisal Ratings will be prohibited except for secured, privileged users.
 
-FR-6.10 The user shall be able to edit element inspection data.
+FR-BRDG-2.10 The user shall be able to edit element inspection data.
 
-FR-6.11 The user shall be able to edit the bridge inventory items excluding the dependent/derived values (i.e., the appraisal ratings that are calculated automatically).
+FR-BRDG-2.11 The user shall be able to edit the bridge inventory items excluding the dependent/derived values (i.e., the appraisal ratings that are calculated automatically).
 
-FR-6.12 The user shall be able to edit inspection and structure notes.
+FR-BRDG-2.12 The user shall be able to edit inspection and structure notes.
 
-FR-6.13 The system shall be capable of storing notes in plain text and XML, and shall maximize the notes field size. The user shall be capable of setting the size of
+FR-BRDG-2.13 The system shall be capable of storing notes in plain text and XML, and shall maximize the notes field size. The user shall be capable of setting the size of
 the notes field.
 
-FR-6.14 The user shall be able to create and edit work recommendations. The system shall be capable of estimating quantity for bridge type work recommendations.
+FR-BRDG-2.14 The user shall be able to create and edit work recommendations. The system shall be capable of estimating quantity for bridge type work recommendations.
 
-FR-6.15 The user shall be able to enter and update inspection planning information (i.e., frequency of regular and special inspections and estimated resource requirements).
+FR-BRDG-2.15 The user shall be able to enter and update inspection planning information (i.e., frequency of regular and special inspections and estimated resource requirements).
 
-FR-6.16 The user shall be able to link and manage multimedia files.
+FR-BRDG-2.16 The user shall be able to link and manage multimedia files.
 
-FR-6.17 The system shall provide an inspection scheduling tool. [13]
+FR-BRDG-2.17 The system shall provide an inspection scheduling tool. [13]
 
-FR-6.18 The system shall provide the capability to “lock down” an inspection record once signed and sealed to prevent deletion or modification.
+FR-BRDG-2.18 The system shall provide the capability to “lock down” an inspection record once signed and sealed to prevent deletion or modification.
 
-FR-6.19 Privileged users shall be able to delete an existing inspection unless it is “locked down”.
+FR-BRDG-2.19 Privileged users shall be able to delete an existing inspection unless it is “locked down”.
 
-FR-6.20 The user shall be able to sort the element data by unit number, environment, and quantity.
+FR-BRDG-2.20 The user shall be able to sort the element data by unit number, environment, and quantity.
 
-FR-6.21 The user shall be able to view all data from any two inspections, for a single bridge, in a tiled side-by-side or top-to-bottom presentation for easy comparison. The presentation (view/report) shall clearly highlight the difference between two inspections.
+FR-BRDG-2.21 The user shall be able to view all data from any two inspections, for a single bridge, in a tiled side-by-side or top-to-bottom presentation for easy comparison. The presentation (view/report) shall clearly highlight the difference between two inspections.
 
-FR-6.22 The system shall provide a configurable tracking mechanism to ensure that a set of screens and data fields have been reviewed and approved during the course of an inspection
+FR-BRDG-2.22 The system shall provide a configurable tracking mechanism to ensure that a set of screens and data fields have been reviewed and approved during the course of an inspection
 
-#### UC-7 **Calculate Dependent/Derived Inspection Results**
+#### UC-BRDG-3 **Calculate Dependent/Derived Inspection Results**
 
-FR-7.1 The system shall be capable of calculating NBI condition ratings using the FHWA NBI Translator.
+FR-BRDG-3.1 The system shall be capable of calculating NBI condition ratings using the FHWA NBI Translator.
 
-FR-7.2 The system shall be capable of calculating and storing bridge Sufficiency Rating.
+FR-BRDG-3.2 The system shall be capable of calculating and storing bridge Sufficiency Rating.
 
-FR-7.3 The system shall be capable of calculating appraisal ratings.
+FR-BRDG-3.3 The system shall be capable of calculating appraisal ratings.
 
-FFR-7.4 The system shall be capable of calculating Structurally Deficient/Functionally Obsolete (SD/FO) status.
+FR-BRDG-3.4 The system shall be capable of calculating Structurally Deficient/Functionally Obsolete (SD/FO) status.
 
-FR-7.5 The ability of the user to update the calculated ratings and status in the database shall be a controlled privilege. Agencies may optionally exclude/prohibit direct edits to the calculated inspection results such as the NBI translator output. The agency shall therefore be able to enforce strict use of calculated translator results for calculating NBI condition ratings.
+FR-BRDG-3.5 The ability of the user to update the calculated ratings and status in the database shall be a controlled privilege. Agencies may optionally exclude/prohibit direct edits to the calculated inspection results such as the NBI translator output. The agency shall therefore be able to enforce strict use of calculated translator results for calculating NBI condition ratings.
 
-FR-7.6 The system shall be capable of prompting users when the dependent fields for ratings are changed and offer the user option to recalculate the ratings.
+FR-BRDG-3.6 The system shall be capable of prompting users when the dependent fields for ratings are changed and offer the user option to recalculate the ratings.
 
-FR-7.7 The system administrator shall be able to configure the recalculation behavior of the derived data. The options shall include 1) do nothing, 2) alert user that recalculation is required and give option to recalculate before update/save, and 3) recalculate silently with no confirmation prompt when user saves the inspection.
+FR-BRDG-3.7 The system administrator shall be able to configure the recalculation behavior of the derived data. The options shall include 1) do nothing, 2) alert user that recalculation is required and give option to recalculate before update/save, and 3) recalculate silently with no confirmation prompt when user saves the inspection.
 
-FR-7.8 The system shall eliminate any and all dependencies on workstation (user) control/parameter files for program operation. For example, parameter information required by the NBI Translator (including information currently stored in ELEMENTS.PRN and ERRORS.LST) will be stored strictly within the Pontis database rather than on individual user workstations.
+FR-BRDG-3.8 The system shall eliminate any and all dependencies on workstation (user) control/parameter files for program operation. For example, parameter information required by the NBI Translator (including information currently stored in ELEMENTS.PRN and ERRORS.LST) will be stored strictly within the Pontis database rather than on individual user workstations.
 
 ### 4.3 PRESERVATION MODEL DEVELOPMENT
 
-#### UC-8 **Develop Preservation Policy**
+#### UC-PRSV-1 **Develop Preservation Policy**
 
-FR-8.1 The system shall be capable of creating cost and deterioration elicitation records for Pontis users.
+FR-PRSV-1.1 The system shall be capable of creating cost and deterioration elicitation records for Pontis users.
 
-FR-8.2 The system shall be capable of updating the transition probabilities for preservation actions based on expert elicitations.
+FR-PRSV-1.2 The system shall be capable of updating the transition probabilities for preservation actions based on expert elicitations.
 
-FR-8.3 The system shall be capable of updating preservation action costs based on expert elicitations.
+FR-PRSV-1.3 The system shall be capable of updating preservation action costs based on expert elicitations.
 
-FR-8.4 The system shall be capable of updating transition probabilities for donothing actions based on historical inspection data.
+FR-PRSV-1.4 The system shall be capable of updating transition probabilities for donothing actions based on historical inspection data.
 
-FR-8.5 The user shall be able to edit the cost and deterioration models through the GUI and immediately see the impact on model recommendations.
+FR-PRSV-1.5 The user shall be able to edit the cost and deterioration models through the GUI and immediately see the impact on model recommendations.
 
-FR-8.6 The system shall be capable of using the transition probabilities and preservation action costs to develop an optimal preservation policy as detailed in the Pontis Technical Manual.
+FR-PRSV-1.6 The system shall be capable of using the transition probabilities and preservation action costs to develop an optimal preservation policy as detailed in the Pontis Technical Manual.
 
-FR-8.7 The system shall be capable of recovering the model if the elicitation process fails.
+FR-PRSV-1.7 The system shall be capable of recovering the model if the elicitation process fails.
 
-FR-8.8 The system shall be capable of restoring the previous action costs, transition probabilities, and preservation policy.
+FR-PRSV-1.8 The system shall be capable of restoring the previous action costs, transition probabilities, and preservation policy.
 
-FR-8.9 The system shall be capable of supporting multiple cost and deterioration models.
+FR-PRSV-1.9 The system shall be capable of supporting multiple cost and deterioration models.
 
-FR-8.10 The system shall be capable of incorporating Health Index targets in a preservation (short-term) model.
+FR-PRSV-1.10 The system shall be capable of incorporating Health Index targets in a preservation (short-term) model.
 
-FR-8.11 The system shall streamline the model generation process (i.e. remove any unnecessary prompts as currently implemented in version 4.x).
+FR-PRSV-1.11 The system shall streamline the model generation process (i.e. remove any unnecessary prompts as currently implemented in version 4.x).
 
-#### UC-9 **Perform Health Index Targeting**
+#### UC-PRSV-2 **Perform Health Index Targeting**
 
-FR-9.1 The system shall be capable of determining the long-term cost of achieving an average health index target for one or more structure(s), broken down by elements, element categories, for the entire structure.
+FR-PRSV-2.1 The system shall be capable of determining the long-term cost of achieving an average health index target for one or more structure(s), broken down by elements, element categories, for the entire structure.
 
-FR9.2 The system shall provide a preservation model dashboard integrating the capabilities described above. The exact functionality of the dashboard will be informed by review of the results of NCHRP Project 12-67, Multiple-Objective Optimization for Bridge Management Systems.
+FR-PRSV-2.2 The system shall provide a preservation model dashboard integrating the capabilities described above. The exact functionality of the dashboard will be informed by review of the results of NCHRP Project 12-67, Multiple-Objective Optimization for Bridge Management Systems.
 
 ### 4.4 PROGRAM SIMULATION
 
-#### UC-10 **Configure Simulation Parameters**
+#### UC-PRGM-1 **Configure Simulation Parameters**
 
-FR-10.1 The user shall be able to specify the characteristics of the simulation, including the simulation timeframe, various thresholds for the simulation, the project types included in the simulation, the needs addressed, and the annual budget for the simulation.
+FR-PRGM-1.1 The user shall be able to specify the characteristics of the simulation, including the simulation timeframe, various thresholds for the simulation, the project types included in the simulation, the needs addressed, and the annual budget for the simulation.
 
-FR-10.2 The user shall be able to update the unit costs and the policy standards governing the improvement model.
+FR-PRGM-1.2 The user shall be able to update the unit costs and the policy standards governing the improvement model.
 
-FR-10.3 The user shall be able to modify the technical parameters governing the simulation, including the parameters of the improvement model and the simulation rules.
+FR-PRGM-1.3 The user shall be able to modify the technical parameters governing the simulation, including the parameters of the improvement model and the simulation rules.
 
-FR-10.4 The user shall be able to select the structural elements to be included in the
+FR-PRGM-1.4 The user shall be able to select the structural elements to be included in the
 simulation.
 
-FR-10.5 The user shall be able to dynamically determine bridge subsets as part of the
+FR-PRGM-1.5 The user shall be able to dynamically determine bridge subsets as part of the
 scenario settings.
 
-#### UC-11 **Perform Program Simulation**
+#### UC-PRGM-2 **Perform Program Simulation**
 
-FR-11.1 The system shall be capable of running a program simulation for a selected set of structures and storing the simulation results in the Pontis database.
+FR-PRGM-2.1 The system shall be capable of running a program simulation for a selected set of structures and storing the simulation results in the Pontis database.
 
-#### UC-12 **Perform Bridge Analysis**
+#### UC-PRGM-3 **Perform Bridge Analysis**
 
-FR-12.1 The user shall be able to choose from Pontis-generated work recommendations, inspector work candidates, and user-defined work items to include in the bridge simulation for a structure.
+FR-PRGM-3.1 The user shall be able to choose from Pontis-generated work recommendations, inspector work candidates, and user-defined work items to include in the bridge simulation for a structure.
 
-FR-12.2 The system shall be capable of running bridge analysis for a single structure and storing the simulation results in the Pontis database.
+FR-PRGM-3.2 The system shall be capable of running bridge analysis for a single structure and storing the simulation results in the Pontis database.
 
-FR-12.3 The system shall provide a Bridge Analysis Dashboard that will allow the user to choose work items for a structure and the timing of the work, view the impact of the work on the condition of the structure, assign the work candidates to a project, and perform life-cycle cost analysis for the structure. The exact functionality of the dashboard will be informed by review of the results of NCHRP Project 12-67, Multiple-Objective Optimization for Bridge Management Systems.
+FR-PRGM-3.3 The system shall provide a Bridge Analysis Dashboard that will allow the user to choose work items for a structure and the timing of the work, view the impact of the work on the condition of the structure, assign the work candidates to a project, and perform life-cycle cost analysis for the structure. The exact functionality of the dashboard will be informed by review of the results of NCHRP Project 12-67, Multiple-Objective Optimization for Bridge Management Systems.
 
 ### 4.5 PROJECT & PROGRAM DEVELOPMENT
 
-#### UC-13 **Create/Edit Programs**
+#### UC-PROJ-1 **Create/Edit Programs**
 
-FR-13.1 The user shall be able to create new programs by manually entering program information.
+FR-PROJ-1.1 The user shall be able to create new programs by manually entering program information.
 
-FR-13.2 The user shall be able to edit or delete existing programs.
+FR-PROJ-1.2 The user shall be able to edit or delete existing programs.
 
-#### UC-14 **Create/Edit Projects**
+#### UC-PROJ-2 **Create/Edit Projects**
 
-FR-14.1 The user shall be able to create new projects by manually entering the project information.
+FR-PROJ-2.1 The user shall be able to create new projects by manually entering the project information.
 
-FR-14.2 The user shall be able to edit or delete existing projects.
+FR-PROJ-2.2 The user shall be able to edit or delete existing projects.
 
-FR-14.3 The user shall be able assign Pontis-generated work recommendations inspector work candidates, and user-specified work items to a project, or remove work items from a project.
+FR-PROJ-2.3 The user shall be able assign Pontis-generated work recommendations inspector work candidates, and user-specified work items to a project, or remove work items from a project.
 
-FR-14.4 The user shall be able to split a project into multiple projects and combine multiple projects into a master project.
+FR-PROJ-2.4 The user shall be able to split a project into multiple projects and combine multiple projects into a master project.
 
-FR-14.5 The user shall be able to edit the characteristics of multiple projects simultaneously (batch update).
+FR-PROJ-2.5 The user shall be able to edit the characteristics of multiple projects simultaneously (batch update).
 
-FR-14.6 The user shall be able to edit the data stored in the Project Planning tables through the GUI.
+FR-PROJ-2.6 The user shall be able to edit the data stored in the Project Planning tables through the GUI.
 
-FR-14.7 The system shall be capable of tracking and linking funding levels and project budgets. The system shall warn users if the project budget exceeds funding.
+FR-PROJ-2.7 The system shall be capable of tracking and linking funding levels and project budgets. The system shall warn users if the project budget exceeds funding.
 
-FR-14.8 The system shall be capable of grouping work candidates by different action types – bridge-level, element-level, and flexible-level actions.
+FR-PROJ-2.8 The system shall be capable of grouping work candidates by different action types – bridge-level, element-level, and flexible-level actions.
 
 ### 4.6 DATA MANAGEMENT
 
-#### UC-15 **Perform Data Validation**
+#### UC-DATA-1 **Perform Data Validation**
 
-FR-15.1 The system shall be capable of performing single-field and cross-field validation on NBI data items in batch mode.
+FR-DATA-1.1 The system shall be capable of performing single-field and cross-field validation on NBI data items in batch mode.
 
-FR-15.2 The system shall be capable of performing configurable input range checks using the DATADICT table upon entering data.
+FR-DATA-1.2 The system shall be capable of performing configurable input range checks using the DATADICT table upon entering data.
 
-FR-15.3 The system shall be capable of performing data validation tasks including cross field validation upon saving data.
+FR-DATA-1.3 The system shall be capable of performing data validation tasks including cross field validation upon saving data.
 
-FR-15.4 The system shall allow users to configure data validation rules. This shall be a privileged operation.
+FR-DATA-1.4 The system shall allow users to configure data validation rules. This shall be a privileged operation.
 
-FR-15.5 The system shall provide data review wizard for comparing incoming bridge data with existing data. The errors will be highlighted for easy review.
+FR-DATA-1.5 The system shall provide data review wizard for comparing incoming bridge data with existing data. The errors will be highlighted for easy review.
 
-FR-15.6 The system shall guarantee atomic database transactions to ensure maximum data integrity, using standard .NET transaction management capabilities.
+FR-DATA-1.6 The system shall guarantee atomic database transactions to ensure maximum data integrity, using standard .NET transaction management capabilities.
 
-FR-15.7 The system shall maximize multi-user concurrency and conflict resolution in the application using standard .NET session and transaction management capabilities.
+FR-DATA-1.7 The system shall maximize multi-user concurrency and conflict resolution in the application using standard .NET session and transaction management capabilities.
 
-#### UC-16 **Exchange Data**
+#### UC-DATA-2 **Exchange Data**
 
-FR-16.1 The user shall be able to exchange data in NBI format.
+FR-DATA-2.1 The user shall be able to exchange data in NBI format.
 
-FR-16.2 The user shall be able to exchange data in PDI format as specified in the Pontis Technical Manual.
+FR-DATA-2.2 The user shall be able to exchange data in PDI format as specified in the Pontis Technical Manual.
 
-FR-16.3 The user shall be able to exchange data in XML format. The emerging TransXML schema specification shall be utilized once established and accepted.
+FR-DATA-2.3 The user shall be able to exchange data in XML format. The emerging TransXML schema specification shall be utilized once established and accepted.
 
-FR-16.4 The user shall be able to exchange bridge inspection data in PDI format.
+FR-DATA-2.4 The user shall be able to exchange bridge inspection data in PDI format.
 
-FR-16.5 The user shall be able to designate a recipient for checked-out bridges.
+FR-DATA-2.5 The user shall be able to designate a recipient for checked-out bridges.
 
-FR-16.6 The system shall store all export/import control information within the database for central administration, eliminating any dependency on workstation control files to manage export/import behavior.
+FR-DATA-2.6 The system shall store all export/import control information within the database for central administration, eliminating any dependency on workstation control files to manage export/import behavior.
 
-FR-16.7 The system shall strictly separate transient or volatile batch operation control records – e.g. bridge records to be included in a report – from more static control record – e.g. currently checked-out bridges.
+FR-DATA-2.7 The system shall strictly separate transient or volatile batch operation control records – e.g. bridge records to be included in a report – from more static control record – e.g. currently checked-out bridges.
 
-#### UC-17 **Perform Data Archiving**
+#### UC-DATA-3 **Perform Data Archiving**
 
-FR-17.1 The user shall be able to archive data for existing and removed structures.
+FR-DATA-3.1 The user shall be able to archive data for existing and removed structures.
 
-FR-17.2 A selection/filter capability shall be provided to restrict operations on active, inactive, or all structures during any data archiving activity.
+FR-DATA-3.2 A selection/filter capability shall be provided to restrict operations on active, inactive, or all structures during any data archiving activity.
 
-FR-17.3 The system shall provide reporting mechanism for viewing archived data.
+FR-DATA-3.3 The system shall provide reporting mechanism for viewing archived data.
 
-FR-17.4 The user shall be able to restore the archived data.
+FR-DATA-3.4 The user shall be able to restore the archived data.
 
-FR-17.5 The system shall use timestamps in the database to log when rows were last changed.
+FR-DATA-3.5 The system shall use timestamps in the database to log when rows were last changed.
 
-#### UC-18 **BRIDGEWare Integration Support**
+#### UC-DATA-4 **BRIDGEWare Integration Support**
 
-FR-18.1 The system shall continue to provide existing application integration capabilities with BRIDGEWare products.
+FR-DATA-4.1 The system shall continue to provide existing application integration capabilities with BRIDGEWare products.
 
-FR-18.2 The system shall support concurrent storage in the database of planned, active, and inactive structures, and potentially other status/lifecycle phase indicators, to facilitate BRIDGEWare integration.
+FR-DATA-4.2 The system shall support concurrent storage in the database of planned, active, and inactive structures, and potentially other status/lifecycle phase indicators, to facilitate BRIDGEWare integration.
 
 ### 4.7 SYSTEM ADMINISTRATION
 
-#### UC-19 **Define and Manage User Roles**
+#### UC-ADMN-1 **Define and Manage User Roles**
 
-FR-19.1 The administrator shall be able to create and edit new application roles.
+FR-ADMN-1.1 The administrator shall be able to create and edit new application roles.
 
-FR-19.2 The administrator shall be able to assign users to application roles.
+FR-ADMN-1.2 The administrator shall be able to assign users to application roles.
 
-FR-19.3 The system shall provide user interface for managing application roles.
+FR-ADMN-1.3 The system shall provide user interface for managing application roles.
 
-FR-19.4 The administrator shall be able to assign application permissions to each user roles.
+FR-ADMN-1.4 The administrator shall be able to assign application permissions to each user roles.
 
-#### UC-20 **Manage Application Users**
+#### UC-ADMN-2 **Manage Application Users**
 
-FR-20.1 The administrator shall be able to add new users to the system.
+FR-ADMN-2.1 The administrator shall be able to add new users to the system.
 
-FR-20.2 The user shall be able to modify his or her basic account profile.
+FR-ADMN-2.2 The user shall be able to modify his or her basic account profile.
 
-FR-20.3 The administrator shall be able to create bridge-level access filters.
+FR-ADMN-2.3 The administrator shall be able to create bridge-level access filters.
 
-FR-20.4 The administrator shall be able to assign bridge-level filters for each user.
+FR-ADMN-2.4 The administrator shall be able to assign bridge-level filters for each user.
 
-FR-20.5 The administrator shall be able to remove users from the system or disable access as appropriate.
+FR-ADMN-2.5 The administrator shall be able to remove users from the system or disable access as appropriate.
 
-#### UC-21 **Perform User Authentication**
+#### UC-ADMN-3 **Perform User Authentication**
 
-FR-21.1 The system shall be capable of validating user name and password during log-in process.
+FR-ADMN-3.1 The system shall be capable of validating user name and password during log-in process.
 
-FR-21.2 The system shall be capable of authorizing access to Pontis functionalities depending on the user’s privileges during log-in process.
+FR-ADMN-3.2 The system shall be capable of authorizing access to Pontis functionalities depending on the user’s privileges during log-in process.
 
-FR-21.3 The system shall be capable of tracking login and logout activity.
+FR-ADMN-3.3 The system shall be capable of tracking login and logout activity.
 
-FR-21.4 The system shall be capable of running concurrent sessions for a user.
+FR-ADMN-3.4 The system shall be capable of running concurrent sessions for a user.
 
-FR-21.5 The system shall be capable of supporting Windows Authentication mechanism for database access.
+FR-ADMN-3.5 The system shall be capable of supporting Windows Authentication mechanism for database access.
 
-FR-21.6 The system shall be capable of initiating a session without a login prompt. This capability will provide support for an independent launch shell for Pontis and will be configured by the system administrator.
+FR-ADMN-3.6 The system shall be capable of initiating a session without a login prompt. This capability will provide support for an independent launch shell for Pontis and will be configured by the system administrator.
 
-FR-21.7 The system shall be capable of integrating authentication and permissions with BRIDGEWare.
+FR-ADMN-3.7 The system shall be capable of integrating authentication and permissions with BRIDGEWare.
 
-FR-21.8 The system shall be capable of operating with a single-sign-on authentication mechanism based on Active Directory Services or the LDAP standard.
+FR-ADMN-3.8 The system shall be capable of operating with a single-sign-on authentication mechanism based on Active Directory Services or the LDAP standard.
 
-#### UC-22 **Configure Application Functionalities**
+#### UC-ADMN-4 **Configure Application Functionalities**
 
-FR-22.1 The administrator shall be able to configure the system units of measure in either English or metric mode. This will be a permanent setting for the application and database.
+FR-ADMN-4.1 The administrator shall be able to configure the system units of measure in either English or metric mode. This will be a permanent setting for the application and database.
 
-FR-22.2 The system shall be capable of storing the INI file configuration information in the database or workstation registry as appropriate, eliminating dependency on INI files for program operation.
+FR-ADMN-4.2 The system shall be capable of storing the INI file configuration information in the database or workstation registry as appropriate, eliminating dependency on INI files for program operation.
 
-FR-22.3 The system will accommodate XP directory security and file permissions when storing any configuration or session parameters.
+FR-ADMN-4.3 The system will accommodate XP directory security and file permissions when storing any configuration or session parameters.
 
-FR-22.4 The administrator shall be able to edit the DATADICT table or its successor(s) through a GUI window.
+FR-ADMN-4.4 The administrator shall be able to edit the DATADICT table or its successor(s) through a GUI window.
 
-FR-22.5 The administrator shall be able to add and configure pre-populated new structure templates.
+FR-ADMN-4.5 The administrator shall be able to add and configure pre-populated new structure templates.
 
-FR-22.6 The administrator shall be able to configure field-level security.
+FR-ADMN-4.6 The administrator shall be able to configure field-level security.
 
-FR-22.7 The administrator shall be able to configure some fields as mandatory for user input.
+FR-ADMN-4.7 The administrator shall be able to configure some fields as mandatory for user input.
 
-FR-22.8 The administrator shall be able to configure different levels of permission to control editing of checked-out bridges.
+FR-ADMN-4.8 The administrator shall be able to configure different levels of permission to control editing of checked-out bridges.
 
-FR-22.9 The system shall adhere to a .NET logging standard.
+FR-ADMN-4.9 The system shall adhere to a .NET logging standard.
 
-FR-22.10 The system shall adhere to a .NET exception handling standard.
+FR-ADMN-4.10 The system shall adhere to a .NET exception handling standard.
 
-FRFR-22.11 The administrator shall be able to configure the values in the dropdown lists in the system.
+FR-ADMN-4.11 The administrator shall be able to configure the values in the dropdown lists in the system.
 
-FR-22.12 The administrator shall be able to create agency-specific elements, including element definitions, condition states, actions, models and other related information.
+FR-ADMN-4.12 The administrator shall be able to create agency-specific elements, including element definitions, condition states, actions, models and other related information.
 
-FR-22.13 The administrator shall be able to configure definitions of element types, environments, materials, and categories.
+FR-ADMN-4.13 The administrator shall be able to configure definitions of element types, environments, materials, and categories.
 
-FR-22.14 The administrator shall be able to add custom structure lists.
+FR-ADMN-4.14 The administrator shall be able to add custom structure lists.
 
-FR-22.15 The administrator shall be able to add custom project lists.
+FR-ADMN-4.15 The administrator shall be able to add custom project lists.
 
-FR-22.16 The administrator shall be able to configure default values for various scenario parameters.
+FR-ADMN-4.16 The administrator shall be able to configure default values for various scenario parameters.
 
-FR-22.17 The administrator shall be able to configure customizable options that affect system operations.
+FR-ADMN-4.17 The administrator shall be able to configure customizable options that affect system operations.
 
-FR-22.18 The system shall validate all configuration options to verify proper program operation, including explicit identification of any potentially conflicting program options.
+FR-ADMN-4.18 The system shall validate all configuration options to verify proper program operation, including explicit identification of any potentially conflicting program options.
 
-FR-22.19 Configuration option validation shall be supported by a built-in diagnostic report.
+FR-ADMN-4.19 Configuration option validation shall be supported by a built-in diagnostic report.
 
-#### UC-23 **Configure User-Interface Presentation**
+#### UC-ADMN-5 **Configure User-Interface Presentation**
 
-FR-23.1 The administrator shall be able to configure the labels of user interface items and screen displays.
+FR-ADMN-5.1 The administrator shall be able to configure the labels of user interface items and screen displays.
 
-FR-23.2 The system shall be capable of supporting internationalization using the standard Windows/.NET internationalization support.
+FR-ADMN-5.2 The system shall be capable of supporting internationalization using the standard Windows/.NET internationalization support.
 
-FR-23.3 The system shall be capable of showing all screens, menus, user interface controls, prompts, error messages and information notices in native language, with some of these elements customizable.
+FR-ADMN-5.3 The system shall be capable of showing all screens, menus, user interface controls, prompts, error messages and information notices in native language, with some of these elements customizable.
 
-#### UC-24 **Admin Functionalities**
+#### UC-ADMN-6 **Admin Functionalities**
 
-FR-24.1 The system shall provide an interface to communicate with an external service or third-party software. A set of standard interfaces will be defined for this capability.
+FR-ADMN-6.1 The system shall provide an interface to communicate with an external service or third-party software. A set of standard interfaces will be defined for this capability.
 
-FR-24.2 The system shall provide application administrators with a secured tool for overriding bridge/project check-out status.
+FR-ADMN-6.2 The system shall provide application administrators with a secured tool for overriding bridge/project check-out status.
 
-FR-24.3 The system shall provide application administrators with a secured tool for clearing batch processing tables used by the system for deadlock/lockout resolution.
+FR-ADMN-6.3 The system shall provide application administrators with a secured tool for clearing batch processing tables used by the system for deadlock/lockout resolution.
 
-FR-24.4 The system shall provide a fixed set of predefined, secured, administration reports to document users, user roles, application privileges, user login sessions, checked-out bridges, and other key information necessary to manage application operation.
+FR-ADMN-6.4 The system shall provide a fixed set of predefined, secured, administration reports to document users, user roles, application privileges, user login sessions, checked-out bridges, and other key information necessary to manage application operation.
 
 ### 4.8 DATA REQUIREMENTS
 
@@ -1574,167 +1574,6 @@ expectations, either because it does not meet their requirements or because it
 does not conform to their technology standards. This risk can be managed
 through the use of prototypes in the design phase and by following a phased
 development schedule.
-
-
------
-
------
-
-
-
-
-
-## 7.0 Project Issues
-
-#### 7.1 O PEN I SSUES
-
-There are no open issues as of this FRS version.
-
-#### 7.2 O FF -T HE -S HELF S OLUTIONS
-
-No review has been performed and consequently no commercial off-the-shelf
-solutions (COTS) have been identified as yet to fulfill special requirements in this
-document. Specific functionality in Pontis 5.0 may be provided by off-the-shelf
-solutions such as Sybase DataWindow .NET. COTS software may be in the
-public domain or licensed for a fee by AASHTO. Further COTS review will be
-conducted as part of the detailed design phase.
-
-A standalone database engine will be required for off-line/standalone operation.
-It is assumed this will be the Sybase Adaptive Server Anywhere product, release
-9 or above.
-
-#### 7.3 N EW P ROBLEMS
-
-No new problems have been identified as of this FRS version.
-
-#### 7.4 W AITING R OOM
-
-As of Revision 0.3, the “may” requirements from Section 4.0 - Functional
-Requirements - have been moved to this section.
-
-**UC-1 View Bridge Data**
-
-The system may be configurable by the application administrator to provide
-additional standard criteria for filtering, finding, and selecting structures.
-(possible issues when upgrading the software-updating custom configurations)
-
-The system may provide a two-way interface with a GIS map application to
-display bridge and project records on a map.
-
-**UC-2 View Project Data**
-
-The system may be configurable by the application administrator to provide
-additional standard criteria for filtering, finding, and selecting projects/work
-items.
-
-Database enhancement: Federal aid common code number field may be added
-to the PROJECTS table.
-
-
------
-
-
-
-
-**UC-4 Create/Edit Structure**
-
-The user may be able to create a new structure using a step-by-step wizard with
-pre-defined data requirements.
-
-The user may be able to create a new structure using pre-defined templates.
-
-**UC- 5 Create/Edit Inspection**
-
-The user may be able to create a new inspection using a step-by-step wizard.
-
-The user may be able to query on the notes field from the GUI.
-
-The system may provide the capability to affix an electronic signature to any
-record in the system to “lock down” the record. [34]
-
-The system may be capable of transferring multimedia files to and from a server
-to a local hard drive.
-
-The system may provide the capability to communicate/link with an EDMS
-(electronic document management system).
-
-The system may provide the ability to combine multiple inspections.
-
-**UC-7 Develop Preservation Policy**
-
-The system may be capable of incorporating user cost considerations in the shortterm and long-term model for deck elements.
-
-**UC-8 Health Index Targeting**
-
-The system may be capable of running parametric simulations (i.e. series of
-simulations with varying budget levels).
-
-The system may be capable of running multiple scenarios to generate results sets
-used in cross-scenario reporting.
-
-**UC-13 Create/Edit Programs**
-
-The user may be able to create new programs using a program wizard.
-
-**UC-14 Create/Edit Projects**
-
-The user may be able to create new projects using a project wizard.
-
-34 This requirements document does not attempt to address the issue of state law and
-agency policy with regard to electronic signatures by licensed professionals. From the
-application point of view, the capability will be generic and follow available open
-source standards for affixing electronic signatures.
-
-
------
-
-
-
-
-
-The system may provide an interface for route management and/or corridor
-analysis. Projects may be defined by geography, mile point limits, and other
-criteria.
-
-**UC-16 Exchange Data**
-
-The system may provide capability to translate contract bid items to cost data
-used in the preservation cost model.
-
-The system may provide a specification for exchanging data with a Maintenance
-Management System, which will likely involve development of an XML schema
-for this purpose.
-
-**UC-17 Perform Data Archiving**
-
-The system may provide field-level change logging.
-
-**UC-20 Create/Edit Users**
-
-The user may be able to send a request for a new user account. This requirement
-applies to the thin-client platform.
-
-**UC-22 Configure Application Functionalities**
-
-The administrator may be able to configure the search and filter criteria for
-viewing data.
-
-The administrator may be able to configure the level of GUI and application disk
-logging.
-
-**UC-24 Admin Functionalities**
-
-The system may provide messaging capability to notify users when a key event
-(such as creating new bridges or deleting bridges) occurs.
-
-
------
-
------
-
-
-
-
 
 ## Appendix A – COSMIC-FFP Overview
 

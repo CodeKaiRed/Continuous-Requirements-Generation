@@ -1,64 +1,77 @@
 {
     "use-cases": [
         {
-            "parent-section": "3.2 BRIDGE INVENTORY & INSPECTION",
-            "id": "UC-23",
-            "modification-type": "new",
-            "description": "The system shall notify bridge inspectors of upcoming bridge inspections due within the next 30 calendar days.",
-            "success-end-condition": "Bridge inspectors receive timely notifications about upcoming bridge inspections, allowing for efficient allocation of inspection personnel and resources."
+            "parent-id": "3.2",
+            "parent-section": "BRIDGE INVENTORY & INSPECTION",
+            "id": "UC-BRDG-4",
+            "title": "Send Notifications for Upcoming Bridge Inspections",
+            "description": "The system automatically sends notifications to the bridge inspector for bridges whose inspections are coming due within the next 30 days. The notifications include details on the inspections due, suggested scheduling times, and resource allocation recommendations.",
+            "success-end-condition": "The bridge inspector receives timely and accurate notifications about upcoming bridge inspections, enabling efficient allocation of inspection personnel and resources for the next month."
         }
     ],
     "functional-requirements": [
         {
-            "parent-id": "UC-23",
-            "id": "FR-23.1",
-            "modification-type": "new",
-            "description": "The system shall generate a list of bridges with inspections due within the next 30 calendar days and send notifications to the designated bridge inspectors."
+            "parent-id": "UC-BRDG-4",
+            "id": "FR-UC-BRDG-4.1",
+            "description": "The system shall automatically identify bridges that require inspections within the next 30 calendar days and send notifications to bridge inspectors."
         },
         {
-            "parent-id": "UC-23",
-            "id": "FR-23.2",
-            "modification-type": "new",
-            "description": "The system shall allow bridge inspectors to configure notification preferences, specifying the exact frequency (daily, weekly, monthly) and method (email, SMS, desktop alert) of the notifications."
+            "parent-id": "UC-BRDG-4",
+            "id": "FR-UC-BRDG-4.2",
+            "description": "When a bridge inspection is due within the next 30 days, the system shall send email notifications to the bridge inspector that include the bridge ID, inspection due date, special instructions, and previous inspection notes."
         },
         {
-            "parent-id": "UC-23",
-            "id": "FR-23.3",
-            "modification-type": "new",
-            "description": "The system shall generate a summary report listing all scheduled bridge inspections for the next 30 calendar days, including dates, locations, and assigned personnel, for review and planning purposes."
+            "parent-id": "UC-BRDG-4",
+            "id": "FR-UC-BRDG-4.3",
+            "description": "The system shall provide suggested scheduling times based on the confirmed availability of inspection personnel and inspection resources, ensuring that at least one available time slot is suggested for each inspection."
         },
         {
-            "parent-id": "UC-23",
-            "id": "FR-23.4",
-            "modification-type": "new",
-            "description": "The system shall enable bridge inspectors to mark notifications as acknowledged and track the status of inspection scheduling."
+            "parent-id": "UC-BRDG-4",
+            "id": "FR-UC-BRDG-4.4",
+            "description": "The system shall provide recommendations specifying the quantity and type of resources required for each upcoming inspection, including the number of personnel, equipment, and materials needed."
+        },
+        {
+            "parent-id": "UC-BRDG-4",
+            "id": "FR-UC-BRDG-4.5",
+            "description": "The system shall allow the bridge inspector to update the notification preferences, including specifying the lead time for notifications in days and selecting communication channels from a predefined list (email, SMS)."
         }
     ],
     "non-functional-requirements": [
         {
-            "id": "USA-23.1",
-            "modification-type": "new",
-            "description": "The notification system shall enable bridge inspectors to configure notification settings within 5 minutes and receive notifications for upcoming bridge inspections at least 7 days before the inspection date."
+            "id": "LAF-UC-BRDG-4.1",
+            "description": "The notification interface shall adhere to the Pontis user interface guidelines version 3.2."
         },
         {
-            "id": "CAP-23.2",
-            "modification-type": "new",
-            "description": "The notification system shall support up to 10,000 concurrent notifications with a maximum increase in response time of 5% compared to the baseline response time."
+            "id": "USA-UC-BRDG-4.1",
+            "description": "The notifications shall contain the date, time, and location of upcoming bridge inspections and shall be limited to 200 characters to avoid overwhelming the inspector."
         },
         {
-            "id": "SPD-23.3",
-            "modification-type": "new",
-            "description": "The system shall deliver notifications within 5 minutes of generating the list of upcoming inspections with a success rate of at least 95%."
+            "id": "CAP-UC-BRDG-4.1",
+            "description": "The system shall support sending notifications for bridge inspections scheduled to occur within the next 30 days."
         },
         {
-            "id": "AVL-23.4",
-            "modification-type": "new",
-            "description": "The notification system shall maintain an uptime of at least 99.9% over any continuous 30-day period."
+            "id": "SPD-UC-BRDG-4.1",
+            "description": "When an upcoming inspection due date is detected, the system shall generate and send notifications within one hour, 95% of the time, where \"upcoming inspection due date\" is defined as any inspection due within the next 30 days."
         },
         {
-            "id": "SEC-23.5",
-            "modification-type": "new",
-            "description": "The notification system shall restrict access to the notification settings and summaries exclusively to users with the role of 'authorized bridge inspector' as explicitly defined in the user access control list."
+            "id": "AVL-UC-BRDG-4.1",
+            "description": "The notification service shall maintain an uptime of at least 99.9% per calendar month."
+        },
+        {
+            "id": "OPR-UC-BRDG-4.1",
+            "description": "While the notification process is operating as a background service within Pontis, the notification process shall ensure it does not interrupt any ongoing user activities, as verified by the absence of user-reported interruptions during normal operations."
+        },
+        {
+            "id": "DEP-UC-BRDG-4.1",
+            "description": "The notification service shall require no more than five configuration steps and shall be deployable without additional changes during existing system upgrades 100% of the time."
+        },
+        {
+            "id": "MPR-UC-BRDG-4.1",
+            "description": "The notification system shall support updates and maintenance activities without causing any system downtime for more than 5 minutes per month."
+        },
+        {
+            "id": "SEC-UC-BRDG-4.1",
+            "description": "The system shall send notifications exclusively to bridge inspectors who are listed in the authorized personnel database."
         }
     ]
 }

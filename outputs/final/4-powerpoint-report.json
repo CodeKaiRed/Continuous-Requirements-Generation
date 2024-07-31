@@ -1,81 +1,92 @@
 {
     "use-cases": [
         {
-            "parent-section": "3.1 BROWSE BRIDGE & PROJECT DATA",
-            "id": "UC-25",
-            "modification-type": "new",
-            "description": "The user exports bridge inspection results to a PowerPoint presentation.",
-            "success-end-condition": "Bridge inspection results are successfully exported to a PowerPoint presentation in the desired format and stored in the Pontis database under the 'Exported Presentations' directory for future use."
+            "parent-id": "3.5",
+            "parent-section": "PROJECT & PROGRAM DEVELOPMENT",
+            "id": "UC-PROJ-3",
+            "title": "Export Bridge Analysis Results to PowerPoint",
+            "description": "The advanced user exports bridge analysis results to a PowerPoint presentation to present risk analysis and recommendations in a digestible format for management personnel.",
+            "success-end-condition": "The bridge analysis results are converted into a PowerPoint presentation and made available for download/export from the system."
         }
     ],
     "functional-requirements": [
         {
-            "parent-id": "UC-25",
-            "id": "FR-25.1",
-            "modification-type": "new",
-            "description": "The system shall allow users to select multiple bridge inspection results and export them to a PowerPoint presentation file."
+            "parent-id": "UC-PROJ-3",
+            "id": "FR-9.3.1",
+            "description": "The system shall allow users to export bridge analysis results into a .pptx file format that is compatible with Microsoft PowerPoint."
         },
         {
-            "parent-id": "UC-25",
-            "id": "FR-25.2",
-            "modification-type": "new",
-            "description": "The system shall provide predefined templates for exporting bridge inspection results to a PowerPoint presentation file."
+            "parent-id": "UC-PROJ-3",
+            "id": "FR-9.3.2",
+            "description": "The system shall enable the user to select specific bridge analysis results and their corresponding visualizations for inclusion in a PowerPoint presentation."
         },
         {
-            "parent-id": "UC-25",
-            "id": "FR-25.3",
-            "modification-type": "new",
-            "description": "The system shall allow users to customize the layout and content of the PowerPoint presentation export, including slide order, text, images, and formatting options."
+            "parent-id": "UC-PROJ-3",
+            "id": "FR-9.3.3",
+            "description": "The system shall format the exported PowerPoint presentation to include bridge analysis summaries, visualizations, and recommendations, each labeled with a title and organized into separate sections."
         },
         {
-            "parent-id": "UC-25",
-            "id": "FR-25.4",
-            "modification-type": "new",
-            "description": "The system shall ensure that the exported PowerPoint presentation includes a detailed risk analysis and specific recommendations based on the selected bridge inspection results."
+            "parent-id": "UC-PROJ-3",
+            "id": "FR-9.3.4",
+            "description": "When the user initiates the final export process, the system shall display a preview of the PowerPoint presentation, including all slides and content."
         },
         {
-            "parent-id": "UC-25",
-            "id": "FR-25.5",
-            "modification-type": "new",
-            "description": "The system shall store the exported PowerPoint presentations in the Pontis database under the 'Exported Presentations' directory for future access by authorized users."
+            "parent-id": "UC-PROJ-3",
+            "id": "FR-9.3.5",
+            "description": "The system shall allow users to customize slide titles, slide captions, and the sequence of slides in a PowerPoint presentation by providing editable text fields for titles and captions, and drag-and-drop functionality for reordering slides."
         },
         {
-            "parent-id": "UC-25",
-            "id": "FR-25.6",
-            "modification-type": "new",
-            "description": "WHEN the bridge inspection results have been successfully exported to a PowerPoint presentation file, the system shall display a notification message to the user."
+            "parent-id": "UC-PROJ-3",
+            "id": "FR-9.3.6",
+            "description": "The system shall scale all visualizations included in the PowerPoint to a resolution of at least 1920x1080 pixels and format text using Arial font size 14 or larger."
+        },
+        {
+            "parent-id": "UC-PROJ-3",
+            "id": "FR-9.3.7",
+            "description": "The system shall provide functionality to export the PowerPoint presentation in both .ppt and .pptx file formats, ensuring that all slides, text, images, and embedded objects are preserved in the exported files."
+        },
+        {
+            "parent-id": "UC-PROJ-3",
+            "id": "FR-9.3.8",
+            "description": "The system shall enable the user to save the current export settings as a template that can be selected and applied in future export operations."
         }
     ],
     "non-functional-requirements": [
         {
-            "id": "LAF-25.1",
-            "modification-type": "new",
-            "description": "The PowerPoint export feature shall enable users to export bridge inspection results to a PowerPoint presentation using exactly three clicks from the main interface."
+            "id": "LAF-3",
+            "description": "The user interface for exporting to PowerPoint shall use the exact color codes, font types, and logo placement as specified in the corporate branding document."
         },
         {
-            "id": "USA-25.2",
-            "modification-type": "new",
-            "description": "The PowerPoint export process shall be documented with a step-by-step guide that includes exactly 10 distinct steps, each with a corresponding screenshot, and shall be accessible within the help section of the software."
+            "id": "USA-3",
+            "description": "The PowerPoint export feature shall provide user guidance for selecting data and customizing the presentation layout, with each step clearly described and illustrated."
         },
         {
-            "id": "CAP-25.3",
-            "modification-type": "new",
-            "description": "The system shall support exporting PowerPoint presentations for up to 50 bridge inspection results in a single operation, with each export operation completing within 5 minutes."
+            "id": "CAP-3",
+            "description": "The system shall support the export of up to 1000 bridge analysis results into separate PowerPoint presentations simultaneously without any decrease in system performance."
         },
         {
-            "id": "SPD-25.4",
-            "modification-type": "new",
-            "description": "The system shall complete the export of bridge inspection results to a PowerPoint presentation file within 30 seconds for 95% of export attempts."
+            "id": "SPD-3",
+            "description": "The system shall generate and export a PowerPoint presentation containing up to 50 slides within 30 seconds."
         },
         {
-            "id": "AVL-25.5",
-            "modification-type": "new",
-            "description": "WHILE [in operational hours] the [PowerPoint export feature] shall [have an uptime of at least 99%, calculated over a continuous period of one month]."
+            "id": "AVL-3",
+            "description": "Between 9 AM and 5 PM, Monday through Friday, the PowerPoint export feature shall be available 99.5% of the time."
         },
         {
-            "id": "SEC-25.6",
-            "modification-type": "new",
-            "description": "The system shall restrict access to exported PowerPoint presentations exclusively to users who possess the 'Export PowerPoint' permission."
+            "id": "OPR-3",
+            "description": "The system shall successfully export PowerPoint presentations on Windows 10, macOS 11, and Ubuntu 20.04 environments without errors."
+        },
+        {
+            "id": "DEP-3",
+            "description": "The PowerPoint export feature shall be deployable using only a web browser for configuration on the client end."
+        },
+        {
+            "id": "MPR-3",
+            "description": "The system shall enable updates and maintenance of the PowerPoint export templates without requiring system downtime during the update and maintenance process."
+        },
+        {
+            "id": "SEC-3",
+            "description": "If the user explicitly selects the option to include sensitive information, then the exported PowerPoint presentation shall contain sensitive information."
         }
     ]
 }
